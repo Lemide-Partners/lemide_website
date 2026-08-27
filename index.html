@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lemide — Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 25, 60, 0.82);
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 680px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50px;
+      padding: 0.5rem 1.5rem;
+      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 span {
+      display: block;
+      background: linear-gradient(135deg, #6ec1ff, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p {
+      font-size: 1.05rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 2.5rem;
+    }
+
+    .notify-form {
+      display: flex;
+      gap: 0;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .notify-form input {
+      flex: 1;
+      padding: 0.9rem 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-right: none;
+      border-radius: 8px 0 0 8px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .notify-form input::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .notify-form input:focus {
+      border-color: rgba(110, 193, 255, 0.6);
+    }
+
+    .notify-form button {
+      padding: 0.9rem 1.75rem;
+      border: none;
+      border-radius: 0 8px 8px 0;
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+
+    .notify-form button:hover {
+      opacity: 0.88;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 2;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    @media (max-width: 480px) {
+      .notify-form {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .notify-form input {
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+      }
+      .notify-form button {
+        border-radius: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="overlay"></div>
+
+  <div class="content">
+    <div class="badge">Under Construction</div>
+    <h1>We're Building<span>Something Great</span></h1>
+    <p>Our website is currently under development. We're working hard to bring you an amazing experience. Stay tuned!</p>
+    <form class="notify-form" onsubmit="event.preventDefault();">
+      <input type="email" placeholder="Enter your email" aria-label="Email address">
+      <button type="submit">Notify Me</button>
+    </form>
+  </div>
+
+  <div class="footer">&copy; 2026 Lemide Partners. All rights reserved.</div>
+</body>
+</html>
