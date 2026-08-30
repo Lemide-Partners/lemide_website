@@ -54,14 +54,14 @@ export function Navbar({
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
-        background: scrolled ? "rgba(247, 235, 223, 0.97)" : "transparent",
-        boxShadow: scrolled ? "0 1px 3px rgba(11, 29, 75, 0.06)" : "none",
+        background: scrolled ? "rgba(11, 29, 75, 0.97)" : "transparent",
+        boxShadow: scrolled ? "0 1px 8px rgba(0, 0, 0, 0.2)" : "none",
         backdropFilter: scrolled ? "blur(12px)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
         <Link href="/" className="shrink-0">
-          <Logo />
+          <Logo inverse />
         </Link>
 
         <div className="hidden lg:flex items-center gap-1">
@@ -73,7 +73,7 @@ export function Navbar({
                 onMouseEnter={() => setDropdownOpen(link.label)}
                 onMouseLeave={() => setDropdownOpen(null)}
               >
-                <button className="flex items-center gap-1 px-4 py-2 type-body-sm font-display font-medium text-foreground hover:text-accent transition-colors duration-200">
+                <button className="flex items-center gap-1 px-4 py-2 type-body-sm font-display font-medium text-white/90 hover:text-accent transition-colors duration-200">
                   {link.label}
                   <svg
                     className="w-3.5 h-3.5 transition-transform duration-300"
@@ -97,12 +97,12 @@ export function Navbar({
                     transition: "opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
                   }}
                 >
-                  <div className="bg-card border border-border rounded-xl shadow-lg py-2 min-w-[220px]">
+                  <div className="bg-deep-navy border border-white/10 rounded-xl shadow-lg py-2 min-w-[220px]">
                     {link.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-4 py-2.5 type-body-sm text-foreground hover:text-accent hover:bg-muted/50 transition-colors duration-150"
+                        className="block px-4 py-2.5 type-body-sm text-white/80 hover:text-accent hover:bg-white/5 transition-colors duration-150"
                       >
                         {child.label}
                       </Link>
@@ -114,7 +114,7 @@ export function Navbar({
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 type-body-sm font-display font-medium text-foreground hover:text-accent transition-colors duration-200"
+                className="px-4 py-2 type-body-sm font-display font-medium text-white/90 hover:text-accent transition-colors duration-200"
               >
                 {link.label}
               </Link>
@@ -134,15 +134,15 @@ export function Navbar({
           aria-label="Toggle menu"
         >
           <span
-            className="absolute w-5 h-0.5 bg-foreground transition-all duration-300"
+            className="absolute w-5 h-0.5 bg-white transition-all duration-300"
             style={{ transform: mobileOpen ? "rotate(45deg)" : "translateY(-4px)" }}
           />
           <span
-            className="absolute w-5 h-0.5 bg-foreground transition-all duration-300"
+            className="absolute w-5 h-0.5 bg-white transition-all duration-300"
             style={{ opacity: mobileOpen ? 0 : 1 }}
           />
           <span
-            className="absolute w-5 h-0.5 bg-foreground transition-all duration-300"
+            className="absolute w-5 h-0.5 bg-white transition-all duration-300"
             style={{ transform: mobileOpen ? "rotate(-45deg)" : "translateY(4px)" }}
           />
         </button>
@@ -152,7 +152,7 @@ export function Navbar({
         className="lg:hidden overflow-hidden transition-all duration-400"
         style={{ maxHeight: mobileOpen ? "500px" : "0", opacity: mobileOpen ? 1 : 0 }}
       >
-        <div className="bg-background border-t border-border px-6 py-4 space-y-1">
+        <div className="bg-deep-navy border-t border-white/10 px-6 py-4 space-y-1">
           {links.map((link, i) => (
             <div
               key={link.label}
@@ -166,7 +166,7 @@ export function Navbar({
                 <>
                   <button
                     onClick={() => setDropdownOpen(dropdownOpen === link.label ? null : link.label)}
-                    className="w-full flex items-center justify-between py-3 type-body-sm font-display font-medium text-foreground"
+                    className="w-full flex items-center justify-between py-3 type-body-sm font-display font-medium text-white/90"
                   >
                     {link.label}
                     <svg
@@ -189,7 +189,7 @@ export function Navbar({
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block py-2 type-body-sm text-muted-foreground hover:text-accent transition-colors duration-150"
+                          className="block py-2 type-body-sm text-white/60 hover:text-accent transition-colors duration-150"
                           onClick={() => setMobileOpen(false)}
                         >
                           {child.label}
@@ -201,7 +201,7 @@ export function Navbar({
               ) : (
                 <Link
                   href={link.href}
-                  className="block py-3 type-body-sm font-display font-medium text-foreground hover:text-accent transition-colors duration-150"
+                  className="block py-3 type-body-sm font-display font-medium text-white/90 hover:text-accent transition-colors duration-150"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}

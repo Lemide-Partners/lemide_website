@@ -22,8 +22,8 @@
   --destructive: #B91C1C;
   --destructive-foreground: #FFFFFF;
 
-  /* Inverse (dark sections: hero, footer) */
-  --inverse-bg: var(--shadow-grey);
+  /* Inverse (dark sections: hero, footer, navbar) */
+  --inverse-bg: var(--deep-navy);
   --inverse-fg: var(--linen);
   --inverse-muted: #A8A29E;
 }
