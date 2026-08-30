@@ -104,30 +104,30 @@ export default function Home() {
 
       <CaseStudies
         label="Case Studies"
-        heading="Real outcomes from"
-        headingAccent="real partnerships."
-        description="See how we've helped early-stage startups build operational foundations that scale."
+        heading="Discover how we help businesses"
+        headingAccent="turn challenges into achievements."
+        description="Explore case studies that showcase how we've helped businesses overcome challenges and achieve lasting success through tailored consulting solutions."
         studies={[
           {
             title: "From incorporation to Series A in 90 days",
             excerpt:
-              "How we helped a fintech startup go from idea to fully operational — entity, banking, compliance — in record time.",
+              "How we helped a fintech startup go from idea to fully operational — entity, banking, compliance — in record time. Millions saved through streamlined processes.",
             tags: ["Fintech", "Legal", "Banking"],
             href: "/case-studies/fintech-series-a",
           },
           {
             title: "Multi-state compliance for a healthcare platform",
             excerpt:
-              "Navigating 12-state regulatory requirements for a telehealth startup scaling faster than their ops team could handle.",
+              "Navigating 12-state regulatory requirements for a telehealth startup scaling faster than their ops team could handle. Real-time dashboards and automated filings.",
             tags: ["Healthcare", "Compliance", "Regulatory"],
             href: "/case-studies/healthcare-compliance",
           },
           {
-            title: "Entity restructuring ahead of acquisition",
+            title: "A logistics transformation that moves with precision",
             excerpt:
-              "Cleaning up a messy cap table and multi-entity structure before a successful exit to a strategic acquirer.",
-            tags: ["M&A", "Entity", "Advisory"],
-            href: "/case-studies/entity-restructuring",
+              "How a manufacturing giant achieved end-to-end supply chain agility by land, air, and sea. Millions saved, smarter analytics, real-time dashboards, and streamlined operations.",
+            tags: ["Logistics", "Supply Chain", "Manufacturing"],
+            href: "/case-studies/logistics-transformation",
           },
         ]}
       />

@@ -433,6 +433,17 @@ body {
   animation: pupil-focus 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Case study sticky stacking cards */
+.case-study-card {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.case-study-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 20px 50px -12px rgba(11, 29, 75, 0.12);
+}
+
 /* Card hover lift */
 .card-hover {
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),

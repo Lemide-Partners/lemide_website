@@ -1,6 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { Button, Badge } from "@/components/ui";
+import { Button } from "@/components/ui";
 import { Reveal } from "./reveal";
 
 interface CaseStudy {
@@ -27,34 +29,38 @@ export function CaseStudies({
   heading,
   headingAccent,
   description,
-  ctaLabel = "View All",
+  ctaLabel = "Read all cases",
   ctaHref = "/case-studies",
   studies,
 }: CaseStudiesProps) {
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className="bg-white py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-16">
           <div>
             <Reveal animation="fade-up">
-              <span className="type-caption text-accent">{label}</span>
+              <span className="inline-block px-4 py-1.5 rounded-full border border-border type-caption text-foreground">
+                {label}
+              </span>
             </Reveal>
             <Reveal delay={0.1} animation="fade-up">
-              <h2 className="type-h2 text-foreground mt-4">
-                {heading}{" "}
+              <h2 className="type-h2 text-foreground mt-6">
+                <span className="block">{heading}</span>
                 {headingAccent && (
-                  <span className="text-muted-foreground">{headingAccent}</span>
+                  <span className="block text-muted-foreground">{headingAccent}</span>
                 )}
               </h2>
             </Reveal>
           </div>
           {description && (
-            <Reveal delay={0.2} animation="fade-left">
-              <div className="lg:max-w-sm">
-                <p className="type-body text-muted-foreground">{description}</p>
-                <div className="mt-5">
+            <Reveal delay={0.2} animation="fade-up">
+              <div className="lg:pt-12">
+                <p className="type-body-lg text-muted-foreground">{description}</p>
+                <div className="mt-6">
                   <Link href={ctaHref}>
-                    <Button variant="outline">{ctaLabel}</Button>
+                    <Button variant="primary" size="lg">
+                      {ctaLabel}
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -62,62 +68,73 @@ export function CaseStudies({
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="case-studies-stack space-y-6">
           {studies.map((study, i) => (
-            <Reveal key={study.href} delay={i * 0.12} animation="fade-up">
-              <Link href={study.href} className="group block h-full">
-                <article className="card-hover bg-card border border-border rounded-xl overflow-hidden h-full flex flex-col">
-                  <div className="relative aspect-[16/10] bg-muted overflow-hidden">
-                    {study.imageSrc ? (
-                      <Image
-                        src={study.imageSrc}
-                        alt={study.imageAlt ?? study.title}
-                        fill
-                        className="object-cover img-zoom"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-navy-50 flex items-center justify-center">
-                        <span className="type-caption text-muted-foreground">
-                          Image
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-6 flex-1 flex flex-col">
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {study.tags.map((tag) => (
-                        <Badge key={tag} variant="muted">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                    <h3 className="type-h4 text-foreground group-hover:text-accent transition-colors duration-300 flex-1">
-                      {study.title}
-                    </h3>
-                    <p className="type-body-sm text-muted-foreground mt-3 line-clamp-2">
-                      {study.excerpt}
-                    </p>
-                    <span className="inline-flex items-center gap-2 mt-5 type-body-sm text-accent font-display font-medium">
-                      Read case
-                      <svg
-                        className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+            <div
+              key={study.href}
+              className="case-study-card sticky"
+              style={{ top: `${80 + i * 30}px`, zIndex: i + 1 }}
+            >
+              <Reveal delay={i * 0.15} animation="fade-up">
+                <Link href={study.href} className="group block">
+                  <article className="grid grid-cols-1 lg:grid-cols-2 bg-linen rounded-2xl overflow-hidden shadow-sm border border-border/40">
+                    <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[340px] overflow-hidden">
+                      {study.imageSrc ? (
+                        <Image
+                          src={study.imageSrc}
+                          alt={study.imageAlt ?? study.title}
+                          fill
+                          className="object-cover img-zoom"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
                         />
-                      </svg>
-                    </span>
-                  </div>
-                </article>
-              </Link>
-            </Reveal>
+                      ) : (
+                        <div className="w-full h-full bg-navy-100 flex items-center justify-center">
+                          <svg viewBox="0 0 120 80" fill="none" className="w-24 h-16 text-navy-200">
+                            <rect x="10" y="10" width="100" height="60" rx="4" stroke="currentColor" strokeWidth="1.5" />
+                            <circle cx="40" cy="35" r="10" stroke="currentColor" strokeWidth="1.5" />
+                            <path d="M10 55l25-15 20 10 25-20 30 25" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-8 lg:p-10 flex flex-col justify-center">
+                      <div className="flex flex-wrap gap-2 mb-5">
+                        {study.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="inline-block px-4 py-1.5 rounded-full bg-foreground text-white type-caption"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <h3 className="type-h3 text-foreground group-hover:text-accent transition-colors duration-300">
+                        {study.title}
+                      </h3>
+                      <p className="type-body text-muted-foreground mt-4 line-clamp-3">
+                        {study.excerpt}
+                      </p>
+                      <span className="inline-flex items-center gap-2 mt-6 type-body-sm text-accent font-display font-medium">
+                        Read case study
+                        <svg
+                          className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </article>
+                </Link>
+              </Reveal>
+            </div>
           ))}
         </div>
       </div>
