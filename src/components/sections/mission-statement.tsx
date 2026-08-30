@@ -13,11 +13,7 @@ export function Problem({ text, mutedText }: ProblemProps) {
           <p className="type-h2 text-foreground text-center lg:text-left leading-snug">
             {text}{" "}
             {mutedText && (
-              <Reveal animation="fade-in" delay={0.4} duration={0.8}>
-                <span className="text-muted-foreground inline">
-                  {mutedText}
-                </span>
-              </Reveal>
+              <span className="text-muted-foreground">{mutedText}</span>
             )}
           </p>
         </Reveal>
