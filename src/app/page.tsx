@@ -22,7 +22,7 @@ export default function Home() {
       <Hero
         headline="Operational infrastructure for founders who"
         headlineAccent="move fast."
-        description="Lemide Partners handles legal, compliance, banking, and entity management — so you can focus on building what matters."
+        description="We help startups set up and run the operations behind the company: incorporation, banking, compliance, tools, and credentials."
         ctaLabel="Schedule a Call"
         ctaHref="/contact"
         videoSrc="/assets/videos/lemidehero.mp4"
