@@ -29,7 +29,7 @@ export function Hero({
   videoSrc,
 }: HeroProps) {
   return (
-    <section className="relative bg-inverse-bg min-h-screen overflow-hidden flex items-end">
+    <section className="relative bg-inverse-bg min-h-screen overflow-hidden flex items-center justify-center">
       {videoSrc && (
         <>
           <video
@@ -37,7 +37,7 @@ export function Hero({
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover brightness-[0.4]"
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
@@ -45,15 +45,15 @@ export function Hero({
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.7) 100%)",
+                "linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.8) 100%)",
             }}
           />
         </>
       )}
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 text-center pt-48 pb-16 lg:pt-56 lg:pb-24">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 text-center py-32 lg:py-40">
         <Reveal animation="fade-up" duration={1}>
-          <h1 className="type-h1 text-inverse-fg max-w-4xl mx-auto">
+          <h1 className="type-h1 text-inverse-fg max-w-[18ch] mx-auto">
             {headline}{" "}
             {headlineAccent && (
               <span className="text-accent">{headlineAccent}</span>
