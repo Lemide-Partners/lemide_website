@@ -55,7 +55,7 @@ export function Navbar({
       <nav
         className="transition-all duration-500"
         style={{
-          background: scrolled ? "rgba(11, 29, 75, 0.65)" : "transparent",
+          background: scrolled ? "rgba(11, 29, 75, 0.88)" : "transparent",
           boxShadow: scrolled ? "0 4px 30px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.08)" : "none",
           backdropFilter: scrolled ? "blur(20px) saturate(1.4)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(20px) saturate(1.4)" : "none",

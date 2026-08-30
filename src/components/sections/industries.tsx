@@ -92,16 +92,16 @@ export function Industries({
   return (
     <section className="bg-white py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <Reveal animation="fade-up">
               <span className="type-caption text-accent">{label}</span>
             </Reveal>
             <Reveal delay={0.1} animation="fade-up">
               <h2 className="type-h2 text-foreground mt-4">
-                {heading}{" "}
+                <span className="block">{heading}</span>
                 {headingAccent && (
-                  <span className="text-muted-foreground">{headingAccent}</span>
+                  <span className="block text-muted-foreground">{headingAccent}</span>
                 )}
               </h2>
             </Reveal>

@@ -98,7 +98,7 @@ export default function Home() {
           { name: "Agriculture" },
           { name: "Logistics" },
         ]}
-        imageSrc="/assets/images/industries.png"
+        imageSrc="/assets/images/industries.jpg"
         imageAlt="Industries Lemide serves"
       />
 
