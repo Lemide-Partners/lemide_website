@@ -45,9 +45,9 @@ export function CaseStudies({
             </Reveal>
             <Reveal delay={0.1} animation="fade-up">
               <h2 className="type-h2 text-foreground mt-6">
-                <span className="block">{heading}</span>
+                {heading}{" "}
                 {headingAccent && (
-                  <span className="block text-muted-foreground">{headingAccent}</span>
+                  <span className="text-muted-foreground">{headingAccent}</span>
                 )}
               </h2>
             </Reveal>
@@ -78,7 +78,7 @@ export function CaseStudies({
               <Reveal delay={i * 0.15} animation="fade-up">
                 <Link href={study.href} className="group block">
                   <article className="grid grid-cols-1 lg:grid-cols-2 bg-linen rounded-2xl overflow-hidden shadow-sm border border-border/40">
-                    <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[340px] overflow-hidden">
+                    <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[440px] overflow-hidden">
                       {study.imageSrc ? (
                         <Image
                           src={study.imageSrc}
@@ -97,39 +97,31 @@ export function CaseStudies({
                         </div>
                       )}
                     </div>
-                    <div className="p-8 lg:p-10 flex flex-col justify-center">
-                      <div className="flex flex-wrap gap-2 mb-5">
-                        {study.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="inline-block px-4 py-1.5 rounded-full bg-foreground text-white type-caption"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <h3 className="type-h3 text-foreground group-hover:text-accent transition-colors duration-300">
+                    <div className="p-8 lg:p-12 flex flex-col justify-between">
+                      <h3 className="type-h3 text-foreground">
                         {study.title}
                       </h3>
-                      <p className="type-body text-muted-foreground mt-4 line-clamp-3">
-                        {study.excerpt}
-                      </p>
-                      <span className="inline-flex items-center gap-2 mt-6 type-body-sm text-accent font-display font-medium">
-                        Read case study
-                        <svg
-                          className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                          />
-                        </svg>
-                      </span>
+                      <div>
+                        <p className="type-body text-muted-foreground line-clamp-4">
+                          {study.excerpt}
+                        </p>
+                        <span className="inline-flex items-center gap-2 mt-6 type-body-sm text-foreground font-display font-medium group-hover:text-accent transition-colors duration-300">
+                          Learn more
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </span>
+                      </div>
                     </div>
                   </article>
                 </Link>

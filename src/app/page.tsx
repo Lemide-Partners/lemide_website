@@ -104,8 +104,8 @@ export default function Home() {
 
       <CaseStudies
         label="Case Studies"
-        heading="Discover how we help businesses"
-        headingAccent="turn challenges into achievements."
+        heading="Discover how we help businesses turn"
+        headingAccent="challenges into achievements."
         description="Explore case studies that showcase how we've helped businesses overcome challenges and achieve lasting success through tailored consulting solutions."
         studies={[
           {
@@ -114,6 +114,8 @@ export default function Home() {
               "How we helped a fintech startup go from idea to fully operational — entity, banking, compliance — in record time. Millions saved through streamlined processes.",
             tags: ["Fintech", "Legal", "Banking"],
             href: "/case-studies/fintech-series-a",
+            imageSrc: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+            imageAlt: "Fintech team collaborating in modern office",
           },
           {
             title: "Multi-state compliance for a healthcare platform",
@@ -121,6 +123,8 @@ export default function Home() {
               "Navigating 12-state regulatory requirements for a telehealth startup scaling faster than their ops team could handle. Real-time dashboards and automated filings.",
             tags: ["Healthcare", "Compliance", "Regulatory"],
             href: "/case-studies/healthcare-compliance",
+            imageSrc: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+            imageAlt: "Healthcare technology and compliance",
           },
           {
             title: "A logistics transformation that moves with precision",
@@ -128,6 +132,8 @@ export default function Home() {
               "How a manufacturing giant achieved end-to-end supply chain agility by land, air, and sea. Millions saved, smarter analytics, real-time dashboards, and streamlined operations.",
             tags: ["Logistics", "Supply Chain", "Manufacturing"],
             href: "/case-studies/logistics-transformation",
+            imageSrc: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
+            imageAlt: "Logistics and supply chain operations",
           },
         ]}
       />
