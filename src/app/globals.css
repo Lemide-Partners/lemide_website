@@ -276,14 +276,12 @@ body {
   position: relative;
 }
 
-.service-item .service-number,
 .service-item .service-title,
 .service-item .service-desc,
 .service-item .service-link {
   transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.service-item .service-number { color: var(--inverse-muted); }
 .service-item .service-link { opacity: 0.3; }
 
 .service-item .service-progress {
@@ -298,10 +296,78 @@ body {
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.service-item:hover .service-number { color: var(--accent); }
 .service-item:hover .service-title { color: var(--accent); }
 .service-item:hover .service-link { opacity: 1; }
 .service-item:hover .service-progress { transform: scaleX(1); }
+
+/* Service icon animations */
+.service-icon-wrapper {
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-item:hover .service-icon-wrapper {
+  border-color: rgba(204, 158, 73, 0.3);
+  background: rgba(204, 158, 73, 0.08);
+  transform: scale(1.08);
+}
+
+.service-icon-svg {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-item:hover .service-icon-svg {
+  transform: scale(1.05);
+}
+
+/* Lock shackle: slides up on hover to "unlock" */
+.service-icon-lock-shackle {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+.service-item:hover .service-icon-lock-shackle {
+  transform: translateY(-2px) rotate(8deg);
+}
+
+/* Banking pillars: stagger grow */
+.service-icon-pillar {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: bottom;
+  transform: scaleY(0.7);
+  opacity: 0.5;
+}
+
+.service-item:hover .service-icon-pillar {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+/* Entity grid items: scale in */
+.service-icon-grid-item {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+  transform: scale(0.8);
+  opacity: 0.5;
+}
+
+.service-item:hover .service-icon-grid-item {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Compass needle: rotates on hover */
+.service-icon-compass-needle {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+.service-item:hover .service-icon-compass-needle {
+  transform: rotate(45deg);
+}
 
 /* Card hover lift */
 .card-hover {

@@ -43,7 +43,7 @@ export default function Home() {
       />
 
       <Services
-        label="What We Do"
+        label="What we Offer"
         heading="Full-stack operational"
         headingAccent="infrastructure."
         services={[
@@ -52,30 +52,35 @@ export default function Home() {
             description:
               "Entity formation, corporate governance, equity management, and ongoing legal ops — structured for startups, not Fortune 500s.",
             href: "/services/legal",
+            icon: "legal",
           },
           {
             title: "Compliance & Regulatory",
             description:
               "State registrations, annual filings, KYC/AML compliance, and regulatory monitoring across jurisdictions.",
             href: "/services/compliance",
+            icon: "compliance",
           },
           {
             title: "Banking & Treasury",
             description:
               "Bank account setup, cash management, payment infrastructure, and treasury operations from day one.",
             href: "/services/banking",
+            icon: "banking",
           },
           {
             title: "Entity Management",
             description:
               "Multi-entity structures, subsidiary management, registered agent services, and corporate record maintenance.",
             href: "/services/entity",
+            icon: "entity",
           },
           {
             title: "Strategic Advisory",
             description:
               "Operational strategy, vendor selection, process design, and the kind of advice that comes from being in the trenches.",
             href: "/services/advisory",
+            icon: "advisory",
           },
         ]}
       />
