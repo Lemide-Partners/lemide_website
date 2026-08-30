@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Reveal } from "./reveal";
 
@@ -16,6 +18,68 @@ interface IndustriesProps {
   imageAlt?: string;
 }
 
+function DashboardCard() {
+  return (
+    <div className="absolute bottom-4 right-4 left-4 sm:left-auto sm:w-72 bg-white/95 backdrop-blur-md rounded-xl shadow-lg border border-border/60 p-4 z-10">
+      <div className="flex items-center justify-between mb-3">
+        <span className="text-[11px] font-medium tracking-wide uppercase text-muted-foreground">
+          Operations Dashboard
+        </span>
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+      </div>
+
+      <div className="grid grid-cols-3 gap-3 mb-3">
+        <div>
+          <p className="text-lg font-semibold text-foreground leading-none">98%</p>
+          <p className="text-[10px] text-muted-foreground mt-0.5">Compliance</p>
+        </div>
+        <div>
+          <p className="text-lg font-semibold text-foreground leading-none">12</p>
+          <p className="text-[10px] text-muted-foreground mt-0.5">Active Filings</p>
+        </div>
+        <div>
+          <p className="text-lg font-semibold text-foreground leading-none">5d</p>
+          <p className="text-[10px] text-muted-foreground mt-0.5">Avg. Resolve</p>
+        </div>
+      </div>
+
+      <div className="space-y-2">
+        <div className="flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+          <span className="text-[11px] text-foreground flex-1">DE Annual Report</span>
+          <span className="text-[10px] text-emerald-600 font-medium">Filed</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
+          <span className="text-[11px] text-foreground flex-1">KYC Refresh — Q3</span>
+          <span className="text-[10px] text-amber-600 font-medium">In Progress</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+          <span className="text-[11px] text-foreground flex-1">Bank Access Provisioned</span>
+          <span className="text-[10px] text-emerald-600 font-medium">Done</span>
+        </div>
+      </div>
+
+      <div className="mt-3 pt-3 border-t border-border/60">
+        <div className="flex items-center justify-between">
+          <span className="text-[10px] text-muted-foreground">Task Completion</span>
+          <span className="text-[10px] font-medium text-foreground">86%</span>
+        </div>
+        <div className="mt-1.5 h-1.5 bg-muted rounded-full overflow-hidden">
+          <div
+            className="h-full rounded-full"
+            style={{
+              width: "86%",
+              background: "linear-gradient(90deg, var(--golden-bronze), #d4a94e)",
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Industries({
   label = "Industries",
   heading,
@@ -28,22 +92,21 @@ export function Industries({
   return (
     <section className="bg-white py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <Reveal animation="fade-up">
-          <span className="type-caption text-accent">{label}</span>
-        </Reveal>
-        <Reveal delay={0.1} animation="fade-up">
-          <h2 className="type-h2 text-foreground mt-4">
-            {heading}{" "}
-            {headingAccent && (
-              <span className="text-muted-foreground">{headingAccent}</span>
-            )}
-          </h2>
-        </Reveal>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           <div>
+            <Reveal animation="fade-up">
+              <span className="type-caption text-accent">{label}</span>
+            </Reveal>
+            <Reveal delay={0.1} animation="fade-up">
+              <h2 className="type-h2 text-foreground mt-4">
+                {heading}{" "}
+                {headingAccent && (
+                  <span className="text-muted-foreground">{headingAccent}</span>
+                )}
+              </h2>
+            </Reveal>
             <Reveal delay={0.15} animation="fade-right">
-              <p className="type-body-lg text-muted-foreground">{description}</p>
+              <p className="type-body-lg text-muted-foreground mt-5">{description}</p>
             </Reveal>
             <div className="mt-10">
               {industries.map((industry, i) => (
@@ -88,6 +151,7 @@ export function Industries({
                   </span>
                 </div>
               )}
+              <DashboardCard />
             </div>
           </Reveal>
         </div>

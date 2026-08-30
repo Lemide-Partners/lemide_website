@@ -88,16 +88,18 @@ export default function Home() {
       <Industries
         label="Industries"
         heading="Deep experience across"
-        headingAccent="the sectors that matter."
+        headingAccent="focus verticals."
         description="We specialize in early-stage companies across industries where compliance, regulatory, and operational complexity can slow you down."
         industries={[
-          { name: "Financial Services & Fintech" },
-          { name: "Healthcare & Biotech" },
-          { name: "SaaS & Enterprise Software" },
-          { name: "E-Commerce & Marketplaces" },
-          { name: "Climate & Clean Energy" },
-          { name: "Consumer & CPG" },
+          { name: "Fintech" },
+          { name: "Education" },
+          { name: "Energy" },
+          { name: "Healthcare" },
+          { name: "Agriculture" },
+          { name: "Logistics" },
         ]}
+        imageSrc="/assets/images/industries.png"
+        imageAlt="Industries Lemide serves"
       />
 
       <CaseStudies
