@@ -28,10 +28,10 @@ export function Industries({
   return (
     <section className="bg-inverse-bg py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <Reveal>
+        <Reveal animation="fade-up">
           <span className="type-caption text-accent">{label}</span>
         </Reveal>
-        <Reveal delay={0.1}>
+        <Reveal delay={0.1} animation="fade-up">
           <h2 className="type-h2 text-inverse-fg mt-4">
             {heading}{" "}
             {headingAccent && (
@@ -42,18 +42,18 @@ export function Industries({
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mt-12">
           <div>
-            <Reveal delay={0.2}>
+            <Reveal delay={0.15} animation="fade-right">
               <p className="type-body-lg text-inverse-muted">{description}</p>
             </Reveal>
             <div className="mt-10">
               {industries.map((industry, i) => (
-                <Reveal key={industry.name} delay={0.2 + i * 0.05}>
-                  <div className="py-4 border-b border-white/10 flex items-center justify-between group">
-                    <span className="type-h5 text-inverse-fg group-hover:text-accent transition-colors duration-200">
+                <Reveal key={industry.name} delay={0.2 + i * 0.06} animation="fade-up">
+                  <div className="industry-item py-4 border-b border-white/10 flex items-center justify-between cursor-pointer group">
+                    <span className="type-h5 text-inverse-fg group-hover:text-accent transition-colors duration-300">
                       {industry.name}
                     </span>
                     <svg
-                      className="w-4 h-4 text-inverse-muted opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
+                      className="w-5 h-5 text-inverse-muted opacity-0 -translate-x-3 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -62,7 +62,7 @@ export function Industries({
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M9 5l7 7-7 7"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
                   </div>
@@ -71,14 +71,14 @@ export function Industries({
             </div>
           </div>
 
-          <Reveal delay={0.3}>
-            <div className="relative rounded-xl overflow-hidden bg-navy-800 aspect-[4/3]">
+          <Reveal delay={0.25} animation="fade-left">
+            <div className="relative rounded-xl overflow-hidden bg-navy-800 aspect-[4/3] group">
               {imageSrc ? (
                 <Image
                   src={imageSrc}
                   alt={imageAlt}
                   fill
-                  className="object-cover"
+                  className="object-cover img-zoom"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               ) : (

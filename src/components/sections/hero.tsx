@@ -9,6 +9,8 @@ interface HeroProps {
   description: string;
   ctaLabel?: string;
   ctaHref?: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
   avatars?: { src: string; alt: string }[];
   avatarCtaLabel?: string;
 }
@@ -19,13 +21,15 @@ export function Hero({
   description,
   ctaLabel = "Schedule a Call",
   ctaHref = "/contact",
+  secondaryCtaLabel,
+  secondaryCtaHref,
   avatars = [],
   avatarCtaLabel = "Talk to a partner",
 }: HeroProps) {
   return (
-    <section className="bg-background py-20 lg:py-32">
+    <section className="bg-background py-24 lg:py-36 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-        <Reveal>
+        <Reveal animation="fade-up" duration={1}>
           <h1 className="type-h1 text-foreground max-w-4xl mx-auto">
             {headline}{" "}
             {headlineAccent && (
@@ -34,30 +38,38 @@ export function Hero({
           </h1>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <p className="type-body-lg text-muted-foreground max-w-2xl mx-auto mt-6">
+        <Reveal animation="fade-up" delay={0.15} duration={0.9}>
+          <p className="type-body-lg text-muted-foreground max-w-2xl mx-auto mt-6 lg:mt-8">
             {description}
           </p>
         </Reveal>
 
-        <Reveal delay={0.2}>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Reveal animation="scale-up" delay={0.3} duration={0.8}>
+          <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href={ctaHref}>
               <Button variant="accent" size="lg">
                 {ctaLabel}
               </Button>
             </Link>
+            {secondaryCtaLabel && secondaryCtaHref && (
+              <Link href={secondaryCtaHref}>
+                <Button variant="outline" size="lg">
+                  {secondaryCtaLabel}
+                </Button>
+              </Link>
+            )}
           </div>
         </Reveal>
 
         {avatars.length > 0 && (
-          <Reveal delay={0.3}>
-            <div className="mt-10 flex items-center justify-center gap-3">
+          <Reveal animation="fade-up" delay={0.45}>
+            <div className="mt-12 flex items-center justify-center gap-4">
               <div className="flex -space-x-3">
                 {avatars.map((avatar, i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full border-2 border-background overflow-hidden"
+                    className="w-10 h-10 rounded-full border-2 border-background overflow-hidden transition-transform duration-300 hover:scale-110 hover:z-10 relative"
+                    style={{ zIndex: avatars.length - i }}
                   >
                     <Image
                       src={avatar.src}
@@ -71,10 +83,12 @@ export function Hero({
               </div>
               <Link
                 href={ctaHref}
-                className="type-body-sm text-foreground font-display font-medium hover:text-accent transition-colors duration-150"
+                className="type-body-sm text-foreground font-display font-medium hover:text-accent transition-colors duration-200 group"
               >
                 {avatarCtaLabel}
-                <span className="ml-1">&rarr;</span>
+                <span className="inline-block ml-1.5 transition-transform duration-200 group-hover:translate-x-1">
+                  &rarr;
+                </span>
               </Link>
             </div>
           </Reveal>

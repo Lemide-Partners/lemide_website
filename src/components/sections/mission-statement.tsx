@@ -9,11 +9,15 @@ export function MissionStatement({ text, mutedText }: MissionStatementProps) {
   return (
     <section className="bg-background py-20 lg:py-28">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
-        <Reveal>
+        <Reveal animation="fade-up" duration={1}>
           <p className="type-h2 text-foreground text-center lg:text-left leading-snug">
             {text}{" "}
             {mutedText && (
-              <span className="text-muted-foreground">{mutedText}</span>
+              <Reveal animation="fade-in" delay={0.4} duration={0.8}>
+                <span className="text-muted-foreground inline">
+                  {mutedText}
+                </span>
+              </Reveal>
             )}
           </p>
         </Reveal>

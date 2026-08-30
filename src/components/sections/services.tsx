@@ -30,7 +30,7 @@ export function Services({
   return (
     <section className={`${bg} py-20 lg:py-28`}>
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
-        <Reveal>
+        <Reveal animation="fade-up">
           <div className="text-center mb-16">
             <span className="type-caption text-accent">{label}</span>
             <h2 className={`type-h2 ${fg} mt-4`}>
@@ -44,33 +44,27 @@ export function Services({
 
         <div>
           {services.map((service, i) => (
-            <Reveal key={service.title} delay={i * 0.08}>
-              <div
-                className={`py-8 border-b ${divider} group`}
-              >
+            <Reveal key={service.title} delay={i * 0.1} animation="fade-up">
+              <div className={`service-item py-8 lg:py-10 border-b ${divider}`}>
                 <div className="flex items-start gap-6 lg:gap-10">
-                  <span
-                    className={`type-h3 ${muted} font-display tabular-nums shrink-0 w-12`}
-                  >
+                  <span className="service-number type-h2 font-display tabular-nums shrink-0 w-16 lg:w-20">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="flex-1">
-                    <h3
-                      className={`type-h4 ${fg} group-hover:text-accent transition-colors duration-200`}
-                    >
+                    <h3 className={`service-title type-h4 ${fg}`}>
                       {service.title}
                     </h3>
-                    <p className={`type-body ${muted} mt-2`}>
+                    <p className={`service-desc type-body ${muted} mt-3`}>
                       {service.description}
                     </p>
                     {service.href && (
                       <Link
                         href={service.href}
-                        className="inline-flex items-center gap-1.5 mt-4 type-body-sm text-accent font-display font-medium hover:gap-3 transition-all duration-200"
+                        className="service-link inline-flex items-center gap-2 mt-5 type-body-sm text-accent font-display font-medium group/link"
                       >
                         Learn more
                         <svg
-                          className="w-4 h-4"
+                          className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1.5"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -86,6 +80,7 @@ export function Services({
                     )}
                   </div>
                 </div>
+                <div className="service-progress" />
               </div>
             </Reveal>
           ))}

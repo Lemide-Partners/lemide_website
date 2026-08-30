@@ -29,18 +29,18 @@ export function About({
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <Reveal>
+            <Reveal animation="fade-right">
               <span className="type-caption text-accent">{label}</span>
             </Reveal>
-            <Reveal delay={0.1}>
+            <Reveal delay={0.1} animation="fade-right">
               <h2 className="type-h2 text-foreground mt-4">{heading}</h2>
             </Reveal>
-            <Reveal delay={0.2}>
+            <Reveal delay={0.2} animation="fade-right">
               <p className="type-body-lg text-muted-foreground mt-6">
                 {description}
               </p>
             </Reveal>
-            <Reveal delay={0.3}>
+            <Reveal delay={0.3} animation="scale-up">
               <div className="mt-8">
                 <Link href={ctaHref}>
                   <Button variant="primary">{ctaLabel}</Button>
@@ -49,8 +49,8 @@ export function About({
             </Reveal>
           </div>
 
-          <Reveal delay={0.2}>
-            <div className="relative rounded-xl overflow-hidden bg-muted aspect-[4/3]">
+          <Reveal delay={0.2} animation="fade-left">
+            <div className="relative rounded-xl overflow-hidden bg-muted aspect-[4/3] group">
               {mediaSrc && mediaType === "video" ? (
                 <video
                   src={mediaSrc}
@@ -65,7 +65,7 @@ export function About({
                   src={mediaSrc}
                   alt={mediaAlt}
                   fill
-                  className="object-cover"
+                  className="object-cover img-zoom"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               ) : (

@@ -24,13 +24,15 @@ export function TeamMarquee({
   headingAccent,
   members,
 }: TeamMarqueeProps) {
+  const tripled = [...members, ...members, ...members];
+
   return (
     <section className="bg-background py-20 lg:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-        <Reveal>
+        <Reveal animation="fade-up">
           <span className="type-caption text-accent">{label}</span>
         </Reveal>
-        <Reveal delay={0.1}>
+        <Reveal delay={0.1} animation="fade-up">
           <h2 className="type-h2 text-foreground mt-4 max-w-2xl mx-auto">
             {heading}{" "}
             {headingAccent && (
@@ -40,13 +42,13 @@ export function TeamMarquee({
         </Reveal>
       </div>
 
-      <Reveal delay={0.2}>
-        <div className="mt-12 relative">
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
+      <Reveal delay={0.25} animation="fade-up">
+        <div className="mt-14 relative marquee-container">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
 
-          <div className="flex animate-marquee w-max gap-6 hover:[animation-play-state:paused]">
-            {[...members, ...members].map((member, i) => (
+          <div className="flex animate-marquee w-max gap-6">
+            {tripled.map((member, i) => (
               <TeamCard key={`${member.name}-${i}`} member={member} />
             ))}
           </div>
@@ -58,31 +60,28 @@ export function TeamMarquee({
 
 function TeamCard({ member }: { member: TeamMember }) {
   return (
-    <div className="shrink-0 w-56 group">
-      <div className="relative aspect-[3/4] rounded-lg overflow-hidden bg-muted">
+    <div className="shrink-0 w-60 group">
+      <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-muted">
         {member.imageSrc ? (
           <Image
             src={member.imageSrc}
             alt={member.name}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-            sizes="224px"
+            className="object-cover img-zoom"
+            sizes="240px"
           />
         ) : (
           <div className="w-full h-full bg-navy-50 flex items-center justify-center">
             <span className="type-caption text-muted-foreground">Photo</span>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
-      <div className="mt-3 flex items-center justify-between">
-        <h3 className="type-h6 text-foreground">{member.name}</h3>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
         {member.linkedinHref && (
           <a
             href={member.linkedinHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-accent transition-colors duration-150"
+            className="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"
             aria-label={`${member.name} LinkedIn`}
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -91,10 +90,13 @@ function TeamCard({ member }: { member: TeamMember }) {
           </a>
         )}
       </div>
-      <p className="type-body-sm text-muted-foreground mt-0.5">
-        {member.title}
-      </p>
-      <p className="type-body-sm text-muted-foreground">{member.experience}</p>
+      <div className="mt-4">
+        <h3 className="type-h6 text-foreground">{member.name}</h3>
+        <p className="type-body-sm text-muted-foreground mt-0.5">
+          {member.title}
+        </p>
+        <p className="type-body-sm text-muted-foreground">{member.experience}</p>
+      </div>
     </div>
   );
 }

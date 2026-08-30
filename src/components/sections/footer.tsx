@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Logo } from "@/components/ui";
+import { Reveal } from "./reveal";
 
 interface FooterLinkGroup {
   title: string;
@@ -86,66 +87,76 @@ export function Footer({
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
-          {/* Brand column */}
-          <div className="lg:max-w-xs shrink-0">
-            <Logo inverse />
-            <a
-              href={`mailto:${email}`}
-              className="block mt-6 type-body-sm text-inverse-muted hover:text-accent transition-colors duration-150"
-            >
-              {email}
-            </a>
-            {socialLinks.length > 0 && (
-              <div className="flex gap-3 mt-6">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.platform}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-inverse-muted hover:text-accent hover:border-accent/30 transition-all duration-200"
-                    aria-label={social.platform}
-                  >
-                    {socialIcons[social.platform] ?? (
-                      <span className="type-caption">{social.platform[0]}</span>
-                    )}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Link columns */}
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-12">
-            {linkGroups.map((group) => (
-              <div key={group.title}>
-                <h3 className="type-caption text-inverse-fg mb-4">
-                  {group.title}
-                </h3>
-                <ul className="space-y-3">
-                  {group.links.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="type-body-sm text-inverse-muted hover:text-inverse-fg transition-colors duration-150"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
+          <Reveal animation="fade-up">
+            <div className="lg:max-w-xs shrink-0">
+              <Logo inverse />
+              <a
+                href={`mailto:${email}`}
+                className="footer-link block mt-6 type-body-sm text-inverse-muted"
+              >
+                {email}
+              </a>
+              {socialLinks.length > 0 && (
+                <div className="flex gap-3 mt-6">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.platform}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-icon w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-inverse-muted"
+                      aria-label={social.platform}
+                    >
+                      {socialIcons[social.platform] ?? (
+                        <span className="type-caption">
+                          {social.platform[0]}
+                        </span>
+                      )}
+                    </a>
                   ))}
-                </ul>
-              </div>
+                </div>
+              )}
+            </div>
+          </Reveal>
+
+          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-12">
+            {linkGroups.map((group, gi) => (
+              <Reveal
+                key={group.title}
+                delay={0.1 + gi * 0.08}
+                animation="fade-up"
+              >
+                <div>
+                  <h3 className="type-caption text-inverse-fg mb-4">
+                    {group.title}
+                  </h3>
+                  <ul className="space-y-3">
+                    {group.links.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="footer-link type-body-sm text-inverse-muted"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </div>
 
       <div className="border-t border-white/10" />
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2">
-        <p className="type-body-sm text-inverse-muted">
-          &copy; {new Date().getFullYear()} Lemide Partners
-        </p>
-      </div>
+      <Reveal animation="fade-in">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="type-body-sm text-inverse-muted">
+            &copy; {new Date().getFullYear()} Lemide Partners
+          </p>
+        </div>
+      </Reveal>
     </footer>
   );
 }

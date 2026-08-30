@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Image from "next/image";
 import { Reveal } from "./reveal";
 
@@ -25,15 +25,28 @@ export function Testimonials({
   testimonials,
 }: TestimonialsProps) {
   const [active, setActive] = useState(0);
+  const [animating, setAnimating] = useState(false);
   const current = testimonials[active];
+
+  const goTo = useCallback(
+    (index: number) => {
+      if (index === active || animating) return;
+      setAnimating(true);
+      setTimeout(() => {
+        setActive(index);
+        setTimeout(() => setAnimating(false), 50);
+      }, 300);
+    },
+    [active, animating]
+  );
 
   return (
     <section className="bg-background py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <Reveal>
+        <Reveal animation="fade-up">
           <span className="type-caption text-accent">{label}</span>
         </Reveal>
-        <Reveal delay={0.1}>
+        <Reveal delay={0.1} animation="fade-up">
           <h2 className="type-h2 text-foreground mt-4 max-w-2xl">
             {heading}{" "}
             {headingAccent && (
@@ -42,15 +55,16 @@ export function Testimonials({
           </h2>
         </Reveal>
 
-        <Reveal delay={0.2}>
+        <Reveal delay={0.2} animation="fade-up">
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            <div className="relative aspect-[3/4] lg:aspect-[4/5] rounded-xl overflow-hidden bg-muted">
+            <div className="relative aspect-[3/4] lg:aspect-[4/5] rounded-xl overflow-hidden bg-muted group">
               {current?.imageSrc ? (
                 <Image
                   src={current.imageSrc}
                   alt={current.name}
                   fill
-                  className="object-cover transition-opacity duration-500"
+                  className="object-cover img-zoom transition-opacity duration-500"
+                  style={{ opacity: animating ? 0 : 1 }}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   key={active}
                 />
@@ -65,8 +79,11 @@ export function Testimonials({
 
             <div>
               <div
-                key={active}
-                className="animate-fade-in"
+                className="transition-all duration-500 ease-out"
+                style={{
+                  opacity: animating ? 0 : 1,
+                  transform: animating ? "translateY(12px)" : "translateY(0)",
+                }}
               >
                 <blockquote className="type-h3 text-foreground font-display font-light leading-relaxed">
                   &ldquo;{current?.quote}&rdquo;
@@ -83,11 +100,11 @@ export function Testimonials({
                 {testimonials.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => setActive(i)}
-                    className={`w-10 h-1.5 rounded-full transition-all duration-300 ${
+                    onClick={() => goTo(i)}
+                    className={`testimonial-dot h-1.5 rounded-full transition-all duration-500 ${
                       i === active
                         ? "bg-accent w-14"
-                        : "bg-border hover:bg-muted-foreground"
+                        : "bg-border w-10 hover:bg-muted-foreground"
                     }`}
                     aria-label={`View testimonial ${i + 1}`}
                   />

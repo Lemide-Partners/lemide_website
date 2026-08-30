@@ -18,7 +18,7 @@ export function FooterCta({
   return (
     <section className="bg-inverse-bg py-24 lg:py-32">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <Reveal>
+        <Reveal animation="fade-up" duration={1}>
           <h2 className="type-h1 text-inverse-fg">
             {heading}{" "}
             {headingAccent && (
@@ -26,7 +26,7 @@ export function FooterCta({
             )}
           </h2>
         </Reveal>
-        <Reveal delay={0.15}>
+        <Reveal delay={0.2} animation="scale-up">
           <div className="mt-10">
             <Link href={ctaHref}>
               <Button variant="accent" size="lg">
