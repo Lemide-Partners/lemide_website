@@ -1,11 +1,11 @@
 import { Reveal } from "./reveal";
 
-interface MissionStatementProps {
+interface ProblemProps {
   text: string;
   mutedText?: string;
 }
 
-export function MissionStatement({ text, mutedText }: MissionStatementProps) {
+export function Problem({ text, mutedText }: ProblemProps) {
   return (
     <section className="bg-background py-20 lg:py-28">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">

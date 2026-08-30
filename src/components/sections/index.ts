@@ -1,7 +1,7 @@
 export { Navbar } from "./navbar";
 export { Hero } from "./hero";
 export { MetricsBar } from "./metrics-bar";
-export { MissionStatement } from "./mission-statement";
+export { Problem } from "./mission-statement";
 export { BrandTitle } from "./brand-title";
 export { About } from "./about";
 export { Industries } from "./industries";

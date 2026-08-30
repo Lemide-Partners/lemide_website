@@ -2,12 +2,10 @@ import {
   Navbar,
   Hero,
   MetricsBar,
-  MissionStatement,
-  About,
-  Industries,
+  Problem,
   Services,
+  Industries,
   CaseStudies,
-  TeamMarquee,
   BenefitsGrid,
   Partners,
   Testimonials,
@@ -39,32 +37,9 @@ export default function Home() {
         ]}
       />
 
-      <MissionStatement
+      <Problem
         text="We don't bill by the hour or disappear after the deliverable."
         mutedText="We embed with your team, handle the operational complexity, and stay for the long run."
-      />
-
-      <About
-        label="Who We Are"
-        heading="An operating partner, not a vendor."
-        description="Lemide Partners provides dedicated operational infrastructure for early-stage startups. From entity formation to banking to ongoing compliance, we handle the back-office so founders can stay focused on product and growth."
-        ctaLabel="Learn More"
-        ctaHref="/about"
-      />
-
-      <Industries
-        label="Industries"
-        heading="Deep experience across"
-        headingAccent="the sectors that matter."
-        description="We specialize in early-stage companies across industries where compliance, regulatory, and operational complexity can slow you down."
-        industries={[
-          { name: "Financial Services & Fintech" },
-          { name: "Healthcare & Biotech" },
-          { name: "SaaS & Enterprise Software" },
-          { name: "E-Commerce & Marketplaces" },
-          { name: "Climate & Clean Energy" },
-          { name: "Consumer & CPG" },
-        ]}
       />
 
       <Services
@@ -105,6 +80,21 @@ export default function Home() {
         ]}
       />
 
+      <Industries
+        label="Industries"
+        heading="Deep experience across"
+        headingAccent="the sectors that matter."
+        description="We specialize in early-stage companies across industries where compliance, regulatory, and operational complexity can slow you down."
+        industries={[
+          { name: "Financial Services & Fintech" },
+          { name: "Healthcare & Biotech" },
+          { name: "SaaS & Enterprise Software" },
+          { name: "E-Commerce & Marketplaces" },
+          { name: "Climate & Clean Energy" },
+          { name: "Consumer & CPG" },
+        ]}
+      />
+
       <CaseStudies
         label="Case Studies"
         heading="Real outcomes from"
@@ -132,22 +122,6 @@ export default function Home() {
             tags: ["M&A", "Entity", "Advisory"],
             href: "/case-studies/entity-restructuring",
           },
-        ]}
-      />
-
-      <TeamMarquee
-        label="Our Team"
-        heading="Meet the operators"
-        headingAccent="behind the infrastructure."
-        members={[
-          { name: "Partner One", title: "Managing Partner", experience: "12 years of experience" },
-          { name: "Partner Two", title: "Senior Partner, Legal", experience: "10 years of experience" },
-          { name: "Partner Three", title: "Senior Partner, Compliance", experience: "8 years of experience" },
-          { name: "Partner Four", title: "Partner, Banking", experience: "7 years of experience" },
-          { name: "Partner Five", title: "Partner, Entity Mgmt", experience: "6 years of experience" },
-          { name: "Partner Six", title: "Associate, Legal Ops", experience: "4 years of experience" },
-          { name: "Partner Seven", title: "Associate, Compliance", experience: "3 years of experience" },
-          { name: "Partner Eight", title: "Associate, Advisory", experience: "3 years of experience" },
         ]}
       />
 
