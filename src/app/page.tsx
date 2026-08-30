@@ -28,6 +28,7 @@ export default function Home() {
         description="Lemide Partners handles legal, compliance, banking, and entity management — so you can focus on building what matters."
         ctaLabel="Schedule a Call"
         ctaHref="/contact"
+        videoSrc="/assets/videos/hero-bg.mp4"
       />
 
       <MetricsBar

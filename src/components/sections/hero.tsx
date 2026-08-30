@@ -13,6 +13,7 @@ interface HeroProps {
   secondaryCtaHref?: string;
   avatars?: { src: string; alt: string }[];
   avatarCtaLabel?: string;
+  videoSrc?: string;
 }
 
 export function Hero({
@@ -25,10 +26,29 @@ export function Hero({
   secondaryCtaHref,
   avatars = [],
   avatarCtaLabel = "Talk to a partner",
+  videoSrc,
 }: HeroProps) {
   return (
-    <section className="bg-inverse-bg py-24 lg:py-36 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+    <section className="relative bg-inverse-bg overflow-hidden">
+      {videoSrc && (
+        <>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+          <div
+            className="absolute inset-0"
+            style={{ background: "rgba(11, 29, 75, 0.75)" }}
+          />
+        </>
+      )}
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center pt-36 pb-24 lg:pt-48 lg:pb-36">
         <Reveal animation="fade-up" duration={1}>
           <h1 className="type-h1 text-inverse-fg max-w-4xl mx-auto">
             {headline}{" "}
