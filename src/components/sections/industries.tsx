@@ -154,7 +154,7 @@ export function Industries({
               <p className="type-body-lg text-muted-foreground mt-5">{description}</p>
             </Reveal>
             <Reveal delay={0.2} animation="fade-up">
-              <div className="mt-10 grid grid-cols-2 gap-x-1">
+              <div className="mt-10 grid grid-cols-2 gap-x-0">
                 {industries.map((industry) => (
                   <div key={industry.name} className="industry-item py-4 border-b border-border flex items-center gap-3 cursor-pointer group">
                     <span className="shrink-0 text-muted-foreground group-hover:text-accent transition-colors duration-300">
