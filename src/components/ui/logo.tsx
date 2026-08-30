@@ -1,75 +1,30 @@
-import { type CSSProperties } from "react";
-import { logo as logoTokens } from "@/lib/design-tokens";
-
-type LogoVariant = "full" | "mark";
+import Image from "next/image";
 
 interface LogoProps {
-  variant?: LogoVariant;
-  width?: number;
   inverse?: boolean;
+  width?: number;
+  height?: number;
 }
 
-const MIN_WIDTHS: Record<LogoVariant, number> = {
-  full: logoTokens.minWidth,
-  mark: logoTokens.minWidthMark,
-};
-
 export function Logo({
-  variant = "full",
-  width,
   inverse = false,
+  width = 140,
+  height = 38,
 }: LogoProps) {
-  const minWidth = MIN_WIDTHS[variant];
-  const resolvedWidth = Math.max(width ?? minWidth, minWidth);
+  const src = inverse
+    ? "/assets/images/Lemide_White.png"
+    : "/assets/images/Lemide_Full.png";
 
-  // Clear space = 25% of rendered height on all sides
-  const clearSpace = resolvedWidth * logoTokens.clearSpaceRatio;
-
-  const wrapperStyle: CSSProperties = {
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    padding: clearSpace,
-    // Block overrides that would distort the logo
-    transform: "none",
-    filter: "none",
-    WebkitFilter: "none",
-  };
-
-  const color = inverse ? "var(--linen)" : "var(--deep-navy)";
+  const alt = "Lemide Partners";
 
   return (
-    <div
-      style={wrapperStyle}
-      role="img"
-      aria-label="Lemide Partners"
-    >
-      {/*
-        Replace this placeholder with the actual logo SVG or <Image>.
-        The wrapper enforces min width, clear space, and blocks distortion.
-        Do NOT pass className to the inner element — style via the
-        wrapper's inverse prop instead.
-      */}
-      <svg
-        width={resolvedWidth}
-        height={resolvedWidth * 0.28}
-        viewBox="0 0 120 34"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{ display: "block" }}
-      >
-        <text
-          x="0"
-          y="24"
-          fontFamily="var(--font-display), 'Plus Jakarta Sans', sans-serif"
-          fontSize="22"
-          fontWeight="500"
-          letterSpacing="0.08em"
-          fill={color}
-        >
-          LEMIDE
-        </text>
-      </svg>
-    </div>
+    <Image
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      className="h-8 lg:h-9 w-auto object-contain"
+      priority
+    />
   );
 }

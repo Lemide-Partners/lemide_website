@@ -64,7 +64,7 @@ export const semantic = {
   successForeground: "#FFFFFF",
 
   // Dark sections (hero, footer, feature blocks)
-  inverseBg: colors.shadowGrey,
+  inverseBg: colors.deepNavy,
   inverseFg: colors.linen,
   inverseMuted: colors.neutral[400],
 } as const;

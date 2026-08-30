@@ -20,6 +20,19 @@ export const metadata: Metadata = {
   title: "Lemide Partners",
   description:
     "Operational partner for early-stage startups — legal, compliance, banking, and infrastructure.",
+  icons: {
+    icon: [
+      {
+        url: "/assets/images/favicon-main.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/assets/images/favicon-white.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+    apple: "/assets/images/favicon-main.png",
+  },
 };
 
 export default function RootLayout({
