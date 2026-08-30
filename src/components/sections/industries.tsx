@@ -153,7 +153,7 @@ export function Industries({
             <Reveal delay={0.15} animation="fade-right">
               <p className="type-body-lg text-muted-foreground mt-5">{description}</p>
             </Reveal>
-            <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-0">
+            <div className="mt-10 grid grid-cols-2 gap-x-2 gap-y-0">
               {industries.map((industry, i) => (
                 <Reveal key={industry.name} delay={0.2 + i * 0.06} animation="fade-up">
                   <div className="industry-item py-4 border-b border-border flex items-center gap-3 cursor-pointer group">
