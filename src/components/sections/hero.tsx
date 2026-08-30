@@ -27,10 +27,10 @@ export function Hero({
   avatarCtaLabel = "Talk to a partner",
 }: HeroProps) {
   return (
-    <section className="bg-background py-24 lg:py-36 overflow-hidden">
+    <section className="bg-inverse-bg py-24 lg:py-36 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <Reveal animation="fade-up" duration={1}>
-          <h1 className="type-h1 text-foreground max-w-4xl mx-auto">
+          <h1 className="type-h1 text-inverse-fg max-w-4xl mx-auto">
             {headline}{" "}
             {headlineAccent && (
               <span className="text-accent">{headlineAccent}</span>
@@ -39,7 +39,7 @@ export function Hero({
         </Reveal>
 
         <Reveal animation="fade-up" delay={0.15} duration={0.9}>
-          <p className="type-body-lg text-muted-foreground max-w-2xl mx-auto mt-6 lg:mt-8">
+          <p className="type-body-lg text-inverse-muted max-w-2xl mx-auto mt-6 lg:mt-8">
             {description}
           </p>
         </Reveal>
@@ -68,7 +68,7 @@ export function Hero({
                 {avatars.map((avatar, i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full border-2 border-background overflow-hidden transition-transform duration-300 hover:scale-110 hover:z-10 relative"
+                    className="w-10 h-10 rounded-full border-2 border-inverse-bg overflow-hidden transition-transform duration-300 hover:scale-110 hover:z-10 relative"
                     style={{ zIndex: avatars.length - i }}
                   >
                     <Image
@@ -83,7 +83,7 @@ export function Hero({
               </div>
               <Link
                 href={ctaHref}
-                className="type-body-sm text-foreground font-display font-medium hover:text-accent transition-colors duration-200 group"
+                className="type-body-sm text-inverse-fg font-display font-medium hover:text-accent transition-colors duration-200 group"
               >
                 {avatarCtaLabel}
                 <span className="inline-block ml-1.5 transition-transform duration-200 group-hover:translate-x-1">

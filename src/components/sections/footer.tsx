@@ -76,87 +76,133 @@ const socialIcons: Record<string, React.ReactNode> = {
   ),
 };
 
+function FooterWave() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      <svg
+        className="absolute bottom-0 left-0 w-full"
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
+        style={{ height: "100%" }}
+      >
+        <defs>
+          <linearGradient id="footer-wave-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#0B1D4B" />
+            <stop offset="35%" stopColor="#0B1D4B" />
+            <stop offset="65%" stopColor="#CC9E49" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#CC9E49" stopOpacity="0.15" />
+          </linearGradient>
+          <linearGradient id="footer-wave-grad-2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#CC9E49" stopOpacity="0.08" />
+            <stop offset="50%" stopColor="#CC9E49" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#0B1D4B" stopOpacity="0.6" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M0,160 C180,220 360,80 540,140 C720,200 900,60 1080,120 C1260,180 1350,100 1440,130 L1440,320 L0,320 Z"
+          fill="url(#footer-wave-grad)"
+          opacity="0.5"
+        />
+        <path
+          d="M0,200 C240,120 360,260 600,180 C840,100 960,240 1200,160 C1320,120 1380,180 1440,170 L1440,320 L0,320 Z"
+          fill="url(#footer-wave-grad-2)"
+          opacity="0.6"
+        />
+        <path
+          d="M0,240 C120,280 300,200 480,230 C660,260 780,210 960,240 C1140,270 1300,220 1440,250 L1440,320 L0,320 Z"
+          fill="#CC9E49"
+          opacity="0.06"
+        />
+      </svg>
+    </div>
+  );
+}
+
 export function Footer({
   email = "contact@lemide.com",
   linkGroups = defaultLinkGroups,
   socialLinks = [],
 }: FooterProps) {
   return (
-    <footer className="bg-inverse-bg text-inverse-fg">
-      <div className="border-t border-white/10" />
+    <footer className="relative text-inverse-fg" style={{ background: "linear-gradient(135deg, #0B1D4B 0%, #091840 40%, #0B1D4B 70%, #1a2a52 100%)" }}>
+      <FooterWave />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
-          <Reveal animation="fade-up">
-            <div className="lg:max-w-xs shrink-0">
-              <Logo inverse />
-              <a
-                href={`mailto:${email}`}
-                className="footer-link block mt-6 type-body-sm text-inverse-muted"
-              >
-                {email}
-              </a>
-              {socialLinks.length > 0 && (
-                <div className="flex gap-3 mt-6">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.platform}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social-icon w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-inverse-muted"
-                      aria-label={social.platform}
-                    >
-                      {socialIcons[social.platform] ?? (
-                        <span className="type-caption">
-                          {social.platform[0]}
-                        </span>
-                      )}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          </Reveal>
+      <div className="relative z-10">
+        <div className="border-t border-white/10" />
 
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-12">
-            {linkGroups.map((group, gi) => (
-              <Reveal
-                key={group.title}
-                delay={0.1 + gi * 0.08}
-                animation="fade-up"
-              >
-                <div>
-                  <h3 className="type-caption text-inverse-fg mb-4">
-                    {group.title}
-                  </h3>
-                  <ul className="space-y-3">
-                    {group.links.map((link) => (
-                      <li key={link.href}>
-                        <Link
-                          href={link.href}
-                          className="footer-link type-body-sm text-inverse-muted"
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
+            <Reveal animation="fade-up">
+              <div className="lg:max-w-xs shrink-0">
+                <Logo inverse />
+                <a
+                  href={`mailto:${email}`}
+                  className="footer-link block mt-6 type-body-sm text-inverse-muted"
+                >
+                  {email}
+                </a>
+                {socialLinks.length > 0 && (
+                  <div className="flex gap-3 mt-6">
+                    {socialLinks.map((social) => (
+                      <a
+                        key={social.platform}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="social-icon w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-inverse-muted"
+                        aria-label={social.platform}
+                      >
+                        {socialIcons[social.platform] ?? (
+                          <span className="type-caption">
+                            {social.platform[0]}
+                          </span>
+                        )}
+                      </a>
                     ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
+                  </div>
+                )}
+              </div>
+            </Reveal>
+
+            <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-12">
+              {linkGroups.map((group, gi) => (
+                <Reveal
+                  key={group.title}
+                  delay={0.1 + gi * 0.08}
+                  animation="fade-up"
+                >
+                  <div>
+                    <h3 className="type-caption text-inverse-fg mb-4">
+                      {group.title}
+                    </h3>
+                    <ul className="space-y-3">
+                      {group.links.map((link) => (
+                        <li key={link.href}>
+                          <Link
+                            href={link.href}
+                            className="footer-link type-body-sm text-inverse-muted"
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="border-t border-white/10" />
-      <Reveal animation="fade-in">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="type-body-sm text-inverse-muted">
-            &copy; {new Date().getFullYear()} Lemide Partners
-          </p>
-        </div>
-      </Reveal>
+        <div className="border-t border-white/10" />
+        <Reveal animation="fade-in">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p className="type-body-sm text-inverse-muted">
+              &copy; {new Date().getFullYear()} Lemide Partners
+            </p>
+          </div>
+        </Reveal>
+      </div>
     </footer>
   );
 }
