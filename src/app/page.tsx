@@ -33,10 +33,10 @@ export default function Home() {
 
       <MetricsBar
         metrics={[
-          { value: "50+", label: "Startups Served" },
-          { value: "3", label: "Years Operating" },
-          { value: "100%", label: "Client Retention" },
-          { value: "24h", label: "Average Response" },
+          { value: "95%", label: "Client Retention Rate" },
+          { value: "2K", label: "Average Optimized Resources" },
+          { value: "300+", label: "Projects Completed" },
+          { value: "68%", label: "Average Revenue Growth" },
         ]}
       />
 

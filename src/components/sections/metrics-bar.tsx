@@ -56,17 +56,34 @@ function AnimatedValue({ value }: { value: string }) {
 
 export function MetricsBar({ metrics }: MetricsBarProps) {
   return (
-    <section className="bg-card border-y border-border py-14 lg:py-18">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+    <section className="relative bg-background">
+      <div
+        className="absolute top-0 left-0 right-0 h-20 lg:h-28"
+        style={{ overflow: "hidden" }}
+      >
+        <svg
+          viewBox="0 0 1440 120"
+          fill="none"
+          preserveAspectRatio="none"
+          className="absolute bottom-0 w-full h-full"
+        >
+          <path
+            d="M0,0 L0,80 Q360,120 720,80 Q1080,40 1440,80 L1440,0 Z"
+            fill="#0B1D4B"
+          />
+        </svg>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 lg:pt-40 pb-20 lg:pb-28">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
           {metrics.map((metric, i) => (
             <Reveal key={metric.label} delay={i * 0.12} animation="fade-up">
-              <div className="text-center">
-                <div className="type-h2 text-accent font-display font-medium">
-                  <AnimatedValue value={metric.value} />
-                </div>
-                <div className="type-body-sm text-muted-foreground mt-2">
+              <div className="text-left">
+                <div className="text-shadow-grey type-body-sm font-display mb-3 lg:mb-4">
                   {metric.label}
+                </div>
+                <div className="text-deep-navy font-display font-light stat-value">
+                  <AnimatedValue value={metric.value} />
                 </div>
               </div>
             </Reveal>
