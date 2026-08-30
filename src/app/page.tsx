@@ -91,12 +91,12 @@ export default function Home() {
         headingAccent="focus verticals."
         description="We specialize in early-stage companies across industries where compliance, regulatory, and operational complexity can slow you down."
         industries={[
-          { name: "Fintech" },
-          { name: "Education" },
-          { name: "Energy" },
-          { name: "Healthcare" },
-          { name: "Agriculture" },
-          { name: "Logistics" },
+          { name: "Fintech", icon: "fintech" },
+          { name: "Education", icon: "education" },
+          { name: "Energy", icon: "energy" },
+          { name: "Healthcare", icon: "healthcare" },
+          { name: "Agriculture", icon: "agriculture" },
+          { name: "Logistics", icon: "logistics" },
         ]}
         imageSrc="/assets/images/industries.jpg"
         imageAlt="Industries Lemide serves"
