@@ -22,72 +22,46 @@ interface ServicesProps {
 }
 
 function ServiceIcon({ icon }: { icon: string }) {
-  const iconMap: Record<string, { default: React.ReactNode; hover: React.ReactNode }> = {
-    legal: {
-      default: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="service-icon-svg w-7 h-7">
-          <path className="service-icon-base" d="M12 3v18" />
-          <path className="service-icon-base" d="M5 6l7-3 7 3" />
-          <path className="service-icon-animate" d="M5 6v0" style={{ transitionDelay: "0s" }} />
-          <path className="service-icon-animate" d="M19 6v0" style={{ transitionDelay: "0.05s" }} />
-          <path className="service-icon-base" d="M5 21h14" />
-          <circle className="service-icon-animate" cx="5" cy="6" r="0" style={{ transitionDelay: "0.1s" }} />
-          <circle className="service-icon-animate" cx="19" cy="6" r="0" style={{ transitionDelay: "0.1s" }} />
-        </svg>
-      ),
-      hover: null,
-    },
-    compliance: {
-      default: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="service-icon-svg w-7 h-7">
-          <rect className="service-icon-base" x="3" y="11" width="18" height="11" rx="2" />
-          <path className="service-icon-lock-shackle" d="M7 11V7a5 5 0 0 1 10 0v4" />
-          <circle className="service-icon-base" cx="12" cy="16" r="1" />
-        </svg>
-      ),
-      hover: null,
-    },
-    banking: {
-      default: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="service-icon-svg w-7 h-7">
-          <path className="service-icon-base" d="M2 17h20" />
-          <path className="service-icon-base" d="M4 21h16" />
-          <path className="service-icon-base" d="M12 2l10 6H2l10-6z" />
-          <path className="service-icon-pillar" d="M6 8v9" style={{ transitionDelay: "0s" }} />
-          <path className="service-icon-pillar" d="M10 8v9" style={{ transitionDelay: "0.06s" }} />
-          <path className="service-icon-pillar" d="M14 8v9" style={{ transitionDelay: "0.12s" }} />
-          <path className="service-icon-pillar" d="M18 8v9" style={{ transitionDelay: "0.18s" }} />
-        </svg>
-      ),
-      hover: null,
-    },
-    entity: {
-      default: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="service-icon-svg w-7 h-7">
-          <rect className="service-icon-base" x="3" y="3" width="7" height="7" rx="1" />
-          <rect className="service-icon-grid-item" x="14" y="3" width="7" height="7" rx="1" style={{ transitionDelay: "0.05s" }} />
-          <rect className="service-icon-grid-item" x="3" y="14" width="7" height="7" rx="1" style={{ transitionDelay: "0.1s" }} />
-          <rect className="service-icon-grid-item" x="14" y="14" width="7" height="7" rx="1" style={{ transitionDelay: "0.15s" }} />
-        </svg>
-      ),
-      hover: null,
-    },
-    advisory: {
-      default: (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="service-icon-svg w-7 h-7">
-          <circle className="service-icon-base" cx="12" cy="12" r="10" />
-          <path className="service-icon-compass-needle" d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z" />
-        </svg>
-      ),
-      hover: null,
-    },
+  const iconMap: Record<string, React.ReactNode> = {
+    compliance_filings: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="service-icon-svg w-7 h-7">
+        <path className="service-icon-base" d="M9 2h6l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+        <path className="service-icon-base" d="M14 2v6h6" />
+        <path className="service-icon-checkmark" d="M9 13l2 2 4-4" />
+      </svg>
+    ),
+    financial_ops: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="service-icon-svg w-7 h-7">
+        <path className="service-icon-base" d="M12 1v22" />
+        <path className="service-icon-dollar-curve" d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+      </svg>
+    ),
+    access_governance: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="service-icon-svg w-7 h-7">
+        <path className="service-icon-shield" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path className="service-icon-lock-shackle" d="M9 11V9a3 3 0 0 1 6 0v2" />
+        <rect className="service-icon-base" x="8" y="11" width="8" height="6" rx="1" />
+      </svg>
+    ),
+    workflow_automation: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="service-icon-svg w-7 h-7">
+        <circle className="service-icon-gear-main" cx="12" cy="12" r="3" />
+        <path className="service-icon-gear-main" d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+      </svg>
+    ),
+    ops_visibility: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="service-icon-svg w-7 h-7">
+        <path className="service-icon-eye-outline" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+        <circle className="service-icon-eye-pupil" cx="12" cy="12" r="3" />
+      </svg>
+    ),
   };
 
-  const entry = iconMap[icon] || iconMap.legal;
+  const entry = iconMap[icon] || iconMap.compliance_filings;
 
   return (
     <div className="service-icon-wrapper shrink-0 w-12 h-12 lg:w-14 lg:h-14 rounded-xl border border-white/10 flex items-center justify-center text-accent">
-      {entry.default}
+      {entry}
     </div>
   );
 }

@@ -48,39 +48,39 @@ export default function Home() {
         headingAccent="infrastructure."
         services={[
           {
-            title: "Legal Operations",
+            title: "Compliance & Filings",
             description:
-              "Entity formation, corporate governance, equity management, and ongoing legal ops — structured for startups, not Fortune 500s.",
-            href: "/services/legal",
-            icon: "legal",
-          },
-          {
-            title: "Compliance & Regulatory",
-            description:
-              "State registrations, annual filings, KYC/AML compliance, and regulatory monitoring across jurisdictions.",
+              "State registrations, annual filings, regulatory reporting, and ongoing compliance management — handled end-to-end so you never miss a deadline.",
             href: "/services/compliance",
-            icon: "compliance",
+            icon: "compliance_filings",
           },
           {
-            title: "Banking & Treasury",
+            title: "Financial Operations",
             description:
-              "Bank account setup, cash management, payment infrastructure, and treasury operations from day one.",
-            href: "/services/banking",
-            icon: "banking",
+              "Bank account setup, payment infrastructure, bookkeeping coordination, and treasury operations — from day one through Series B.",
+            href: "/services/financial-operations",
+            icon: "financial_ops",
           },
           {
-            title: "Entity Management",
+            title: "Access Governance Automation",
             description:
-              "Multi-entity structures, subsidiary management, registered agent services, and corporate record maintenance.",
-            href: "/services/entity",
-            icon: "entity",
+              "Automated provisioning, role-based access controls, and credential management across your entire tool stack — secure by default.",
+            href: "/services/access-governance",
+            icon: "access_governance",
           },
           {
-            title: "Strategic Advisory",
+            title: "Workflow Automation",
             description:
-              "Operational strategy, vendor selection, process design, and the kind of advice that comes from being in the trenches.",
-            href: "/services/advisory",
-            icon: "advisory",
+              "Streamlined onboarding, vendor management, document workflows, and operational processes — built to scale without adding headcount.",
+            href: "/services/workflow-automation",
+            icon: "workflow_automation",
+          },
+          {
+            title: "Operations Visibility",
+            description:
+              "Real-time dashboards, compliance status tracking, and operational reporting — so you always know where things stand.",
+            href: "/services/operations-visibility",
+            icon: "ops_visibility",
           },
         ]}
       />

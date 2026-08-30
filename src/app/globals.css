@@ -321,7 +321,39 @@ body {
   transform: scale(1.05);
 }
 
-/* Lock shackle: slides up on hover to "unlock" */
+/* Compliance checkmark: draws in on hover */
+.service-icon-checkmark {
+  stroke-dasharray: 12;
+  stroke-dashoffset: 12;
+  transition: stroke-dashoffset 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-item:hover .service-icon-checkmark {
+  stroke-dashoffset: 0;
+}
+
+/* Financial ops dollar: subtle bounce */
+.service-icon-dollar-curve {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+.service-item:hover .service-icon-dollar-curve {
+  transform: translateY(-1px);
+}
+
+/* Access governance shield: pulse on hover */
+.service-icon-shield {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center bottom;
+}
+
+.service-item:hover .service-icon-shield {
+  transform: scale(1.06);
+}
+
+/* Access governance lock shackle: unlocks */
 .service-icon-lock-shackle {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: center;
@@ -331,42 +363,34 @@ body {
   transform: translateY(-2px) rotate(8deg);
 }
 
-/* Banking pillars: stagger grow */
-.service-icon-pillar {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  transform-origin: bottom;
-  transform: scaleY(0.7);
-  opacity: 0.5;
-}
-
-.service-item:hover .service-icon-pillar {
-  transform: scaleY(1);
-  opacity: 1;
-}
-
-/* Entity grid items: scale in */
-.service-icon-grid-item {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  transform-origin: center;
-  transform: scale(0.8);
-  opacity: 0.5;
-}
-
-.service-item:hover .service-icon-grid-item {
-  transform: scale(1);
-  opacity: 1;
-}
-
-/* Compass needle: rotates on hover */
-.service-icon-compass-needle {
+/* Workflow gear: rotates on hover */
+.service-icon-gear-main {
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: center;
 }
 
-.service-item:hover .service-icon-compass-needle {
-  transform: rotate(45deg);
+.service-item:hover .service-icon-gear-main {
+  transform: rotate(30deg);
+}
+
+/* Ops visibility eye: pupil dilates on hover */
+.service-icon-eye-outline {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+.service-icon-eye-pupil {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              r 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center;
+}
+
+.service-item:hover .service-icon-eye-pupil {
+  transform: scale(1.25);
+}
+
+.service-item:hover .service-icon-eye-outline {
+  transform: scaleY(1.1);
 }
 
 /* Card hover lift */
