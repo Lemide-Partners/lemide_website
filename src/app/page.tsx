@@ -3,7 +3,6 @@ import {
   Hero,
   MetricsBar,
   MissionStatement,
-  BrandTitle,
   About,
   Industries,
   Services,
@@ -44,8 +43,6 @@ export default function Home() {
         text="We don't bill by the hour or disappear after the deliverable."
         mutedText="We embed with your team, handle the operational complexity, and stay for the long run."
       />
-
-      <BrandTitle />
 
       <About
         label="Who We Are"
