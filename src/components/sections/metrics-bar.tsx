@@ -56,25 +56,8 @@ function AnimatedValue({ value }: { value: string }) {
 
 export function MetricsBar({ metrics }: MetricsBarProps) {
   return (
-    <section className="relative bg-background">
-      <div
-        className="absolute top-0 left-0 right-0 h-20 lg:h-28"
-        style={{ overflow: "hidden" }}
-      >
-        <svg
-          viewBox="0 0 1440 120"
-          fill="none"
-          preserveAspectRatio="none"
-          className="absolute bottom-0 w-full h-full"
-        >
-          <path
-            d="M0,0 L0,80 Q360,120 720,80 Q1080,40 1440,80 L1440,0 Z"
-            fill="#0B1D4B"
-          />
-        </svg>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-32 lg:pt-40 pb-20 lg:pb-28">
+    <section className="bg-background">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-28">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
           {metrics.map((metric, i) => (
             <Reveal key={metric.label} delay={i * 0.12} animation="fade-up">
