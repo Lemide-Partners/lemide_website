@@ -38,8 +38,8 @@ export default function Home() {
       />
 
       <Problem
-        text="We don't bill by the hour or disappear after the deliverable."
-        mutedText="We embed with your team, handle the operational complexity, and stay for the long run."
+        text="Early-stage founders are too busy chasing the market to build the operations behind it."
+        mutedText="Lemide builds it for them, so growth never outpaces the foundation underneath."
       />
 
       <Services
