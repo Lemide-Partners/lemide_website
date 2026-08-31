@@ -20,7 +20,7 @@ export function Hero({
   headline,
   headlineAccent,
   description,
-  ctaLabel = "Schedule a Call",
+  ctaLabel = "Book a Call",
   ctaHref = "/contact",
   secondaryCtaLabel,
   secondaryCtaHref,

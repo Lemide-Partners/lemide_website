@@ -37,7 +37,7 @@ const defaultLinks: NavLink[] = [
 
 export function Navbar({
   links = defaultLinks,
-  ctaLabel = "Schedule a Call",
+  ctaLabel = "Book a Call",
   ctaHref = "/contact",
 }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);

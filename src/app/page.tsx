@@ -23,7 +23,7 @@ export default function Home() {
         headline="Operational infrastructure for founders who"
         headlineAccent="move fast."
         description="We help startups set up and run the operations behind the company: incorporation, banking, compliance, tools, and credentials."
-        ctaLabel="Schedule a Call"
+        ctaLabel="Book a Call"
         ctaHref="/contact"
         videoSrc="/assets/videos/lemidehero.mp4"
       />
