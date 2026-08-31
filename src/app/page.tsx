@@ -38,8 +38,8 @@ export default function Home() {
       />
 
       <Problem
-        text="Early-stage founders are too busy chasing the market to build the operations behind it."
-        mutedText="Lemide builds it for them, so growth never outpaces the foundation underneath."
+        text="5% of startups fail due to operational bottlenecks at their early stage."
+        mutedText="Lemide helps founders build the systems that fix such problems."
       />
 
       <Services

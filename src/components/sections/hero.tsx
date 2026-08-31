@@ -70,7 +70,7 @@ export function Hero({
         <Reveal animation="scale-up" delay={0.3} duration={0.8}>
           <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href={ctaHref}>
-              <Button variant="accent" size="lg">
+              <Button variant="primary" size="lg">
                 {ctaLabel}
               </Button>
             </Link>

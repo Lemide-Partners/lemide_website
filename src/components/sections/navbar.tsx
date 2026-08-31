@@ -128,7 +128,10 @@ export function Navbar({
             )}
             <Link
               href={ctaHref}
-              className="ml-3 inline-flex items-center h-9 px-5 rounded-full bg-accent text-white type-body-sm font-display font-medium hover:bg-gold-500 transition-colors duration-200"
+              className="ml-3 inline-flex items-center h-9 px-5 rounded-full text-white type-body-sm font-display font-medium transition-colors duration-200"
+              style={{
+                background: scrolled ? "var(--accent)" : "var(--primary)",
+              }}
             >
               {ctaLabel}
             </Link>
@@ -222,7 +225,10 @@ export function Navbar({
             <div className="pt-3">
               <Link
                 href={ctaHref}
-                className="block text-center py-3 rounded-full bg-accent text-white type-body-sm font-display font-medium"
+                className="block text-center py-3 rounded-full text-white type-body-sm font-display font-medium"
+                style={{
+                  background: scrolled ? "var(--accent)" : "var(--primary)",
+                }}
                 onClick={() => setMobileOpen(false)}
               >
                 {ctaLabel}
