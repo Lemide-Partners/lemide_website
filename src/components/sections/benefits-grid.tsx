@@ -111,10 +111,12 @@ function RichText({ text, className }: { text: string; className?: string }) {
   );
 }
 
-function BenefitCard({ item }: { item: BenefitItem }) {
+function BenefitCard({ item, compact }: { item: BenefitItem; compact?: boolean }) {
+  const pad = compact ? "p-5 lg:p-6" : "p-6 lg:p-8";
+
   if (item.type === "avatars") {
     return (
-      <div className="benefit-card bg-white/[0.05] border border-white/[0.08] rounded-xl p-6 lg:p-8 h-full flex items-center gap-4">
+      <div className={`benefit-card bg-white/[0.05] border border-white/[0.08] rounded-xl ${pad} h-full flex items-center gap-4`}>
         <AvatarStack />
         <p className="type-h6 text-inverse-fg">
           <span className="text-accent font-semibold">{item.count}</span>{" "}
@@ -126,7 +128,7 @@ function BenefitCard({ item }: { item: BenefitItem }) {
 
   if (item.type === "metric") {
     return (
-      <div className="benefit-card bg-white/[0.05] border border-white/[0.08] rounded-xl p-6 lg:p-8 h-full flex items-center gap-4">
+      <div className={`benefit-card bg-white/[0.05] border border-white/[0.08] rounded-xl ${pad} h-full flex items-center gap-4`}>
         <div
           className="font-display font-light text-accent shrink-0"
           style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)" }}
@@ -140,7 +142,7 @@ function BenefitCard({ item }: { item: BenefitItem }) {
 
   if (item.stat) {
     return (
-      <div className="benefit-card bg-white/[0.05] border border-white/[0.08] rounded-xl p-6 lg:p-8 h-full flex flex-col">
+      <div className={`benefit-card bg-white/[0.05] border border-white/[0.08] rounded-xl ${pad} h-full flex flex-col`}>
         <div className="flex items-center justify-between gap-3 mb-3">
           <h3 className="type-h6 text-inverse-fg">{item.title}</h3>
           {item.tag && (
@@ -166,7 +168,7 @@ function BenefitCard({ item }: { item: BenefitItem }) {
   }
 
   return (
-    <div className="benefit-card bg-white/[0.05] border border-white/[0.08] rounded-xl p-6 lg:p-8 h-full flex flex-col">
+    <div className={`benefit-card bg-white/[0.05] border border-white/[0.08] rounded-xl ${pad} h-full flex flex-col`}>
       <div className="flex items-center justify-between gap-3 mb-3">
         <h3 className="type-h6 text-inverse-fg">{item.title}</h3>
         {item.tag && (
@@ -212,16 +214,16 @@ export function BenefitsGrid({
           {/* Right: nested grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
             <Reveal delay={0.06} animation="fade-up">
-              <BenefitCard item={items[1]} />
+              <BenefitCard item={items[1]} compact />
             </Reveal>
             <Reveal delay={0.12} animation="fade-up">
-              <BenefitCard item={items[2]} />
+              <BenefitCard item={items[2]} compact />
             </Reveal>
             <Reveal delay={0.18} animation="fade-up">
-              <BenefitCard item={items[3]} />
+              <BenefitCard item={items[3]} compact />
             </Reveal>
             <Reveal delay={0.24} animation="fade-up">
-              <BenefitCard item={items[4]} />
+              <BenefitCard item={items[4]} compact />
             </Reveal>
             <Reveal delay={0.30} animation="fade-up" className="sm:col-span-2">
               <BenefitCard item={items[5]} />
