@@ -10,7 +10,7 @@ export { CaseStudies } from "./case-studies";
 export { TeamMarquee } from "./team-marquee";
 export { BenefitsGrid } from "./benefits-grid";
 export { Partners } from "./partners";
-export { Testimonials } from "./testimonials";
+export { Insights } from "./insights";
 export { Faq } from "./faq";
 export { FooterCta } from "./footer-cta";
 export { Footer } from "./footer";

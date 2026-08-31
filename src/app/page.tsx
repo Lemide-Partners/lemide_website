@@ -8,7 +8,7 @@ import {
   CaseStudies,
   BenefitsGrid,
   Partners,
-  Testimonials,
+  Insights,
   Faq,
   FooterCta,
   Footer,
@@ -194,40 +194,51 @@ export default function Home() {
         ]}
       />
 
-      <Testimonials
-        label="What Founders Say"
-        heading="Find out why founders trust"
-        headingAccent="our operational expertise."
-        testimonials={[
+      <Insights
+        label="Insights"
+        heading="Latest thinking on"
+        headingAccent="startup operations."
+        description="Practical guides and perspectives for founders building the operational backbone of their company."
+        insights={[
           {
-            quote:
-              "Lemide took our back-office from chaotic to institutional-grade in weeks. They understood exactly what an early-stage company needs.",
-            name: "Founder A",
-            title: "CEO at FinanceStartup",
+            title: "Why operational infrastructure is the silent killer of Series A rounds",
+            excerpt:
+              "Most founders don't lose funding because of a weak product — they lose it because investors find compliance gaps, messy cap tables, and no financial controls. Here's how to fix it before the due diligence clock starts.",
+            category: "Fundraising",
+            date: "Aug 2026",
+            readTime: "6 min read",
+            href: "/insights/operational-infrastructure-series-a",
+            imageSrc: "https://images.unsplash.com/photo-1553729459-uj1ef-1a-f4e2-8b51-dbe8e14261?w=800&q=80",
           },
           {
-            quote:
-              "Having a dedicated partner who knows our business inside and out has been transformative. We don't think about ops anymore.",
-            name: "Founder B",
-            title: "CTO at HealthTech Co",
+            title: "The true cost of DIY compliance for early-stage startups",
+            excerpt:
+              "Founders spend an average of 12 hours per week on compliance tasks they could outsource. We break down the hidden costs and when it makes sense to bring in a partner.",
+            category: "Compliance",
+            date: "Jul 2026",
+            readTime: "4 min read",
+            href: "/insights/diy-compliance-costs",
+            imageSrc: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
           },
           {
-            quote:
-              "The retainer model is genius. Predictable costs, immediate response, and they actually care about our success.",
-            name: "Founder C",
-            title: "CEO at CleanEnergy Inc",
+            title: "Multi-state operations: a founder's playbook",
+            excerpt:
+              "Expanding across state lines means navigating a maze of registrations, tax obligations, and employment law. Our step-by-step guide keeps you compliant as you scale.",
+            category: "Operations",
+            date: "Jun 2026",
+            readTime: "8 min read",
+            href: "/insights/multi-state-operations-playbook",
+            imageSrc: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
           },
           {
-            quote:
-              "They handled our multi-state compliance so seamlessly that we were able to launch 3 months ahead of schedule.",
-            name: "Founder D",
-            title: "COO at SaaS Platform",
-          },
-          {
-            quote:
-              "Lemide is the operational co-founder every startup wishes they had. Reliable, fast, and deeply competent.",
-            name: "Founder E",
-            title: "Founder at Marketplace Co",
+            title: "Banking setup mistakes that slow down your first 90 days",
+            excerpt:
+              "From picking the wrong bank to missing fraud controls, these are the treasury missteps we see most often — and how to avoid them.",
+            category: "Banking",
+            date: "May 2026",
+            readTime: "5 min read",
+            href: "/insights/banking-setup-mistakes",
+            imageSrc: "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?w=800&q=80",
           },
         ]}
       />
