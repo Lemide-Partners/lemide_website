@@ -146,32 +146,33 @@ export default function Home() {
           {
             type: "feature",
             title: "Cut Costs",
-            description: "Reduce operational overhead by consolidating vendors and automating back-office workflows.",
-            stat: "2x",
+            tag: "Popular Solution",
+            description: "We identify cost-saving opportunities without compromising value — from automation to smart resource allocation.",
           },
           {
             type: "avatars",
             count: "20+",
             label: "Business Partners",
           },
-          { type: "metric", value: "78%", label: "of founders say ops is their **biggest bottleneck**" },
+          { type: "metric", value: "78%", label: "Of businesses don't check their **analytics**." },
           {
             type: "feature",
-            title: "Average Investment",
-            description: "Predictable flat-fee retainer that replaces five separate vendor contracts.",
+            title: "Average investment",
+            description: "Even modest strategic investments can lead to visible improvements in efficiency and growth.",
             stat: "$15K",
           },
           {
             type: "feature",
             title: "Focusing",
-            tag: "Stay sharp",
-            description: "Free your team to focus on product and customers while we handle the rest.",
+            tag: "Measurable results",
+            description: "Forget about blind decisions and lost revenue. We help you build a data-driven culture.",
           },
+          { type: "metric", value: "2x", label: "Is an **average result** in cost optimization services." },
           {
             type: "feature",
             title: "Tailored Solutions",
-            tag: "Custom fit",
-            description: "Every engagement is scoped to your stage, industry, and growth trajectory — no cookie-cutter playbooks.",
+            tag: "Personalized plans",
+            description: "We analyze your specific goals and challenges to build solutions **that truly fit**.",
           },
         ]}
       />
