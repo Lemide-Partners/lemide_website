@@ -141,28 +141,38 @@ export default function Home() {
       <BenefitsGrid
         label="Why Lemide"
         heading="The value behind every partnership is"
-        headingAccent="turning complexity into clarity."
+        headingAccent="turning strategy into impact."
         items={[
-          { type: "metric", value: "90%", label: "Faster operational setup vs. doing it yourself" },
           {
             type: "feature",
-            title: "Dedicated Partner",
-            tag: "Always-on",
-            description: "One senior partner owns your relationship end-to-end. No handoffs, no rotating associates.",
+            title: "Cut Costs",
+            tag: "Save more",
+            description: "Reduce operational overhead by consolidating vendors and automating back-office workflows.",
           },
-          { type: "metric", value: "24h", label: "Average turnaround on operational requests" },
           {
-            type: "feature",
-            title: "Retainer Model",
-            tag: "Predictable costs",
-            description: "Flat monthly retainer. No surprise invoices, no billable-hour anxiety.",
+            type: "avatars",
+            count: "20+",
+            label: "Business Partners",
           },
-          { type: "metric", value: "50+", label: "Startups trust Lemide with their operations" },
+          { type: "metric", value: "78%", label: "of founders say ops is their **biggest bottleneck**" },
           {
             type: "feature",
-            title: "Full Stack",
-            tag: "End-to-end",
-            description: "Legal, compliance, banking, entity — all under one roof. No coordinating between 5 vendors.",
+            title: "Average Investment",
+            description: "Predictable flat-fee retainer that replaces five separate vendor contracts.",
+            stat: "$15K",
+          },
+          {
+            type: "feature",
+            title: "Focusing",
+            tag: "Stay sharp",
+            description: "Free your team to focus on product and customers while we handle the rest.",
+          },
+          { type: "metric", value: "2x", label: "faster time-to-market with **operational infrastructure** in place" },
+          {
+            type: "feature",
+            title: "Tailored Solutions",
+            tag: "Custom fit",
+            description: "Every engagement is scoped to your stage, industry, and growth trajectory — no cookie-cutter playbooks.",
           },
         ]}
       />
