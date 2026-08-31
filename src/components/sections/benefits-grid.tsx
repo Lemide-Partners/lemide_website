@@ -183,7 +183,7 @@ export function BenefitsGrid({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-6 gap-4 lg:gap-5">
-          {/* Row 1: feature (2col) | avatars (2col) | metric (2col) */}
+          {/* Row 1: feature+stat (2col) | avatars (2col) | metric (2col) */}
           <Reveal delay={0} animation="fade-up" className="md:col-span-2">
             <BenefitCard item={items[0]} />
           </Reveal>
@@ -194,21 +194,18 @@ export function BenefitsGrid({
             <BenefitCard item={items[2]} />
           </Reveal>
 
-          {/* Row 2: gap (1col) | feature+stat (3col) | feature (2col) */}
-          <div className="hidden md:block md:col-span-1" />
+          {/* Row 2: feature+stat (3col) | feature (3col) */}
           <Reveal delay={0.18} animation="fade-up" className="md:col-span-3">
             <BenefitCard item={items[3]} />
           </Reveal>
-          <Reveal delay={0.24} animation="fade-up" className="md:col-span-2">
+          <Reveal delay={0.24} animation="fade-up" className="md:col-span-3">
             <BenefitCard item={items[4]} />
           </Reveal>
 
-          {/* Row 3: metric (2col) | feature (3col) | gap (1col) */}
-          <Reveal delay={0.30} animation="fade-up" className="md:col-span-2">
+          {/* Row 3 (centered): feature (4col) */}
+          <div className="hidden md:block md:col-span-1" />
+          <Reveal delay={0.30} animation="fade-up" className="md:col-span-4">
             <BenefitCard item={items[5]} />
-          </Reveal>
-          <Reveal delay={0.36} animation="fade-up" className="md:col-span-3">
-            <BenefitCard item={items[6]} />
           </Reveal>
           <div className="hidden md:block md:col-span-1" />
         </div>

@@ -146,8 +146,8 @@ export default function Home() {
           {
             type: "feature",
             title: "Cut Costs",
-            tag: "Save more",
             description: "Reduce operational overhead by consolidating vendors and automating back-office workflows.",
+            stat: "2x",
           },
           {
             type: "avatars",
@@ -167,7 +167,6 @@ export default function Home() {
             tag: "Stay sharp",
             description: "Free your team to focus on product and customers while we handle the rest.",
           },
-          { type: "metric", value: "2x", label: "faster time-to-market with **operational infrastructure** in place" },
           {
             type: "feature",
             title: "Tailored Solutions",
