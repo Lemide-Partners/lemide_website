@@ -148,6 +148,8 @@ export default function Home() {
             title: "Cut Costs",
             tag: "Popular Solution",
             description: "We identify cost-saving opportunities without compromising value — from automation to smart resource allocation.",
+            stat: "2x",
+            statLabel: "Is an **average result** in cost optimization services.",
           },
           {
             type: "avatars",
@@ -167,7 +169,6 @@ export default function Home() {
             tag: "Measurable results",
             description: "Forget about blind decisions and lost revenue. We help you build a data-driven culture.",
           },
-          { type: "metric", value: "2x", label: "Is an **average result** in cost optimization services." },
           {
             type: "feature",
             title: "Tailored Solutions",

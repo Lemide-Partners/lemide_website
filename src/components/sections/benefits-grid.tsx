@@ -15,6 +15,7 @@ interface BenefitFeature {
   tag?: string;
   description: string;
   stat?: string;
+  statLabel?: string;
 }
 
 interface BenefitAvatars {
@@ -132,15 +133,7 @@ function BenefitCard({ item }: { item: BenefitItem }) {
         >
           <AnimatedMetricValue value={item.value} />
         </div>
-        <p className="type-body-sm text-inverse-muted">
-          {item.label.split("**").map((part, i) =>
-            i % 2 === 1 ? (
-              <span key={i} className="text-inverse-fg font-semibold">{part}</span>
-            ) : (
-              <span key={i}>{part}</span>
-            )
-          )}
-        </p>
+        <RichText text={item.label} className="type-body-sm text-inverse-muted" />
       </div>
     );
   }
@@ -148,13 +141,25 @@ function BenefitCard({ item }: { item: BenefitItem }) {
   if (item.stat) {
     return (
       <div className="benefit-card bg-white/[0.05] border border-white/[0.08] rounded-xl p-6 lg:p-8 h-full flex flex-col">
-        <h3 className="type-h6 text-inverse-fg">{item.title}</h3>
-        <RichText text={item.description} className="type-body-sm text-inverse-muted mt-3" />
-        <div
-          className="font-display font-light text-accent mt-auto pt-4"
-          style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)" }}
-        >
-          <AnimatedMetricValue value={item.stat} />
+        <div className="flex items-center justify-between gap-3 mb-3">
+          <h3 className="type-h6 text-inverse-fg">{item.title}</h3>
+          {item.tag && (
+            <span className="type-caption text-inverse-muted bg-white/[0.08] px-3 py-1 rounded-full whitespace-nowrap border border-white/[0.1]">
+              {item.tag}
+            </span>
+          )}
+        </div>
+        <RichText text={item.description} className="type-body-sm text-inverse-muted" />
+        <div className="mt-auto pt-6 flex items-center gap-4">
+          <div
+            className="font-display font-light text-accent shrink-0"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)" }}
+          >
+            <AnimatedMetricValue value={item.stat} />
+          </div>
+          {item.statLabel && (
+            <RichText text={item.statLabel} className="type-body-sm text-inverse-muted" />
+          )}
         </div>
       </div>
     );
@@ -198,35 +203,30 @@ export function BenefitsGrid({
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 lg:gap-5">
-          {/* Row 1: feature (2col) | avatars (2col) | metric (2col) */}
-          <Reveal delay={0} animation="fade-up" className="md:col-span-2">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-4 lg:gap-5">
+          {/* Left: tall card spanning full height */}
+          <Reveal delay={0} animation="fade-up">
             <BenefitCard item={items[0]} />
           </Reveal>
-          <Reveal delay={0.06} animation="fade-up" className="md:col-span-2">
-            <BenefitCard item={items[1]} />
-          </Reveal>
-          <Reveal delay={0.12} animation="fade-up" className="md:col-span-2">
-            <BenefitCard item={items[2]} />
-          </Reveal>
 
-          {/* Row 2: gap (1col) | feature+stat (3col) | feature (2col) */}
-          <div className="hidden md:block md:col-span-1" />
-          <Reveal delay={0.18} animation="fade-up" className="md:col-span-3">
-            <BenefitCard item={items[3]} />
-          </Reveal>
-          <Reveal delay={0.24} animation="fade-up" className="md:col-span-2">
-            <BenefitCard item={items[4]} />
-          </Reveal>
-
-          {/* Row 3: metric (2col) | feature (3col) | gap (1col) */}
-          <Reveal delay={0.30} animation="fade-up" className="md:col-span-2">
-            <BenefitCard item={items[5]} />
-          </Reveal>
-          <Reveal delay={0.36} animation="fade-up" className="md:col-span-3">
-            <BenefitCard item={items[6]} />
-          </Reveal>
-          <div className="hidden md:block md:col-span-1" />
+          {/* Right: nested grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+            <Reveal delay={0.06} animation="fade-up">
+              <BenefitCard item={items[1]} />
+            </Reveal>
+            <Reveal delay={0.12} animation="fade-up">
+              <BenefitCard item={items[2]} />
+            </Reveal>
+            <Reveal delay={0.18} animation="fade-up">
+              <BenefitCard item={items[3]} />
+            </Reveal>
+            <Reveal delay={0.24} animation="fade-up">
+              <BenefitCard item={items[4]} />
+            </Reveal>
+            <Reveal delay={0.30} animation="fade-up" className="sm:col-span-2">
+              <BenefitCard item={items[5]} />
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>
