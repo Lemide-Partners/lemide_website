@@ -184,13 +184,13 @@ export default function Home() {
         headingAccent="build with confidence."
         description="Working alongside the best founders, accelerators, and venture firms in the ecosystem."
         partners={[
-          { name: "Partner Logo 1", logoSrc: "/placeholder-logo.svg" },
-          { name: "Partner Logo 2", logoSrc: "/placeholder-logo.svg" },
-          { name: "Partner Logo 3", logoSrc: "/placeholder-logo.svg" },
-          { name: "Partner Logo 4", logoSrc: "/placeholder-logo.svg" },
-          { name: "Partner Logo 5", logoSrc: "/placeholder-logo.svg" },
-          { name: "Partner Logo 6", logoSrc: "/placeholder-logo.svg" },
-          { name: "Partner Logo 7", logoSrc: "/placeholder-logo.svg" },
+          { name: "Partner 1", logoSrc: "/assets/images/partners/partner-1.svg" },
+          { name: "Partner 2", logoSrc: "/assets/images/partners/partner-2.svg" },
+          { name: "Partner 3", logoSrc: "/assets/images/partners/partner-3.svg" },
+          { name: "Partner 4", logoSrc: "/assets/images/partners/partner-4.svg" },
+          { name: "Partner 5", logoSrc: "/assets/images/partners/partner-5.svg" },
+          { name: "Partner 6", logoSrc: "/assets/images/partners/partner-6.svg" },
+          { name: "Partner 7", logoSrc: "/assets/images/partners/partner-7.svg" },
         ]}
       />
 
@@ -208,7 +208,7 @@ export default function Home() {
             date: "Aug 2026",
             readTime: "6 min read",
             href: "/insights/operational-infrastructure-series-a",
-            imageSrc: "https://images.unsplash.com/photo-1553729459-uj1ef-1a-f4e2-8b51-dbe8e14261?w=800&q=80",
+            imageSrc: "https://images.unsplash.com/photo-1553729459-ebb1b9bca9bf?w=800&q=80",
           },
           {
             title: "The true cost of DIY compliance for early-stage startups",
@@ -283,8 +283,8 @@ export default function Home() {
       <Footer
         email="contact@lemide.com"
         socialLinks={[
-          { platform: "linkedin", href: "#" },
-          { platform: "twitter", href: "#" },
+          { platform: "linkedin", href: "https://linkedin.com/company/lemide" },
+          { platform: "twitter", href: "https://x.com/lemide" },
         ]}
       />
     </>

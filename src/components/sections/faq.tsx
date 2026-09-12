@@ -36,20 +36,24 @@ function FaqAccordion({
     <div className="border-b border-border">
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between py-5 lg:py-6 text-left focus-ring rounded-md group"
+        className={`w-full flex items-center justify-between py-5 lg:py-6 px-5 text-left focus-ring rounded-lg group transition-all duration-300 ${
+          isOpen ? "bg-primary" : ""
+        }`}
         aria-expanded={isOpen}
       >
-        <span className="type-h5 text-foreground pr-4 group-hover:text-accent transition-colors duration-200">
+        <span className={`type-h5 pr-4 transition-colors duration-300 ${
+          isOpen ? "text-white" : "text-foreground group-hover:text-accent"
+        }`}>
           {item.question}
         </span>
         <span
-          className={`faq-icon shrink-0 w-8 h-8 rounded-full border border-border flex items-center justify-center transition-all duration-300 ${
-            isOpen ? "open" : "group-hover:border-accent"
+          className={`faq-icon shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
+            isOpen ? "border-white/30 bg-white/10" : "border-border group-hover:border-accent"
           }`}
         >
           <svg
-            className={`w-4 h-4 transition-colors duration-300 ${
-              isOpen ? "text-white" : "text-foreground"
+            className={`w-4 h-4 transition-all duration-300 ${
+              isOpen ? "text-white rotate-45" : "text-foreground"
             }`}
             fill="none"
             viewBox="0 0 24 24"

@@ -76,18 +76,31 @@ function AnimatedMetricValue({ value }: { value: string }) {
 }
 
 function AvatarStack() {
-  const colors = ["#CC9E49", "#2E4578", "#51699F", "#8B9BBF", "#0B1D4B"];
+  const avatars = [
+    { bg: "#CC9E49", skin: "#D4A574", hair: "#3D2314" },
+    { bg: "#2E4578", skin: "#F5D0A9", hair: "#1A1A2E" },
+    { bg: "#51699F", skin: "#8D5524", hair: "#0D0D0D" },
+    { bg: "#8B9BBF", skin: "#E8C39E", hair: "#4A2C17" },
+    { bg: "#0B1D4B", skin: "#C68642", hair: "#1B1B2F" },
+  ];
   return (
     <div className="flex -space-x-2">
-      {colors.map((bg, i) => (
+      {avatars.map((a, i) => (
         <div
           key={i}
-          className="w-10 h-10 rounded-full border-2 border-navy-800 flex items-center justify-center overflow-hidden"
-          style={{ background: bg, zIndex: 5 - i }}
+          className="w-10 h-10 rounded-full border-2 border-navy-800 overflow-hidden"
+          style={{ background: a.bg, zIndex: 5 - i }}
         >
-          <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-white/70">
-            <circle cx="12" cy="8" r="4" fill="currentColor" />
-            <path d="M4 20c0-3.3 3.6-6 8-6s8 2.7 8 6" fill="currentColor" />
+          <svg viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="15" r="7" fill={a.skin} />
+            <ellipse cx="20" cy="34" rx="12" ry="10" fill={a.skin} />
+            <path d={
+              i === 0 ? "M13 12c0-5 3-8 7-8s7 3 7 8c0 1-1 2-2 1.5-.5-2-2-3-5-3s-4.5 1-5 3c-1 .5-2-.5-2-1.5z" :
+              i === 1 ? "M12 14c0-6 3.5-10 8-10s8 4 8 10c-1 0-2-3-8-3s-7 3-8 3z" :
+              i === 2 ? "M11 13c0-5 4-9 9-9s9 4 9 9c0 1-1.5 1-2 0-.5-3-3-5-7-5s-6.5 2-7 5c-.5 1-2 1-2 0z" :
+              i === 3 ? "M13 15c-1-7 3-11 7-11s8 4 7 11c-.5-2-3-4-7-4s-6.5 2-7 4z" :
+              "M12 12c1-5 4-8 8-8s7 3 8 8c-2-1-4-3-8-3s-6 2-8 3z"
+            } fill={a.hair} />
           </svg>
         </div>
       ))}
