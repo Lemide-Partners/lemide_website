@@ -49,9 +49,9 @@ export function Footer({
         <div className="border-t border-white/10" />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-8">
             {/* Brand column */}
-            <Reveal animation="fade-up" className="lg:col-span-1">
+            <Reveal animation="fade-up">
               <div>
                 <Logo inverse />
                 <p className="type-body-sm text-inverse-muted mt-4 max-w-xs">
@@ -77,6 +77,9 @@ export function Footer({
                 )}
               </div>
             </Reveal>
+
+            {/* Empty spacer column */}
+            <div className="hidden lg:block" />
 
             {/* Navigation */}
             <Reveal delay={0.1} animation="fade-up">
