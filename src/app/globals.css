@@ -1,0 +1,574 @@
+@import "tailwindcss";
+
+/* ── Brand tokens ─────────────────────────────────────────────────── */
+:root {
+  --deep-navy: #0B1D4B;
+  --golden-bronze: #CC9E49;
+  --linen: #F7EBDF;
+  --shadow-grey: #171721;
+
+  --background: var(--linen);
+  --foreground: var(--deep-navy);
+  --muted: #F5F5F4;
+  --muted-foreground: #78716C;
+  --border: #E7E5E4;
+  --ring: var(--golden-bronze);
+  --card: #FFFFFF;
+  --card-foreground: var(--deep-navy);
+  --primary: var(--deep-navy);
+  --primary-foreground: var(--linen);
+  --accent: var(--golden-bronze);
+  --accent-foreground: #FFFFFF;
+  --destructive: #B91C1C;
+  --destructive-foreground: #FFFFFF;
+
+  /* Inverse (dark sections: hero, footer, navbar) */
+  --inverse-bg: var(--deep-navy);
+  --inverse-fg: var(--linen);
+  --inverse-muted: #A8A29E;
+}
+
+/* ── Tailwind v4 theme extension ──────────────────────────────────── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-inverse-bg: var(--inverse-bg);
+  --color-inverse-fg: var(--inverse-fg);
+  --color-inverse-muted: var(--inverse-muted);
+
+  /* Raw brand colors for one-off use */
+  --color-deep-navy: #0B1D4B;
+  --color-golden-bronze: #CC9E49;
+  --color-linen: #F7EBDF;
+  --color-shadow-grey: #171721;
+
+  /* Navy scale */
+  --color-navy-50: #E8ECF3;
+  --color-navy-100: #C5CDDF;
+  --color-navy-200: #8B9BBF;
+  --color-navy-300: #51699F;
+  --color-navy-400: #2E4578;
+  --color-navy-500: #0B1D4B;
+  --color-navy-600: #091840;
+  --color-navy-700: #071234;
+  --color-navy-800: #050D28;
+  --color-navy-900: #03081C;
+
+  /* Gold scale */
+  --color-gold-50: #FBF5E8;
+  --color-gold-100: #F5E5C5;
+  --color-gold-200: #EBCB8B;
+  --color-gold-300: #D9AD5E;
+  --color-gold-400: #CC9E49;
+  --color-gold-500: #B8893A;
+  --color-gold-600: #9A712E;
+  --color-gold-700: #7C5A23;
+  --color-gold-800: #5E4319;
+  --color-gold-900: #3F2D10;
+
+  /* Font families */
+  --font-display: var(--font-plus-jakarta-sans);
+  --font-body: var(--font-dm-sans);
+
+  /* Radii */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Shadows (navy-tinted for brand consistency) */
+  --shadow-sm: 0 1px 2px 0 rgba(11, 29, 75, 0.04);
+  --shadow-md: 0 2px 8px -1px rgba(11, 29, 75, 0.06), 0 1px 3px -1px rgba(11, 29, 75, 0.04);
+  --shadow-lg: 0 8px 24px -4px rgba(11, 29, 75, 0.08), 0 2px 6px -2px rgba(11, 29, 75, 0.04);
+}
+
+/* ── Base reset ───────────────────────────────────────────────────── */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography utility classes ───────────────────────────────────── */
+/* Display font (headings) — Plus Jakarta Sans standing in for Bomstad Display */
+.font-display {
+  font-family: var(--font-display), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Body font — DM Sans standing in for Satoshi */
+.font-body {
+  font-family: var(--font-body), "DM Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Type scale */
+.type-h1 {
+  font-family: var(--font-display), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(2.5rem, 4.5vw + 0.9rem, 4.5rem);
+  line-height: 1.05;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+
+.type-h2 {
+  font-family: var(--font-display), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 2.475rem;
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.type-h3 {
+  font-family: var(--font-display), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.type-h4 {
+  font-family: var(--font-display), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.375rem;
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+.type-h5 {
+  font-family: var(--font-display), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.type-h6 {
+  font-family: var(--font-display), "Plus Jakarta Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.type-body-lg {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.type-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.type-body-sm {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+}
+
+.type-caption {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Stat value — oversized display numerals */
+.stat-value {
+  font-size: clamp(3rem, 5vw + 0.85rem, 5.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+/* ── Animations ──────────────────────────────────────────────────── */
+
+/* Keyframes */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes progress-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes tab-fade {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation utilities */
+.animate-fade-up {
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-tab-fade {
+  animation: tab-fade 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee 50s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 35s linear infinite;
+}
+
+/* Pause marquee on hover for the PARENT container */
+.marquee-container:hover .animate-marquee,
+.marquee-container:hover .animate-marquee-slow,
+.marquee-container:hover .animate-marquee-reverse {
+  animation-play-state: paused;
+}
+
+/* Service item hover interaction — Advisio-style progress bar + color shift */
+.service-item {
+  position: relative;
+}
+
+.service-item .service-title,
+.service-item .service-desc,
+.service-item .service-link {
+  transition: color 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-item .service-link { opacity: 0.3; }
+
+.service-item .service-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-item:hover .service-title { color: var(--accent); }
+.service-item:hover .service-link { opacity: 1; }
+.service-item:hover .service-progress { transform: scaleX(1); }
+
+/* Service icon animations */
+.service-icon-wrapper {
+  transition: border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-item:hover .service-icon-wrapper {
+  border-color: rgba(204, 158, 73, 0.4);
+  background: rgba(204, 158, 73, 0.12);
+  transform: scale(1.12);
+  box-shadow: 0 0 20px rgba(204, 158, 73, 0.15);
+}
+
+/* Compliance checkmark: draws itself in then bounces */
+@keyframes checkmark-draw {
+  0%   { stroke-dashoffset: 12; opacity: 0.3; }
+  40%  { stroke-dashoffset: 0; opacity: 1; }
+  55%  { transform: scale(1.3); }
+  70%  { transform: scale(0.95); }
+  85%  { transform: scale(1.1); }
+  100% { stroke-dashoffset: 0; opacity: 1; transform: scale(1); }
+}
+
+.service-icon-checkmark {
+  stroke-dasharray: 12;
+  stroke-dashoffset: 12;
+  transform-origin: center;
+}
+
+.service-item:hover .service-icon-checkmark {
+  animation: checkmark-draw 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Financial ops dollar: slides up with shimmer */
+@keyframes dollar-slide {
+  0%   { transform: translateY(4px); opacity: 0.4; }
+  30%  { transform: translateY(-3px); opacity: 1; }
+  50%  { transform: translateY(1px); }
+  70%  { transform: translateY(-1px); }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.service-icon-dollar-curve {
+  transform-origin: center;
+}
+
+.service-item:hover .service-icon-dollar-curve {
+  animation: dollar-slide 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Access governance shield: pulses and lock unlocks */
+@keyframes shield-pulse {
+  0%   { transform: scale(1); }
+  20%  { transform: scale(1.1); }
+  40%  { transform: scale(0.97); }
+  60%  { transform: scale(1.06); }
+  80%  { transform: scale(0.99); }
+  100% { transform: scale(1.04); }
+}
+
+@keyframes lock-unlock {
+  0%   { transform: translateY(0) rotate(0deg); }
+  30%  { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-3px) rotate(15deg); }
+  70%  { transform: translateY(-4px) rotate(20deg); }
+  100% { transform: translateY(-4px) rotate(20deg); }
+}
+
+.service-icon-shield {
+  transform-origin: center bottom;
+}
+
+.service-item:hover .service-icon-shield {
+  animation: shield-pulse 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.service-icon-lock-shackle {
+  transform-origin: right bottom;
+}
+
+.service-item:hover .service-icon-lock-shackle {
+  animation: lock-unlock 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Workflow gear: continuous rotation */
+@keyframes gear-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(180deg); }
+}
+
+.service-icon-gear-main {
+  transform-origin: center;
+}
+
+.service-item:hover .service-icon-gear-main {
+  animation: gear-spin 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Ops visibility eye: opens wide then focuses */
+@keyframes eye-open {
+  0%   { transform: scaleY(0.6); opacity: 0.5; }
+  30%  { transform: scaleY(1.15); opacity: 1; }
+  50%  { transform: scaleY(0.95); }
+  70%  { transform: scaleY(1.05); }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+@keyframes pupil-focus {
+  0%   { transform: scale(0.6); opacity: 0.4; }
+  25%  { transform: scale(1.5); opacity: 1; }
+  50%  { transform: scale(0.8); }
+  75%  { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.service-icon-eye-outline {
+  transform-origin: center;
+}
+
+.service-icon-eye-pupil {
+  transform-origin: center;
+}
+
+.service-item:hover .service-icon-eye-outline {
+  animation: eye-open 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.service-item:hover .service-icon-eye-pupil {
+  animation: pupil-focus 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Case study sticky stacking cards */
+.case-study-card {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.case-study-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 20px 50px -12px rgba(11, 29, 75, 0.12);
+}
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px rgba(11, 29, 75, 0.12), 0 4px 12px -4px rgba(11, 29, 75, 0.06);
+}
+
+/* Image zoom on hover (for parent .group) */
+.img-zoom {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .img-zoom {
+  transform: scale(1.06);
+}
+
+/* Industry list item hover */
+.industry-item {
+  position: relative;
+}
+
+.industry-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scaleX(0);
+  width: 3px;
+  height: 60%;
+  background: var(--accent);
+  border-radius: 2px;
+  transform-origin: top;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.industry-item:hover::before {
+  transform: translateY(-50%) scaleX(1);
+}
+
+.industry-item:hover {
+  padding-left: 16px;
+  transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* FAQ accordion */
+.faq-icon {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease,
+              border-color 0.3s ease;
+}
+
+.faq-icon.open {
+  transform: rotate(45deg);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Navbar scroll state */
+.navbar-scrolled {
+  background: rgba(247, 235, 223, 0.97);
+  box-shadow: 0 1px 3px rgba(11, 29, 75, 0.06);
+}
+
+/* Testimonial active indicator */
+.testimonial-dot {
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease;
+}
+
+/* Partner logo hover — grayscale to color with opacity */
+.partner-logo {
+  opacity: 0.5;
+  filter: grayscale(100%);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.partner-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* Benefit card hover glow */
+.benefit-card {
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.benefit-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(204, 158, 73, 0.2);
+  box-shadow: 0 0 30px rgba(204, 158, 73, 0.06);
+}
+
+/* Footer links */
+.footer-link {
+  transition: color 0.25s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+}
+
+/* Social icons */
+.social-icon {
+  transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-icon:hover {
+  color: var(--accent);
+  border-color: rgba(204, 158, 73, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ── Focus ring ───────────────────────────────────────────────────── */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
