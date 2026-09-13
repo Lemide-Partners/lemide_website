@@ -109,31 +109,31 @@ export default function Home() {
         description="Explore case studies that showcase how we've helped businesses overcome challenges and achieve lasting success through tailored consulting solutions."
         studies={[
           {
-            title: "From incorporation to Series A in 90 days",
+            title: "The Compliance Maze That Almost Cost a Funding Close",
             excerpt:
-              "How we helped a fintech startup go from idea to fully operational — entity, banking, compliance — in record time. Millions saved through streamlined processes.",
-            tags: ["Fintech", "Legal", "Banking"],
-            href: "/case-studies/fintech-series-a",
-            imageSrc: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
-            imageAlt: "Fintech team collaborating in modern office",
+              "A payments startup building a Canada-to-Nigeria remittance corridor discovered, six weeks before closing, that they weren't actually cleared to move money. A fractional operations partner mapped the regulatory sequence and got the round closed on schedule.",
+            tags: ["Payments", "Compliance", "Fundraising"],
+            href: "/case-studies/compliance-maze",
+            imageSrc: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80",
+            imageAlt: "Financial documents and compliance review",
           },
           {
-            title: "Multi-state compliance for a healthcare platform",
+            title: "Audit Ready in 90 Days",
             excerpt:
-              "Navigating 12-state regulatory requirements for a telehealth startup scaling faster than their ops team could handle. Real-time dashboards and automated filings.",
-            tags: ["Healthcare", "Compliance", "Regulatory"],
-            href: "/case-studies/healthcare-compliance",
-            imageSrc: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
-            imageAlt: "Healthcare technology and compliance",
+              "A vertical SaaS company had grown fast on foundations nobody had time to formalize. When a term sheet arrived, an operations partner turned informal processes into audit-ready documentation before the closing date.",
+            tags: ["Due Diligence", "Fundraising", "Operations"],
+            href: "/case-studies/audit-ready-90-days",
+            imageSrc: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+            imageAlt: "Professional reviewing business documents",
           },
           {
-            title: "A logistics transformation that moves with precision",
+            title: "Two Countries, One Payroll",
             excerpt:
-              "How a manufacturing giant achieved end-to-end supply chain agility by land, air, and sea. Millions saved, smarter analytics, real-time dashboards, and streamlined operations.",
-            tags: ["Logistics", "Supply Chain", "Manufacturing"],
-            href: "/case-studies/logistics-transformation",
-            imageSrc: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
-            imageAlt: "Logistics and supply chain operations",
+              "A logistics and technology company with teams in Toronto and Lagos needed one coherent payroll process instead of two half-solutions. The fix wasn't a payroll app. It was someone who understood both regulatory systems.",
+            tags: ["Payroll", "Cross-Border", "Operations"],
+            href: "/case-studies/two-countries-one-payroll",
+            imageSrc: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
+            imageAlt: "International team collaboration",
           },
         ]}
       />
