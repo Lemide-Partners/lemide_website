@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Button } from "@/components/ui";
 import {
   Navbar,
-  MetricsBar,
   FooterCta,
   Footer,
   Reveal,
@@ -72,21 +71,25 @@ const team = [
     name: "Alex Morgan",
     title: "Managing Partner",
     experience: "15 years in startup ops",
+    imageSrc: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop&crop=faces",
   },
   {
     name: "Jordan Lee",
     title: "Head of Compliance",
     experience: "Former Big 4 advisory",
+    imageSrc: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop&crop=faces",
   },
   {
     name: "Taylor Chen",
     title: "Financial Operations Lead",
     experience: "Fintech & banking specialist",
+    imageSrc: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=800&fit=crop&crop=faces",
   },
   {
     name: "Sam Adeyemi",
     title: "Access & Infra Lead",
     experience: "Enterprise security background",
+    imageSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=faces",
   },
 ];
 
@@ -195,16 +198,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <MetricsBar
-        className="bg-white"
-        metrics={[
-          { value: "12+", label: "Years of Experience" },
-          { value: "50+", label: "Startups Supported" },
-          { value: "5+", label: "Countries Covered" },
-          { value: "30", label: "Days to Readiness" },
-        ]}
-      />
-
       {/* History / Our Story */}
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -248,22 +241,23 @@ export default function AboutPage() {
           <Reveal delay={0.3} animation="fade-up">
             <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4">
               {[
-                { alt: "Strategic planning session" },
-                { alt: "Team collaboration" },
-                { alt: "Office workspace" },
-                { alt: "Client meeting" },
+                { alt: "Strategic planning session", src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=450&fit=crop" },
+                { alt: "Team collaboration", src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=450&fit=crop" },
+                { alt: "Office workspace", src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=450&fit=crop" },
+                { alt: "Client meeting", src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=450&fit=crop" },
               ].map((img, i) => (
                 <div
                   key={i}
-                  className="relative aspect-[4/3] rounded-xl overflow-hidden bg-navy-50"
+                  className="relative aspect-[4/3] rounded-xl overflow-hidden bg-navy-50 group"
                 >
-                  <div className="w-full h-full flex items-center justify-center">
-                    <svg viewBox="0 0 120 80" fill="none" className="w-16 h-10 text-navy-200">
-                      <rect x="10" y="10" width="100" height="60" rx="4" stroke="currentColor" strokeWidth="1.5" />
-                      <circle cx="40" cy="35" r="10" stroke="currentColor" strokeWidth="1.5" />
-                      <path d="M10 55l25-15 20 10 25-20 30 25" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-                    </svg>
-                  </div>
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    unoptimized
+                    className="object-cover img-zoom"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
                 </div>
               ))}
             </div>
@@ -351,14 +345,15 @@ export default function AboutPage() {
             </div>
 
             <Reveal delay={0.2} animation="fade-left">
-              <div className="relative rounded-2xl overflow-hidden bg-navy-50 aspect-[3/4]">
-                <div className="w-full h-full flex items-center justify-center">
-                  <svg viewBox="0 0 120 160" fill="none" className="w-20 h-28 text-navy-200">
-                    <rect x="10" y="10" width="100" height="140" rx="8" stroke="currentColor" strokeWidth="1.5" />
-                    <circle cx="60" cy="60" r="20" stroke="currentColor" strokeWidth="1.5" />
-                    <path d="M30 130 C30 105, 90 105, 90 130" stroke="currentColor" strokeWidth="1.5" />
-                  </svg>
-                </div>
+              <div className="relative rounded-2xl overflow-hidden bg-navy-50 aspect-[3/4] group">
+                <Image
+                  src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=800&fit=crop"
+                  alt="Team working together"
+                  fill
+                  unoptimized
+                  className="object-cover img-zoom"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
             </Reveal>
           </div>
@@ -370,14 +365,15 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <Reveal animation="fade-right">
-              <div className="relative rounded-2xl overflow-hidden bg-navy-50 aspect-[4/5]">
-                <div className="w-full h-full flex items-center justify-center">
-                  <svg viewBox="0 0 120 150" fill="none" className="w-20 h-24 text-navy-200">
-                    <rect x="10" y="10" width="100" height="130" rx="8" stroke="currentColor" strokeWidth="1.5" />
-                    <circle cx="60" cy="55" r="22" stroke="currentColor" strokeWidth="1.5" />
-                    <path d="M25 125 C25 95, 95 95, 95 125" stroke="currentColor" strokeWidth="1.5" />
-                  </svg>
-                </div>
+              <div className="relative rounded-2xl overflow-hidden bg-navy-50 aspect-[4/5] group">
+                <Image
+                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=750&fit=crop&crop=faces"
+                  alt="Sola Oyegbile — Founder & Managing Partner"
+                  fill
+                  unoptimized
+                  className="object-cover img-zoom"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
             </Reveal>
 
@@ -504,14 +500,16 @@ export default function AboutPage() {
             {team.map((member, i) => (
               <Reveal key={member.name} delay={i * 0.1} animation="fade-up">
                 <div className="group">
-                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-navy-50">
-                    <div className="absolute inset-0 bg-deep-navy/20" />
-                    <div className="w-full h-full flex items-center justify-center">
-                      <svg viewBox="0 0 80 100" fill="none" className="w-12 h-16 text-navy-200">
-                        <circle cx="40" cy="35" r="16" stroke="currentColor" strokeWidth="1.5" />
-                        <path d="M15 90 C15 65, 65 65, 65 90" stroke="currentColor" strokeWidth="1.5" />
-                      </svg>
-                    </div>
+                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-navy-50 group">
+                    <Image
+                      src={member.imageSrc}
+                      alt={member.name}
+                      fill
+                      unoptimized
+                      className="object-cover img-zoom"
+                      sizes="(max-width: 1024px) 50vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-deep-navy/15 mix-blend-multiply" />
                   </div>
                   <div className="mt-4">
                     <div className="flex items-center gap-2">
