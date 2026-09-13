@@ -84,6 +84,7 @@ export function CaseStudies({
                           src={study.imageSrc}
                           alt={study.imageAlt ?? study.title}
                           fill
+                          unoptimized
                           className="object-cover img-zoom"
                           sizes="(max-width: 1024px) 100vw, 50vw"
                         />

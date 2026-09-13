@@ -63,14 +63,14 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="bg-background pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ background: "linear-gradient(135deg, #0B1D4B 0%, #091840 40%, #0B1D4B 70%, #1a2a52 100%)" }}>
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <span className="type-caption text-accent">About Us</span>
-          <h1 className="type-h1 text-foreground mt-4">
+          <h1 className="type-h1 text-inverse-fg mt-4">
             We build the backbone so founders can{" "}
             <span className="text-accent">build the future.</span>
           </h1>
-          <p className="type-body-lg text-muted-foreground mt-6 max-w-2xl mx-auto">
+          <p className="type-body-lg text-inverse-muted mt-6 max-w-2xl mx-auto">
             Lemide Partners is the operational infrastructure partner for
             early-stage startups. We handle incorporation, compliance, banking,
             tooling, and credentials — so you can focus on product and growth.

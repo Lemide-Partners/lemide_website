@@ -199,7 +199,7 @@ export function BenefitsGrid({
   items,
 }: BenefitsGridProps) {
   return (
-    <section className="bg-inverse-bg py-20 lg:py-28">
+    <section className="bg-inverse-bg pt-20 pb-10 lg:pt-28 lg:pb-14">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <Reveal animation="fade-up">

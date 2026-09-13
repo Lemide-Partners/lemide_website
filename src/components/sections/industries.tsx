@@ -178,6 +178,7 @@ export function Industries({
                   src={imageSrc}
                   alt={imageAlt}
                   fill
+                  unoptimized
                   className="object-cover img-zoom"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />

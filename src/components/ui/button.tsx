@@ -12,7 +12,7 @@ const variantStyles: Record<Variant, string> = {
   primary:
     "bg-primary text-primary-foreground hover:bg-navy-600 active:bg-navy-700",
   accent:
-    "bg-accent text-white hover:bg-gold-500 active:bg-gold-600",
+    "bg-accent text-black hover:bg-gold-500 active:bg-gold-600",
   outline:
     "border border-border bg-transparent text-foreground hover:bg-muted active:bg-navy-50",
   ghost:
