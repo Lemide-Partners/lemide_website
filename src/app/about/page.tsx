@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { Button } from "@/components/ui";
 import {
   Navbar,
   About,
@@ -63,22 +65,121 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 lg:pt-40 lg:pb-28" style={{ background: "linear-gradient(135deg, #0B1D4B 0%, #091840 40%, #0B1D4B 70%, #1a2a52 100%)" }}>
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <span className="type-caption text-accent">About Us</span>
-          <h1 className="type-h1 text-inverse-fg mt-4">
+      <section className="relative min-h-[85vh] flex items-end overflow-hidden">
+        {/* Fluid abstract background */}
+        <div className="absolute inset-0" style={{ background: "#050d28" }}>
+          {/* Base gradient layer */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "radial-gradient(ellipse 80% 60% at 60% 40%, #1a3a7a 0%, transparent 70%), radial-gradient(ellipse 60% 50% at 20% 60%, #0e2460 0%, transparent 60%), radial-gradient(ellipse 40% 35% at 80% 70%, #162d6b 0%, transparent 50%)",
+            }}
+          />
+          {/* Flowing silk shapes via SVG */}
+          <svg
+            className="absolute inset-0 w-full h-full"
+            viewBox="0 0 1440 800"
+            preserveAspectRatio="xMidYMid slice"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="silk1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#2a4a8a" stopOpacity="0.9" />
+                <stop offset="40%" stopColor="#1a3570" stopOpacity="0.7" />
+                <stop offset="100%" stopColor="#0B1D4B" stopOpacity="0.3" />
+              </linearGradient>
+              <linearGradient id="silk2" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#3355a0" stopOpacity="0.6" />
+                <stop offset="50%" stopColor="#1e3d7a" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#0B1D4B" stopOpacity="0.2" />
+              </linearGradient>
+              <linearGradient id="gold1" x1="0%" y1="0%" x2="100%" y2="80%">
+                <stop offset="0%" stopColor="#CC9E49" stopOpacity="0.5" />
+                <stop offset="50%" stopColor="#a07830" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#0B1D4B" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id="highlight" x1="40%" y1="0%" x2="60%" y2="100%">
+                <stop offset="0%" stopColor="#4a7ad4" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#1a3570" stopOpacity="0" />
+              </linearGradient>
+              <filter id="blur1">
+                <feGaussianBlur stdDeviation="20" />
+              </filter>
+              <filter id="blur2">
+                <feGaussianBlur stdDeviation="8" />
+              </filter>
+            </defs>
+            {/* Large flowing shape — left to center */}
+            <path
+              d="M-100 200 C200 80, 500 350, 700 150 C900 -50, 1100 300, 1500 100 L1500 800 L-100 800Z"
+              fill="url(#silk1)"
+              filter="url(#blur1)"
+            />
+            {/* Second silk wave — right side */}
+            <path
+              d="M400 800 C500 500, 800 200, 1100 350 C1400 500, 1500 150, 1600 300 L1600 800Z"
+              fill="url(#silk2)"
+              filter="url(#blur1)"
+            />
+            {/* Gold accent ribbon */}
+            <path
+              d="M-50 500 C200 300, 400 550, 600 350 C800 150, 900 400, 1100 250 C1300 100, 1400 350, 1550 200"
+              stroke="url(#gold1)"
+              strokeWidth="120"
+              fill="none"
+              filter="url(#blur1)"
+              strokeLinecap="round"
+            />
+            {/* Bright highlight wave */}
+            <path
+              d="M300 0 C450 200, 700 100, 900 300 C1100 500, 1200 200, 1440 350"
+              stroke="url(#highlight)"
+              strokeWidth="180"
+              fill="none"
+              filter="url(#blur1)"
+              strokeLinecap="round"
+            />
+            {/* Top-right bright orb */}
+            <circle cx="1100" cy="150" r="200" fill="#2a5099" fillOpacity="0.35" filter="url(#blur1)" />
+            {/* Small gold accent spot */}
+            <circle cx="250" cy="450" r="100" fill="#CC9E49" fillOpacity="0.15" filter="url(#blur1)" />
+          </svg>
+          {/* Vignette overlay */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, rgba(5,13,40,0.6) 100%)",
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pt-40 pb-16 lg:pt-48 lg:pb-24">
+          <span className="inline-block px-5 py-2 rounded-full bg-white/[0.08] border border-white/[0.12] type-caption text-white/90 backdrop-blur-sm mb-8">
+            About Us
+          </span>
+          <h1 className="type-h1 text-inverse-fg max-w-3xl" style={{ fontSize: "clamp(2.5rem, 5vw, 3.75rem)", lineHeight: 1.1 }}>
             We build the backbone so founders can{" "}
             <span className="text-accent">build the future.</span>
           </h1>
-          <p className="type-body-lg text-inverse-muted mt-6 max-w-2xl mx-auto">
+          <p className="type-body-lg text-inverse-muted mt-6 max-w-2xl">
             Lemide Partners is the operational infrastructure partner for
             early-stage startups. We handle incorporation, compliance, banking,
             tooling, and credentials — so you can focus on product and growth.
           </p>
+          <div className="mt-10">
+            <Link href="/contact">
+              <Button variant="outline" className="bg-white text-foreground border-white hover:bg-white/90">
+                Book a Call
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
       <MetricsBar
+        className="bg-white"
         metrics={[
           { value: "12+", label: "Years of Experience" },
           { value: "50+", label: "Startups Supported" },
@@ -89,6 +190,7 @@ export default function AboutPage() {
 
       {/* Story */}
       <About
+        className="bg-white py-20 lg:py-28"
         label="Our Story"
         heading="Born from the trenches of early-stage operations."
         description="Lemide was founded by operators who lived the pain of building startups from scratch — navigating state filings, banking hurdles, compliance deadlines, and credential management while trying to ship product. We built Lemide to be the partner we wished we had: one team, one point of contact, handling everything behind the scenes so founders never have to choose between moving fast and getting it right."
@@ -97,7 +199,7 @@ export default function AboutPage() {
       />
 
       {/* Values */}
-      <section className="bg-background py-20 lg:py-28">
+      <section className="bg-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center">
             <span className="type-caption text-accent">Our Values</span>

@@ -12,6 +12,7 @@ interface AboutProps {
   mediaSrc?: string;
   mediaType?: "image" | "video";
   mediaAlt?: string;
+  className?: string;
 }
 
 export function About({
@@ -23,9 +24,10 @@ export function About({
   mediaSrc,
   mediaType = "image",
   mediaAlt = "",
+  className,
 }: AboutProps) {
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className={className ?? "bg-background py-20 lg:py-28"}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
