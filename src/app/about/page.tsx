@@ -179,11 +179,11 @@ export default function AboutPage() {
           <span className="inline-block px-5 py-2 rounded-full bg-white/[0.08] border border-white/[0.12] type-caption text-white/90 backdrop-blur-sm mb-8">
             About Us
           </span>
-          <h1 className="type-h1 text-inverse-fg max-w-3xl" style={{ fontSize: "clamp(2.5rem, 5vw, 3.75rem)", lineHeight: 1.1 }}>
+          <h1 className="type-h1 text-inverse-fg max-w-[720px]" style={{ fontSize: "clamp(2.5rem, 5vw, 3.75rem)", lineHeight: 1.1, textWrap: "balance" }}>
             We build the backbone so founders can{" "}
             <span className="text-accent">build the future.</span>
           </h1>
-          <p className="type-body-lg text-inverse-muted mt-6 max-w-2xl">
+          <p className="type-body-lg text-inverse-muted mt-6 max-w-lg" style={{ textWrap: "pretty" }}>
             Lemide Partners is the operational infrastructure partner for
             early-stage startups. We handle incorporation, compliance, banking,
             tooling, and credentials — so you can focus on product and growth.
@@ -201,33 +201,31 @@ export default function AboutPage() {
       {/* History / Our Story */}
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-8 lg:gap-x-20 items-start">
+            <div className="lg:col-span-4">
               <Reveal animation="fade-right">
-                <span className="inline-block px-4 py-1.5 rounded-full border border-border type-caption text-foreground">
+                <span className="inline-block px-4 py-1.5 rounded-full border border-border type-caption text-foreground mb-6">
                   History
                 </span>
-              </Reveal>
-            </div>
-            <div>
-              <Reveal delay={0.1} animation="fade-left">
-                <h2 className="type-h2 text-foreground">
+                <h2 className="type-h2 text-foreground" style={{ textWrap: "balance" }}>
                   From vision to impact —{" "}
                   <span className="text-muted-foreground">
                     our journey in operational excellence.
                   </span>
                 </h2>
               </Reveal>
-              <Reveal delay={0.2} animation="fade-left">
-                <p className="type-body-lg text-muted-foreground mt-8">
+            </div>
+            <div className="lg:col-span-7 lg:col-start-6 lg:pt-14">
+              <Reveal delay={0.15} animation="fade-left">
+                <p className="type-body-lg text-muted-foreground" style={{ textWrap: "pretty" }}>
                   Lemide was founded by operators who lived the pain of building
                   startups from scratch — navigating state filings, banking
                   hurdles, compliance deadlines, and credential management while
                   trying to ship product.
                 </p>
               </Reveal>
-              <Reveal delay={0.3} animation="fade-left">
-                <p className="type-body-lg text-muted-foreground mt-6">
+              <Reveal delay={0.25} animation="fade-left">
+                <p className="type-body-lg text-muted-foreground mt-6" style={{ textWrap: "pretty" }}>
                   We built Lemide to be the partner we wished we had: one team,
                   one point of contact, handling everything behind the scenes so
                   founders never have to choose between moving fast and getting
@@ -268,31 +266,29 @@ export default function AboutPage() {
       {/* Advantages */}
       <section className="bg-white py-20 lg:py-28 border-t border-border/40">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-14">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-14">
             <Reveal animation="fade-up">
-              <h2 className="type-h2 text-foreground">
+              <h2 className="type-h2 text-foreground max-w-md" style={{ textWrap: "balance" }}>
                 Why leading startups{" "}
                 <span className="text-muted-foreground">choose Lemide.</span>
               </h2>
             </Reveal>
-            <div className="flex items-start justify-end">
-              <Reveal delay={0.1} animation="fade-up">
-                <span className="inline-block px-4 py-1.5 rounded-full border border-border type-caption text-foreground">
-                  Advantages
-                </span>
-              </Reveal>
-            </div>
+            <Reveal delay={0.1} animation="fade-up">
+              <span className="inline-block px-4 py-1.5 rounded-full border border-border type-caption text-foreground shrink-0">
+                Advantages
+              </span>
+            </Reveal>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {advantages.map((item, i) => (
               <Reveal key={item.title} delay={i * 0.12} animation="fade-up">
                 <div className="rounded-2xl bg-[#f8f8f6] p-8 lg:p-10 h-full group hover:shadow-lg transition-shadow duration-300">
-                  <div className="w-14 h-14 rounded-xl bg-deep-navy text-white flex items-center justify-center mb-8">
+                  <div className="w-14 h-14 rounded-xl bg-deep-navy text-white flex items-center justify-center mb-6">
                     {item.icon}
                   </div>
-                  <h3 className="type-h4 text-foreground">{item.title}</h3>
-                  <p className="type-body text-muted-foreground mt-4 leading-relaxed">
+                  <h3 className="type-h5 text-foreground">{item.title}</h3>
+                  <p className="type-body text-muted-foreground mt-3" style={{ textWrap: "pretty" }}>
                     {item.description}
                   </p>
                 </div>
@@ -310,13 +306,13 @@ export default function AboutPage() {
               <span className="type-caption text-accent">Our Values</span>
             </Reveal>
             <Reveal delay={0.1} animation="fade-up">
-              <h2 className="type-h2 text-foreground mt-4 max-w-2xl mx-auto">
+              <h2 className="type-h2 text-foreground mt-4 max-w-lg mx-auto" style={{ textWrap: "balance" }}>
                 Principles that guide{" "}
                 <span className="text-muted-foreground">every engagement.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.15} animation="fade-up">
-              <p className="type-body-lg text-muted-foreground mt-6 max-w-xl mx-auto">
+              <p className="type-body-lg text-muted-foreground mt-6 max-w-md mx-auto" style={{ textWrap: "pretty" }}>
                 These aren&apos;t aspirational slogans — they&apos;re the operational
                 standards we hold ourselves to on every project.
               </p>
@@ -324,7 +320,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="space-y-8">
+            <div className="space-y-10">
               {values.map((value, i) => (
                 <Reveal key={value.title} delay={i * 0.12} animation="fade-right">
                   <div className="flex gap-5">
@@ -335,7 +331,7 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <h3 className="type-h5 text-foreground">{value.title}</h3>
-                      <p className="type-body text-muted-foreground mt-2">
+                      <p className="type-body text-muted-foreground mt-2" style={{ textWrap: "pretty" }}>
                         {value.description}
                       </p>
                     </div>
@@ -377,20 +373,20 @@ export default function AboutPage() {
               </div>
             </Reveal>
 
-            <div>
+            <div className="lg:max-w-lg">
               <Reveal animation="fade-left">
                 <span className="inline-block px-4 py-1.5 rounded-full border border-border type-caption text-foreground">
                   Leadership
                 </span>
               </Reveal>
               <Reveal delay={0.1} animation="fade-left">
-                <h2 className="type-h2 text-foreground mt-6">
+                <h2 className="type-h2 text-foreground mt-6" style={{ textWrap: "balance" }}>
                   A message from{" "}
                   <span className="text-accent">our founder.</span>
                 </h2>
               </Reveal>
               <Reveal delay={0.2} animation="fade-left">
-                <blockquote className="mt-8 text-muted-foreground type-body-lg leading-relaxed border-l-2 border-accent pl-6">
+                <blockquote className="mt-8 text-muted-foreground type-body-lg border-l-2 border-accent pl-6" style={{ lineHeight: 1.8, textWrap: "pretty" }}>
                   &ldquo;I built Lemide because I saw too many brilliant founders
                   burning out on operational busywork — state filings, banking
                   setups, compliance deadlines — instead of building the products
@@ -403,7 +399,7 @@ export default function AboutPage() {
                   <div>
                     <p className="type-h5 text-foreground">Sola Oyegbile</p>
                     <p className="type-body-sm text-muted-foreground">
-                      Founder & Managing Partner
+                      Founder &amp; Managing Partner
                     </p>
                   </div>
                   <a
@@ -432,13 +428,13 @@ export default function AboutPage() {
               <span className="type-caption text-accent">How We Work</span>
             </Reveal>
             <Reveal delay={0.1} animation="fade-up">
-              <h2 className="type-h2 text-inverse-fg mt-4 max-w-2xl mx-auto">
+              <h2 className="type-h2 text-inverse-fg mt-4 max-w-md mx-auto" style={{ textWrap: "balance" }}>
                 From first call to{" "}
                 <span className="text-accent">full operations.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.15} animation="fade-up">
-              <p className="type-body-lg text-inverse-muted mt-6 max-w-xl mx-auto">
+              <p className="type-body-lg text-inverse-muted mt-6 max-w-sm mx-auto" style={{ textWrap: "pretty" }}>
                 A streamlined engagement model designed for speed and clarity.
               </p>
             </Reveal>
@@ -471,7 +467,7 @@ export default function AboutPage() {
                     {phase.step}
                   </span>
                   <h3 className="type-h5 text-inverse-fg mt-4">{phase.title}</h3>
-                  <p className="type-body text-inverse-muted mt-3">
+                  <p className="type-body text-inverse-muted mt-3" style={{ textWrap: "pretty" }}>
                     {phase.description}
                   </p>
                 </div>
@@ -484,12 +480,12 @@ export default function AboutPage() {
       {/* Team */}
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-14">
             <Reveal animation="fade-up">
               <span className="type-caption text-accent">Our Team</span>
             </Reveal>
             <Reveal delay={0.1} animation="fade-up">
-              <h2 className="type-h2 text-foreground mt-4 max-w-2xl mx-auto">
+              <h2 className="type-h2 text-foreground mt-4 max-w-sm mx-auto" style={{ textWrap: "balance" }}>
                 Operators who{" "}
                 <span className="text-muted-foreground">understand the grind.</span>
               </h2>
@@ -500,7 +496,7 @@ export default function AboutPage() {
             {team.map((member, i) => (
               <Reveal key={member.name} delay={i * 0.1} animation="fade-up">
                 <div className="group">
-                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-navy-50 group">
+                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-navy-50">
                     <Image
                       src={member.imageSrc}
                       alt={member.name}
@@ -513,15 +509,15 @@ export default function AboutPage() {
                   </div>
                   <div className="mt-4">
                     <div className="flex items-center gap-2">
-                      <h3 className="type-h6 text-foreground">{member.name}</h3>
-                      <svg className="w-4 h-4 text-muted-foreground/50 hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                      <h3 className="type-h6 text-foreground whitespace-nowrap">{member.name}</h3>
+                      <svg className="w-3.5 h-3.5 shrink-0 text-muted-foreground/50 hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                       </svg>
                     </div>
-                    <p className="type-body-sm text-muted-foreground mt-0.5">
+                    <p className="type-body-sm text-muted-foreground mt-1">
                       {member.title}
                     </p>
-                    <p className="type-body-sm text-muted-foreground/70">
+                    <p className="type-body-sm text-muted-foreground/70 mt-0.5">
                       {member.experience}
                     </p>
                   </div>
