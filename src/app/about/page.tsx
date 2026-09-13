@@ -6,6 +6,7 @@ import {
   Navbar,
   FooterCta,
   Footer,
+  Faq,
   Reveal,
 } from "@/components/sections";
 
@@ -68,12 +69,6 @@ const values = [
 
 const team = [
   {
-    name: "Alex Morgan",
-    title: "Managing Partner",
-    experience: "15 years in startup ops",
-    imageSrc: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop&crop=faces",
-  },
-  {
     name: "Jordan Lee",
     title: "Head of Compliance",
     experience: "Former Big 4 advisory",
@@ -93,7 +88,46 @@ const team = [
   },
 ];
 
+const partnerLogos = [
+  { name: "Partner 1", src: "/assets/images/partners/1.png" },
+  { name: "Partner 2", src: "/assets/images/partners/2.png" },
+  { name: "Partner 3", src: "/assets/images/partners/3.png" },
+  { name: "Partner 4", src: "/assets/images/partners/4.png" },
+  { name: "Partner 5", src: "/assets/images/partners/5.png" },
+  { name: "Partner 6", src: "/assets/images/partners/6.png" },
+];
+
+const faqItems = [
+  {
+    question: "What types of startups do you work with?",
+    answer:
+      "We work with early-stage startups across industries — from pre-seed to Series A. Whether you're a solo founder or a small team, we specialize in getting your operational foundation right so you can focus on growth.",
+  },
+  {
+    question: "How quickly can you get us set up?",
+    answer:
+      "Most entity formations and basic operational setups are completed within 2–4 weeks. More complex multi-state or international filings may take longer, but we always provide a clear timeline upfront.",
+  },
+  {
+    question: "Do you replace our legal or accounting team?",
+    answer:
+      "No. We complement your existing advisors by handling the day-to-day operational execution — filings, credential management, banking setup — so your legal and financial teams can focus on strategy.",
+  },
+  {
+    question: "What does a typical engagement look like?",
+    answer:
+      "It starts with a discovery call to understand your needs. From there, we scope a buildout plan covering entity setup, compliance, banking, and tooling. Once launched, we transition to an ongoing retainer for monitoring and scaling.",
+  },
+  {
+    question: "How do you handle confidential information?",
+    answer:
+      "Security and discretion are core to our work. We use enterprise-grade access management, encrypted credential storage, and strict need-to-know protocols for all client data and sensitive operations.",
+  },
+];
+
 export default function AboutPage() {
+  const tripled = [...partnerLogos, ...partnerLogos, ...partnerLogos];
+
   return (
     <>
       <Navbar />
@@ -179,21 +213,23 @@ export default function AboutPage() {
           <span className="inline-block px-5 py-2 rounded-full bg-white/[0.08] border border-white/[0.12] type-caption text-white/90 backdrop-blur-sm mb-8">
             About Us
           </span>
-          <h1 className="type-h1 text-inverse-fg max-w-[720px]" style={{ fontSize: "clamp(2.5rem, 5vw, 3.75rem)", lineHeight: 1.1, textWrap: "balance" }}>
+          <h1 className="type-h1 text-inverse-fg max-w-[640px]" style={{ fontSize: "clamp(2.5rem, 5vw, 3.75rem)", lineHeight: 1.1 }}>
             We build the backbone so founders can{" "}
             <span className="text-accent">build the future.</span>
           </h1>
-          <p className="type-body-lg text-inverse-muted mt-6 max-w-lg" style={{ textWrap: "pretty" }}>
-            Lemide Partners is the operational infrastructure partner for
-            early-stage startups. We handle incorporation, compliance, banking,
-            tooling, and credentials — so you can focus on product and growth.
-          </p>
-          <div className="mt-10">
-            <Link href="/contact">
-              <Button variant="outline" className="bg-white text-foreground border-white hover:bg-white/90">
-                Book a Call
-              </Button>
-            </Link>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mt-6">
+            <p className="type-body-lg text-inverse-muted max-w-[640px]" style={{ textWrap: "pretty" }}>
+              Lemide Partners is the operational infrastructure partner for
+              early-stage startups. We handle incorporation, compliance, banking,
+              tooling, and credentials — so you can focus on product and growth.
+            </p>
+            <div className="shrink-0">
+              <Link href="/contact">
+                <Button variant="outline" className="bg-white text-foreground border-white hover:bg-white/90">
+                  Book a Call
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -296,6 +332,28 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
+
+        {/* Partner logos marquee */}
+        <Reveal delay={0.3} animation="fade-up">
+          <div className="mt-16 relative marquee-container overflow-hidden">
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-white to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-white to-transparent" />
+            <div className="flex animate-marquee-slow w-max items-center gap-16">
+              {tripled.map((logo, i) => (
+                <div key={`${logo.name}-${i}`} className="shrink-0">
+                  <Image
+                    src={logo.src}
+                    alt={logo.name}
+                    width={120}
+                    height={40}
+                    className="h-9 lg:h-11 w-auto object-contain"
+                    style={{ filter: "brightness(0)" }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* Values */}
@@ -319,7 +377,7 @@ export default function AboutPage() {
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="space-y-10">
               {values.map((value, i) => (
                 <Reveal key={value.title} delay={i * 0.12} animation="fade-right">
@@ -341,7 +399,7 @@ export default function AboutPage() {
             </div>
 
             <Reveal delay={0.2} animation="fade-left">
-              <div className="relative rounded-2xl overflow-hidden bg-navy-50 aspect-[3/4] group">
+              <div className="relative rounded-2xl overflow-hidden bg-navy-50 aspect-[4/3] group">
                 <Image
                   src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=800&fit=crop"
                   alt="Team working together"
@@ -352,70 +410,6 @@ export default function AboutPage() {
                 />
               </div>
             </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership */}
-      <section className="bg-white py-20 lg:py-28 border-t border-border/40">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <Reveal animation="fade-right">
-              <div className="relative rounded-2xl overflow-hidden bg-navy-50 aspect-[4/5] group">
-                <Image
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=750&fit=crop&crop=faces"
-                  alt="Sola Oyegbile — Founder & Managing Partner"
-                  fill
-                  unoptimized
-                  className="object-cover img-zoom"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </Reveal>
-
-            <div className="lg:max-w-lg">
-              <Reveal animation="fade-left">
-                <span className="inline-block px-4 py-1.5 rounded-full border border-border type-caption text-foreground">
-                  Leadership
-                </span>
-              </Reveal>
-              <Reveal delay={0.1} animation="fade-left">
-                <h2 className="type-h2 text-foreground mt-6" style={{ textWrap: "balance" }}>
-                  A message from{" "}
-                  <span className="text-accent">our founder.</span>
-                </h2>
-              </Reveal>
-              <Reveal delay={0.2} animation="fade-left">
-                <blockquote className="mt-8 text-muted-foreground type-body-lg border-l-2 border-accent pl-6" style={{ lineHeight: 1.8, textWrap: "pretty" }}>
-                  &ldquo;I built Lemide because I saw too many brilliant founders
-                  burning out on operational busywork — state filings, banking
-                  setups, compliance deadlines — instead of building the products
-                  the world needs. We exist to carry that weight so they
-                  don&apos;t have to.&rdquo;
-                </blockquote>
-              </Reveal>
-              <Reveal delay={0.3} animation="fade-left">
-                <div className="mt-8 flex items-center gap-4">
-                  <div>
-                    <p className="type-h5 text-foreground">Sola Oyegbile</p>
-                    <p className="type-body-sm text-muted-foreground">
-                      Founder &amp; Managing Partner
-                    </p>
-                  </div>
-                  <a
-                    href="https://www.linkedin.com/in/solaoyegbile"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors duration-300"
-                    aria-label="Sola Oyegbile LinkedIn"
-                  >
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                  </a>
-                </div>
-              </Reveal>
-            </div>
           </div>
         </div>
       </section>
@@ -477,56 +471,120 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="bg-white py-20 lg:py-28">
+      {/* Founder + Team */}
+      <section className="bg-white py-20 lg:py-28 border-t border-border/40">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <Reveal animation="fade-up">
-              <span className="type-caption text-accent">Our Team</span>
+          {/* Founder */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <Reveal animation="fade-right">
+              <div className="relative rounded-2xl overflow-hidden bg-navy-50 aspect-[4/3.4] group">
+                <Image
+                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=750&fit=crop&crop=faces"
+                  alt="Sola Oyegbile — Founder & Managing Partner"
+                  fill
+                  unoptimized
+                  className="object-cover img-zoom"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </Reveal>
-            <Reveal delay={0.1} animation="fade-up">
-              <h2 className="type-h2 text-foreground mt-4 max-w-sm mx-auto" style={{ textWrap: "balance" }}>
-                Operators who{" "}
-                <span className="text-muted-foreground">understand the grind.</span>
-              </h2>
-            </Reveal>
-          </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {team.map((member, i) => (
-              <Reveal key={member.name} delay={i * 0.1} animation="fade-up">
-                <div className="group">
-                  <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-navy-50">
-                    <Image
-                      src={member.imageSrc}
-                      alt={member.name}
-                      fill
-                      unoptimized
-                      className="object-cover img-zoom"
-                      sizes="(max-width: 1024px) 50vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-deep-navy/15 mix-blend-multiply" />
-                  </div>
-                  <div className="mt-4">
-                    <div className="flex items-center gap-2">
-                      <h3 className="type-h6 text-foreground whitespace-nowrap">{member.name}</h3>
-                      <svg className="w-3.5 h-3.5 shrink-0 text-muted-foreground/50 hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                      </svg>
-                    </div>
-                    <p className="type-body-sm text-muted-foreground mt-1">
-                      {member.title}
+            <div className="lg:max-w-lg">
+              <Reveal animation="fade-left">
+                <span className="inline-block px-4 py-1.5 rounded-full border border-border type-caption text-foreground">
+                  Leadership
+                </span>
+              </Reveal>
+              <Reveal delay={0.1} animation="fade-left">
+                <h2 className="type-h2 text-foreground mt-6" style={{ textWrap: "balance" }}>
+                  A message from{" "}
+                  <span className="text-accent">our founder.</span>
+                </h2>
+              </Reveal>
+              <Reveal delay={0.2} animation="fade-left">
+                <blockquote className="mt-8 text-muted-foreground type-body-lg border-l-2 border-accent pl-6" style={{ lineHeight: 1.8, textWrap: "pretty" }}>
+                  &ldquo;I built Lemide because I saw too many brilliant founders
+                  burning out on operational busywork — state filings, banking
+                  setups, compliance deadlines — instead of building the products
+                  the world needs. We exist to carry that weight so they
+                  don&apos;t have to.&rdquo;
+                </blockquote>
+              </Reveal>
+              <Reveal delay={0.3} animation="fade-left">
+                <div className="mt-8 flex items-center gap-4">
+                  <div>
+                    <p className="type-h5 text-foreground">Sola Oyegbile</p>
+                    <p className="type-body-sm text-muted-foreground">
+                      Founder &amp; Managing Partner
                     </p>
-                    <p className="type-body-sm text-muted-foreground/70 mt-0.5">
-                      {member.experience}
-                    </p>
                   </div>
+                  <a
+                    href="https://www.linkedin.com/in/solaoyegbile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors duration-300"
+                    aria-label="Sola Oyegbile LinkedIn"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </a>
                 </div>
               </Reveal>
-            ))}
+            </div>
+          </div>
+
+          {/* Team (extension of founder section) */}
+          <div className="mt-20 lg:mt-28">
+            <Reveal animation="fade-up">
+              <h3 className="type-h3 text-foreground mb-10" style={{ textWrap: "balance" }}>
+                Operators who understand the grind —{" "}
+                <span className="text-muted-foreground">meet our team.</span>
+              </h3>
+            </Reveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8">
+              {team.map((member, i) => (
+                <Reveal key={member.name} delay={i * 0.1} animation="fade-up">
+                  <div className="group">
+                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-navy-50">
+                      <Image
+                        src={member.imageSrc}
+                        alt={member.name}
+                        fill
+                        unoptimized
+                        className="object-cover img-zoom"
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                      />
+                      <div className="absolute inset-0 bg-deep-navy/15 mix-blend-multiply" />
+                    </div>
+                    <div className="mt-4">
+                      <div className="flex items-center gap-2">
+                        <h4 className="type-h6 text-foreground whitespace-nowrap">{member.name}</h4>
+                        <svg className="w-3.5 h-3.5 shrink-0 text-muted-foreground/50 hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                      </div>
+                      <p className="type-body-sm text-muted-foreground mt-1">
+                        {member.title}
+                      </p>
+                      <p className="type-body-sm text-muted-foreground/70 mt-0.5">
+                        {member.experience}
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <Faq
+        heading="Questions about working with us?"
+        items={faqItems}
+      />
 
       <FooterCta
         heading="Ready to offload your operations?"
