@@ -11,9 +11,9 @@ import {
 } from "@/components/sections";
 
 export const metadata: Metadata = {
-  title: "About — Lemide Partners",
+  title: "About | Lemide Partners",
   description:
-    "Learn about Lemide Partners — the operational infrastructure partner helping early-stage startups build, launch, and scale with confidence.",
+    "Learn about Lemide Partners, the operational infrastructure partner helping early-stage startups build, launch, and scale with confidence.",
 };
 
 const advantages = [
@@ -25,7 +25,7 @@ const advantages = [
     ),
     title: "Confidentiality & Compliance",
     description:
-      "We handle sensitive operations — banking, credentials, compliance filings — with the discretion and rigor your startup demands.",
+      "We handle sensitive operations (banking, credentials, compliance filings) with the discretion and rigor your startup demands.",
   },
   {
     icon: (
@@ -53,7 +53,7 @@ const values = [
   {
     title: "Speed Without Shortcuts",
     description:
-      "We move fast because startups demand it — but never at the expense of compliance, accuracy, or quality.",
+      "We move fast because startups demand it, but never at the expense of compliance, accuracy, or quality.",
   },
   {
     title: "Trust & Transparency",
@@ -63,7 +63,7 @@ const values = [
   {
     title: "Systems Over Heroics",
     description:
-      "We build repeatable processes and durable infrastructure — not one-off fixes that break at scale.",
+      "We build repeatable processes and durable infrastructure, not one-off fixes that break at scale.",
   },
 ];
 
@@ -101,17 +101,17 @@ const faqItems = [
   {
     question: "What types of startups do you work with?",
     answer:
-      "We work with early-stage startups across industries — from pre-seed to Series A. Whether you're a solo founder or a small team, we specialize in getting your operational foundation right so you can focus on growth.",
+      "We work with early-stage startups across industries, from pre-seed to Series A. Whether you're a solo founder or a small team, we specialize in getting your operational foundation right so you can focus on growth.",
   },
   {
     question: "How quickly can you get us set up?",
     answer:
-      "Most entity formations and basic operational setups are completed within 2–4 weeks. More complex multi-state or international filings may take longer, but we always provide a clear timeline upfront.",
+      "Most entity formations and basic operational setups are completed within 2 to 4 weeks. More complex multi-state or international filings may take longer, but we always provide a clear timeline upfront.",
   },
   {
     question: "Do you replace our legal or accounting team?",
     answer:
-      "No. We complement your existing advisors by handling the day-to-day operational execution — filings, credential management, banking setup — so your legal and financial teams can focus on strategy.",
+      "No. We complement your existing advisors by handling the day-to-day operational execution (filings, credential management, banking setup) so your legal and financial teams can focus on strategy.",
   },
   {
     question: "What does a typical engagement look like?",
@@ -213,15 +213,15 @@ export default function AboutPage() {
           <span className="inline-block px-5 py-2 rounded-full bg-white/[0.08] border border-white/[0.12] type-caption text-white/90 backdrop-blur-sm mb-8">
             About Us
           </span>
-          <h1 className="type-h1 text-inverse-fg max-w-[640px]" style={{ fontSize: "clamp(2.5rem, 5vw, 3.75rem)", lineHeight: 1.1 }}>
+          <h1 className="type-h1 text-inverse-fg max-w-4xl" style={{ fontSize: "clamp(2.5rem, 5vw, 3.75rem)", lineHeight: 1.1 }}>
             We build the backbone so founders can{" "}
             <span className="text-accent">build the future.</span>
           </h1>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mt-6">
-            <p className="type-body-lg text-inverse-muted max-w-[640px]" style={{ textWrap: "pretty" }}>
+            <p className="type-body-lg text-inverse-muted max-w-4xl" style={{ textWrap: "pretty" }}>
               Lemide Partners is the operational infrastructure partner for
               early-stage startups. We handle incorporation, compliance, banking,
-              tooling, and credentials — so you can focus on product and growth.
+              tooling, and credentials so you can focus on product and growth.
             </p>
             <div className="shrink-0">
               <Link href="/contact">
@@ -243,8 +243,8 @@ export default function AboutPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full border border-border type-caption text-foreground mb-6">
                   History
                 </span>
-                <h2 className="type-h2 text-foreground" style={{ textWrap: "balance" }}>
-                  From vision to impact —{" "}
+                <h2 className="type-h2 text-foreground">
+                  From vision to impact,{" "}
                   <span className="text-muted-foreground">
                     our journey in operational excellence.
                   </span>
@@ -255,7 +255,7 @@ export default function AboutPage() {
               <Reveal delay={0.15} animation="fade-left">
                 <p className="type-body-lg text-muted-foreground" style={{ textWrap: "pretty" }}>
                   Lemide was founded by operators who lived the pain of building
-                  startups from scratch — navigating state filings, banking
+                  startups from scratch: navigating state filings, banking
                   hurdles, compliance deadlines, and credential management while
                   trying to ship product.
                 </p>
@@ -371,7 +371,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={0.15} animation="fade-up">
               <p className="type-body-lg text-muted-foreground mt-6 max-w-md mx-auto" style={{ textWrap: "pretty" }}>
-                These aren&apos;t aspirational slogans — they&apos;re the operational
+                These aren&apos;t aspirational slogans. They&apos;re the operational
                 standards we hold ourselves to on every project.
               </p>
             </Reveal>
@@ -440,7 +440,7 @@ export default function AboutPage() {
                 step: "01",
                 title: "Discover",
                 description:
-                  "We learn your business, stage, and operational gaps through a focused intake call. No questionnaires — just a conversation.",
+                  "We learn your business, stage, and operational gaps through a focused intake call. No questionnaires, just a conversation.",
               },
               {
                 step: "02",
@@ -452,7 +452,7 @@ export default function AboutPage() {
                 step: "03",
                 title: "Launch & Grow",
                 description:
-                  "We transition to an ongoing retainer — monitoring deadlines, managing renewals, and scaling your ops as you grow.",
+                  "We transition to an ongoing retainer, monitoring deadlines, managing renewals, and scaling your ops as you grow.",
               },
             ].map((phase, i) => (
               <Reveal key={phase.step} delay={i * 0.12} animation="fade-up">
@@ -480,7 +480,7 @@ export default function AboutPage() {
               <div className="relative rounded-2xl overflow-hidden bg-navy-50 aspect-[4/3.4] group">
                 <Image
                   src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=750&fit=crop&crop=faces"
-                  alt="Sola Oyegbile — Founder & Managing Partner"
+                  alt="Sola Oyegbile, Founder and Managing Partner"
                   fill
                   unoptimized
                   className="object-cover img-zoom"
@@ -504,8 +504,8 @@ export default function AboutPage() {
               <Reveal delay={0.2} animation="fade-left">
                 <blockquote className="mt-8 text-muted-foreground type-body-lg border-l-2 border-accent pl-6" style={{ lineHeight: 1.8, textWrap: "pretty" }}>
                   &ldquo;I built Lemide because I saw too many brilliant founders
-                  burning out on operational busywork — state filings, banking
-                  setups, compliance deadlines — instead of building the products
+                  burning out on operational busywork (state filings, banking
+                  setups, compliance deadlines) instead of building the products
                   the world needs. We exist to carry that weight so they
                   don&apos;t have to.&rdquo;
                 </blockquote>
@@ -538,8 +538,8 @@ export default function AboutPage() {
           <div className="mt-20 lg:mt-28">
             <Reveal animation="fade-up">
               <h3 className="type-h3 text-foreground mb-10" style={{ textWrap: "balance" }}>
-                Operators who understand the grind —{" "}
-                <span className="text-muted-foreground">meet our team.</span>
+                Operators who understand the grind.{" "}
+                <span className="text-muted-foreground">Meet our team.</span>
               </h3>
             </Reveal>
 
