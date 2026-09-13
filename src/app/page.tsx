@@ -184,13 +184,12 @@ export default function Home() {
         headingAccent="build with confidence."
         description="Working alongside the best founders, accelerators, and venture firms in the ecosystem."
         partners={[
-          { name: "Partner 1", logoSrc: "/assets/images/partners/partner-1.svg" },
-          { name: "Partner 2", logoSrc: "/assets/images/partners/partner-2.svg" },
-          { name: "Partner 3", logoSrc: "/assets/images/partners/partner-3.svg" },
-          { name: "Partner 4", logoSrc: "/assets/images/partners/partner-4.svg" },
-          { name: "Partner 5", logoSrc: "/assets/images/partners/partner-5.svg" },
-          { name: "Partner 6", logoSrc: "/assets/images/partners/partner-6.svg" },
-          { name: "Partner 7", logoSrc: "/assets/images/partners/partner-7.svg" },
+          { name: "Krunchpark", logoSrc: "/assets/images/partners/1.png" },
+          { name: "Partner 2", logoSrc: "/assets/images/partners/2.png" },
+          { name: "Partner 3", logoSrc: "/assets/images/partners/3.png" },
+          { name: "Partner 4", logoSrc: "/assets/images/partners/4.png" },
+          { name: "Partner 5", logoSrc: "/assets/images/partners/5.png" },
+          { name: "Partner 6", logoSrc: "/assets/images/partners/6.png" },
         ]}
       />
 

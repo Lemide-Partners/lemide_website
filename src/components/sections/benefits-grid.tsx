@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { Reveal } from "./reveal";
 
 interface BenefitMetric {
@@ -76,39 +77,28 @@ function AnimatedMetricValue({ value }: { value: string }) {
 }
 
 function AvatarStack() {
-  const avatars = [
-    { skin: "#D4A574", hair: "#3D2314", shirt: "#CC9E49", initials: "AM" },
-    { skin: "#F5D0A9", hair: "#1A1A2E", shirt: "#2E4578", initials: "JL" },
-    { skin: "#8D5524", hair: "#0D0D0D", shirt: "#51699F", initials: "TC" },
-    { skin: "#E8C39E", hair: "#4A2C17", shirt: "#0B1D4B", initials: "SA" },
-    { skin: "#C68642", hair: "#1B1B2F", shirt: "#8B9BBF", initials: "CR" },
+  const badges = [
+    "/assets/images/badge1.jpeg",
+    "/assets/images/badge2.jpeg",
+    "/assets/images/badge3.png",
+    "/assets/images/badge4.png",
+    "/assets/images/badge5.png",
   ];
   return (
     <div className="flex -space-x-3">
-      {avatars.map((a, i) => (
+      {badges.map((src, i) => (
         <div
           key={i}
           className="w-11 h-11 rounded-full border-[2.5px] border-navy-800 overflow-hidden shadow-md"
           style={{ zIndex: 5 - i }}
         >
-          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="44" height="44" rx="22" fill={a.shirt} />
-            <circle cx="22" cy="17" r="8" fill={a.skin} />
-            <ellipse cx="22" cy="17" rx="8" ry="8" fill={a.skin} />
-            <circle cx="19" cy="16" r="1" fill="#1a1a2e" />
-            <circle cx="25" cy="16" r="1" fill="#1a1a2e" />
-            <path d="M20 19.5 Q22 21 24 19.5" stroke="#1a1a2e" strokeWidth="0.7" fill="none" strokeLinecap="round" />
-            <ellipse cx="22" cy="38" rx="14" ry="12" fill={a.shirt} />
-            <path d={
-              i === 0 ? "M14 14c0-5 3.5-9 8-9s8 4 8 9c0 1-1 2-2 1-.5-3-2.5-5-6-5s-5.5 2-6 5c-1 1-2 0-2-1z" :
-              i === 1 ? "M13 16c0-7 4-12 9-12s9 5 9 12c-1-1-3-5-9-5s-8 4-9 5z" :
-              i === 2 ? "M14 13c0-4 3-7 8-7s8 3 8 7c0 2-1 3-2 2-.5-2-2.5-4-6-4s-5.5 2-6 4c-1 1-2 0-2-2z" :
-              i === 3 ? "M15 17c-1-8 3-13 7-13s8 5 7 13c-.5-3-3-6-7-6s-6.5 3-7 6z" :
-              "M14 14c1-6 4-9 8-9s7 3 8 9c-2-2-4-5-8-5s-6 3-8 5z"
-            } fill={a.hair} />
-            {i === 1 && <ellipse cx="15" cy="17" rx="1.5" ry="2" fill={a.skin} />}
-            {i === 1 && <ellipse cx="29" cy="17" rx="1.5" ry="2" fill={a.skin} />}
-          </svg>
+          <Image
+            src={src}
+            alt=""
+            width={44}
+            height={44}
+            className="w-full h-full object-cover"
+          />
         </div>
       ))}
     </div>
