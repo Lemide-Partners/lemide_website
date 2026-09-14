@@ -121,6 +121,7 @@ body {
   line-height: 1.05;
   font-weight: 300;
   letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .type-h2 {
@@ -129,6 +130,7 @@ body {
   line-height: 1.15;
   font-weight: 400;
   letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
 .type-h3 {
@@ -137,6 +139,7 @@ body {
   line-height: 1.2;
   font-weight: 400;
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 .type-h4 {
