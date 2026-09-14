@@ -53,7 +53,7 @@ export function Reveal({
   };
 
   return (
-    <div ref={ref} className={className} style={style}>
+    <div ref={ref} className={className} style={style} data-revealed={inView || undefined}>
       {children}
     </div>
   );

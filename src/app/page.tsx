@@ -50,35 +50,35 @@ export default function Home() {
           {
             title: "Compliance & Filings",
             description:
-              "State registrations, annual filings, regulatory reporting, and ongoing compliance management — handled end-to-end so you never miss a deadline.",
+              "State registrations, annual filings, regulatory reporting, and ongoing compliance management, handled end-to-end so you never miss a deadline.",
             href: "/services/compliance",
             icon: "compliance_filings",
           },
           {
             title: "Financial Operations",
             description:
-              "Bank account setup, payment infrastructure, bookkeeping coordination, and treasury operations — from day one through Series B.",
+              "Bank account setup, payment infrastructure, bookkeeping coordination, and treasury operations, from day one through Series B.",
             href: "/services/financial-operations",
             icon: "financial_ops",
           },
           {
             title: "Access Governance Automation",
             description:
-              "Automated provisioning, role-based access controls, and credential management across your entire tool stack — secure by default.",
+              "Automated provisioning, role-based access controls, and credential management across your entire tool stack. Secure by default.",
             href: "/services/access-governance",
             icon: "access_governance",
           },
           {
             title: "Workflow Automation",
             description:
-              "Streamlined onboarding, vendor management, document workflows, and operational processes — built to scale without adding headcount.",
+              "Streamlined onboarding, vendor management, document workflows, and operational processes. Built to scale without adding headcount.",
             href: "/services/workflow-automation",
             icon: "workflow_automation",
           },
           {
             title: "Operations Visibility",
             description:
-              "Real-time dashboards, compliance status tracking, and operational reporting — so you always know where things stand.",
+              "Real-time dashboards, compliance status tracking, and operational reporting, so you always know where things stand.",
             href: "/services/operations-visibility",
             icon: "ops_visibility",
           },
@@ -147,7 +147,7 @@ export default function Home() {
             type: "feature",
             title: "Cut Costs",
             tag: "Popular Solution",
-            description: "We identify cost-saving opportunities without compromising value — from automation to smart resource allocation.",
+            description: "We identify cost-saving opportunities without compromising value, from automation to smart resource allocation.",
             stat: "2x",
             statLabel: "Is an **average result** in cost optimization services.",
           },
@@ -202,12 +202,12 @@ export default function Home() {
           {
             title: "Why operational infrastructure is the silent killer of Series A rounds",
             excerpt:
-              "Most founders don't lose funding because of a weak product — they lose it because investors find compliance gaps, messy cap tables, and no financial controls. Here's how to fix it before the due diligence clock starts.",
+              "Most founders don't lose funding because of a weak product. They lose it because investors find compliance gaps, messy cap tables, and no financial controls. Here's how to fix it before the due diligence clock starts.",
             category: "Fundraising",
             date: "Aug 2026",
             readTime: "6 min read",
             href: "/insights/operational-infrastructure-series-a",
-            imageSrc: "https://images.unsplash.com/photo-1553729459-ebb1b9bca9bf?w=800&q=80",
+            imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
           },
           {
             title: "The true cost of DIY compliance for early-stage startups",
@@ -232,7 +232,7 @@ export default function Home() {
           {
             title: "Banking setup mistakes that slow down your first 90 days",
             excerpt:
-              "From picking the wrong bank to missing fraud controls, these are the treasury missteps we see most often — and how to avoid them.",
+              "From picking the wrong bank to missing fraud controls, these are the treasury missteps we see most often, and how to avoid them.",
             category: "Banking",
             date: "May 2026",
             readTime: "5 min read",
@@ -254,7 +254,7 @@ export default function Home() {
           {
             question: "How is the retainer model structured?",
             answer:
-              "We offer flat monthly retainers that cover your core operational needs — legal, compliance, banking, and entity management. No surprise invoices, no hourly billing. We scope the retainer based on your company's stage and complexity.",
+              "We offer flat monthly retainers that cover your core operational needs: legal, compliance, banking, and entity management. No surprise invoices, no hourly billing. We scope the retainer based on your company's stage and complexity.",
           },
           {
             question: "What's the typical engagement timeline?",
@@ -282,8 +282,8 @@ export default function Home() {
       <Footer
         email="contact@lemide.com"
         socialLinks={[
-          { platform: "linkedin", href: "https://linkedin.com/company/lemide" },
-          { platform: "twitter", href: "https://x.com/lemide" },
+          { platform: "linkedin", href: "https://www.linkedin.com/company/lemide-partners" },
+          { platform: "instagram", href: "https://www.instagram.com/lemidepartners/" },
         ]}
       />
     </>
