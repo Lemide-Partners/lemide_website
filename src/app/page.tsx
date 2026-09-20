@@ -51,35 +51,35 @@ export default function Home() {
             title: "Compliance & Filings",
             description:
               "Provincial and federal registrations, annual filings, regulatory reporting, and ongoing compliance management across Canada and the U.S., handled end-to-end so you never miss a deadline.",
-            href: "/services/compliance",
+            href: "/services#compliance",
             icon: "compliance_filings",
           },
           {
             title: "Financial Operations",
             description:
               "Bank account setup, payment infrastructure, bookkeeping coordination, and treasury operations in Canada and the U.S., from day one through Series B.",
-            href: "/services/financial-operations",
+            href: "/services#financial-operations",
             icon: "financial_ops",
           },
           {
             title: "Access Governance Automation",
             description:
               "Automated provisioning, role-based access controls, and credential management across your entire tool stack. Secure by default.",
-            href: "/services/access-governance",
+            href: "/services#access-governance",
             icon: "access_governance",
           },
           {
             title: "Workflow Automation",
             description:
               "Streamlined onboarding, vendor management, document workflows, and operational processes. Built to scale without adding headcount.",
-            href: "/services/workflow-automation",
+            href: "/services#workflow-automation",
             icon: "workflow_automation",
           },
           {
             title: "Operations Visibility",
             description:
               "Real-time dashboards, compliance status tracking, and operational reporting, so you always know where things stand.",
-            href: "/services/operations-visibility",
+            href: "/services#operations-visibility",
             icon: "ops_visibility",
           },
         ]}
