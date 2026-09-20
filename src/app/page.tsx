@@ -22,7 +22,7 @@ export default function Home() {
       <Hero
         headline="Operational infrastructure for founders who"
         headlineAccent="move fast."
-        description="We help startups set up and run the operations behind the company: incorporation, banking, compliance, tools, and credentials."
+        description="We help Canadian startups set up and run the operations behind the company: incorporation, banking, compliance, tools, and credentials, with support for U.S. expansion."
         ctaLabel="Book a Call"
         ctaHref="/contact"
         videoSrc="/assets/videos/lemidehero.mp4"
@@ -50,14 +50,14 @@ export default function Home() {
           {
             title: "Compliance & Filings",
             description:
-              "State registrations, annual filings, regulatory reporting, and ongoing compliance management, handled end-to-end so you never miss a deadline.",
+              "Provincial and federal registrations, annual filings, regulatory reporting, and ongoing compliance management across Canada and the U.S., handled end-to-end so you never miss a deadline.",
             href: "/services/compliance",
             icon: "compliance_filings",
           },
           {
             title: "Financial Operations",
             description:
-              "Bank account setup, payment infrastructure, bookkeeping coordination, and treasury operations, from day one through Series B.",
+              "Bank account setup, payment infrastructure, bookkeeping coordination, and treasury operations in Canada and the U.S., from day one through Series B.",
             href: "/services/financial-operations",
             icon: "financial_ops",
           },
@@ -182,7 +182,7 @@ export default function Home() {
         label="Trusted By"
         heading="We help startups"
         headingAccent="build with confidence."
-        description="Working alongside the best founders, accelerators, and venture firms in the ecosystem."
+        description="Working alongside the best founders, accelerators, and venture firms in the Canadian ecosystem and beyond."
         partners={[
           { name: "Krunchpark", logoSrc: "/assets/images/partners/1.png" },
           { name: "Partner 2", logoSrc: "/assets/images/partners/2.png" },
@@ -220,9 +220,9 @@ export default function Home() {
             imageSrc: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
           },
           {
-            title: "Multi-state operations: a founder's playbook",
+            title: "Multi-jurisdiction operations: a founder's playbook",
             excerpt:
-              "Expanding across state lines means navigating a maze of registrations, tax obligations, and employment law. Our step-by-step guide keeps you compliant as you scale.",
+              "Expanding across provinces or into the U.S. means navigating a maze of registrations, tax obligations, and employment law. Our step-by-step guide keeps you compliant as you scale.",
             category: "Operations",
             date: "Jun 2026",
             readTime: "8 min read",
@@ -249,7 +249,7 @@ export default function Home() {
           {
             question: "What types of startups do you work with?",
             answer:
-              "We primarily work with early-stage startups (pre-seed through Series B) across sectors including fintech, healthtech, SaaS, e-commerce, and climate. Our solutions are tailored to your stage, industry, and specific operational needs.",
+              "We primarily work with Canadian early-stage startups (pre-seed through Series B) across sectors including fintech, healthtech, SaaS, e-commerce, and climate. We also support founders expanding into the U.S. market. Our solutions are tailored to your stage, industry, and specific operational needs.",
           },
           {
             question: "How is the retainer model structured?",

@@ -19,7 +19,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Lemide Partners",
   description:
-    "Operational partner for early-stage startups — legal, compliance, banking, and infrastructure.",
+    "Canada's operational partner for early-stage startups, covering legal, compliance, banking, and infrastructure across Canada and the U.S.",
   icons: {
     icon: [
       {

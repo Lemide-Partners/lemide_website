@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "Services | Lemide Partners",
   description:
-    "Full-stack operational infrastructure for startups. Compliance, financial operations, access governance, workflow automation, and operations visibility.",
+    "Full-stack operational infrastructure for Canadian startups. Compliance, financial operations, access governance, workflow automation, and operations visibility across Canada and the U.S.",
 };
 
 const services = [
@@ -21,13 +21,13 @@ const services = [
     title: "Compliance & Filings",
     subtitle: "Stay compliant, stay focused.",
     description:
-      "State registrations, annual filings, regulatory reporting, and ongoing compliance management. Handled end-to-end so you never miss a deadline.",
+      "Federal, provincial, and state registrations, annual filings, regulatory reporting, and ongoing compliance management across Canada and the U.S. Handled end-to-end so you never miss a deadline.",
     details: [
-      "Entity formation and state registrations across all 50 U.S. states",
-      "Annual report filings and registered agent coordination",
+      "Entity formation and registrations across Canadian provinces and U.S. states",
+      "Annual report filings and registered agent coordination in both countries",
       "Regulatory compliance monitoring and deadline tracking",
-      "Multi-state tax registration and nexus analysis",
-      "Foreign qualification filings for interstate expansion",
+      "Multi-province and multi-state tax registration and nexus analysis",
+      "Extra-provincial and foreign qualification filings for cross-border expansion",
       "Corporate governance documentation and minute books",
     ],
     icon: (
@@ -148,14 +148,14 @@ const faqItems = [
       "It means we handle the complete operational backbone of your company: entity formation, compliance, banking, access governance, process automation, and ongoing operational management. Instead of hiring five different specialists, you get one integrated partner.",
   },
   {
-    question: "Can you work with startups outside the U.S.?",
+    question: "Do you only work with Canadian startups?",
     answer:
-      "Yes. We support companies across 5+ countries, with deep expertise in U.S., Canadian, and Nigerian regulatory environments. We regularly help startups with cross-border entity structures, multi-jurisdiction compliance, and international payroll.",
+      "Canada is our home market, but we support companies across 5+ countries, with deep expertise in Canadian, U.S., and Nigerian regulatory environments. We regularly help Canadian startups with cross-border entity structures, multi-jurisdiction compliance, and international payroll as they expand into the U.S. and beyond.",
   },
   {
     question: "How quickly can you get us set up?",
     answer:
-      "Most foundational setups (entity formation, banking, initial compliance filings) are completed within 30 days. More complex multi-state or international engagements may take longer, but we always provide a clear timeline upfront during the discovery phase.",
+      "Most foundational setups (entity formation, banking, initial compliance filings) are completed within 30 days. More complex multi-province, cross-border, or international engagements may take longer, but we always provide a clear timeline upfront during the discovery phase.",
   },
   {
     question: "Do you replace our legal or accounting team?",

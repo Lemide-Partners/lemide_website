@@ -144,11 +144,11 @@ export default function ArticlePage() {
               <h3 className="type-h5 text-foreground mb-6">Where founder time actually goes</h3>
               <ul className="space-y-4">
                 {[
-                  "Researching state-specific filing requirements whenever a new employee is hired remotely",
-                  "Manually tracking annual report due dates across multiple states (each with different deadlines and forms)",
+                  "Researching province-specific or state-specific filing requirements whenever a new employee is hired remotely",
+                  "Manually tracking annual return due dates across multiple provinces and states (each with different deadlines and forms)",
                   "Drafting and updating privacy policies, terms of service, and employee handbooks without legal review",
                   "Reconciling bookkeeping with actual bank statements, often months behind",
-                  "Responding to registered agent mail and government notices that arrive without context",
+                  "Responding to government notices from CRA, provincial registries, or U.S. registered agents that arrive without context",
                   "Preparing documentation for investor calls that should already exist in a data room",
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
@@ -168,8 +168,10 @@ export default function ArticlePage() {
             <h2 className="type-h3 text-foreground mt-16 mb-6">The cost of getting it wrong</h2>
             <p className="type-body-lg text-muted-foreground leading-relaxed" style={{ textWrap: "pretty" }}>
               Missed compliance deadlines carry real financial consequences.
-              Late annual report filings can result in penalties ranging from
-              $50 to $500 per state, per filing. In some states, failure to
+              In Canada, late annual return filings can trigger penalties and
+              even involuntary dissolution of your corporation. In the U.S.,
+              late annual report filings can result in penalties ranging from
+              $50 to $500 per state, per filing. In both countries, failure to
               file can lead to administrative dissolution, meaning your company
               technically ceases to exist as a legal entity.
             </p>
@@ -177,20 +179,23 @@ export default function ArticlePage() {
 
           <Reveal delay={0.1} animation="fade-up">
             <p className="type-body-lg text-muted-foreground leading-relaxed mt-6" style={{ textWrap: "pretty" }}>
-              In 2026, California increased its late filing penalty to $250 for
-              LLCs and $500 for corporations. Delaware imposes a $200 late fee
-              plus 1.5% monthly interest on unpaid franchise taxes. These costs
-              compound quickly if you operate in multiple states.
+              In Canada, Corporations Canada charges a late filing fee for
+              annual returns, and provinces like Ontario can cancel your
+              business registration for non-compliance. If you also operate
+              in the U.S., the costs compound further: California charges
+              $250 to $500 in late filing penalties, and Delaware imposes a
+              $200 late fee plus 1.5% monthly interest on unpaid franchise
+              taxes.
             </p>
           </Reveal>
 
           <Reveal delay={0.1} animation="fade-up">
             <blockquote className="my-12 border-l-2 border-accent pl-6 py-2">
               <p className="type-h5 text-foreground" style={{ lineHeight: 1.6 }}>
-                The founder who spends Sunday nights Googling Delaware
-                franchise tax deadlines is not saving money. They are
-                spending their most valuable resource on their lowest-value
-                task.
+                The founder who spends Sunday nights Googling CRA filing
+                deadlines or provincial registration requirements is not
+                saving money. They are spending their most valuable resource
+                on their lowest-value task.
               </p>
             </blockquote>
           </Reveal>
@@ -206,10 +211,10 @@ export default function ArticlePage() {
           <Reveal delay={0.1} animation="fade-up">
             <div className="my-10 space-y-6">
               {[
-                { signal: "Multi-state operations", detail: "The moment you have employees or customers in more than two states, tracking each state's requirements manually becomes a full-time job. Registered agents, foreign qualifications, and payroll tax registrations each have their own deadlines and forms." },
-                { signal: "Fundraising timeline", detail: "Investors expect a clean compliance record. If you are six months from a raise, every unfiled report and missing registration becomes a line item in due diligence that can slow or kill a deal." },
-                { signal: "First employee hire", detail: "Employment law introduces an entirely new compliance surface: I-9 verification, state-specific employment posters, workers' compensation, unemployment insurance. Missing any of these creates liability." },
-                { signal: "Customer data handling", detail: "Privacy regulations like CCPA, CPRA, and state-level data breach notification laws require documented policies and procedures. A DIY privacy policy downloaded from the internet does not hold up under scrutiny." },
+                { signal: "Multi-jurisdiction operations", detail: "The moment you have employees or customers in more than two provinces, or you expand into the U.S., tracking each jurisdiction's requirements manually becomes a full-time job. Extra-provincial registrations, payroll deductions, and tax filings each have their own deadlines and forms." },
+                { signal: "Fundraising timeline", detail: "Investors expect a clean compliance record. If you are six months from a raise, every unfiled return and missing registration becomes a line item in due diligence that can slow or kill a deal." },
+                { signal: "First employee hire", detail: "Employment law introduces an entirely new compliance surface: ROE filings, provincial employment standards, workers' compensation, and EI/CPP contributions. If you hire in the U.S., add I-9 verification and state-specific requirements. Missing any of these creates liability." },
+                { signal: "Customer data handling", detail: "Privacy regulations like PIPEDA (federal), Quebec's Law 25, and provincial privacy statutes require documented policies and procedures. If you serve U.S. customers, CCPA and state-level breach notification laws apply too. A DIY privacy policy downloaded from the internet does not hold up under scrutiny." },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="shrink-0 w-40">
@@ -258,7 +263,7 @@ export default function ArticlePage() {
             <h2 className="type-h3 text-foreground mt-16 mb-6">The bottom line</h2>
             <p className="type-body-lg text-muted-foreground leading-relaxed" style={{ textWrap: "pretty" }}>
               DIY compliance is a reasonable choice when you are a solo founder
-              operating in one state with no employees. Beyond that point, the
+              operating in one province with no employees. Beyond that point, the
               math changes. Every hour you spend on compliance is an hour you
               are not spending on the work that actually grows your company.
             </p>

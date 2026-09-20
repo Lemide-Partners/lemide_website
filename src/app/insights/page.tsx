@@ -38,15 +38,15 @@ const insights = [
     imageAlt: "Business compliance documents and checklists",
   },
   {
-    title: "Multi-state operations: a founder's playbook",
+    title: "Multi-jurisdiction operations: a founder's playbook",
     excerpt:
-      "Expanding across state lines means navigating a maze of registrations, tax obligations, and employment law. Our step-by-step guide keeps you compliant as you scale.",
+      "Expanding across provinces or into the U.S. means navigating a maze of registrations, tax obligations, and employment law. Our step-by-step guide keeps you compliant as you scale.",
     category: "Operations",
     date: "Jun 2026",
     readTime: "8 min read",
     href: "/insights/multi-state-operations-playbook",
     imageSrc: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-    imageAlt: "Modern office buildings representing multi-state expansion",
+    imageAlt: "Modern office buildings representing cross-border expansion",
   },
   {
     title: "Banking setup mistakes that slow down your first 90 days",

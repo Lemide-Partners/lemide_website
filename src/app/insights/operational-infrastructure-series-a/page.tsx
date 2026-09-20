@@ -142,10 +142,10 @@ export default function ArticlePage() {
               <ul className="space-y-4">
                 {[
                   "Cap table accuracy, including option pools, SAFEs, convertible notes, and pro-forma calculations for the new round",
-                  "Entity structure and foreign qualifications in every state where the company operates or has employees",
+                  "Entity structure and registrations in every province and state where the company operates or has employees",
                   "Employment agreements, IP assignment clauses, and contractor classification documentation",
                   "Financial controls: who approves spending, how expenses are tracked, and whether bank reconciliation is current",
-                  "Compliance status: state filings, annual reports, registered agents, and any pending regulatory obligations",
+                  "Compliance status: federal and provincial filings, annual returns, registered agents, and any pending regulatory obligations",
                   "Data privacy policies and security practices, especially for companies handling customer data",
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
@@ -185,7 +185,7 @@ export default function ArticlePage() {
           <Reveal delay={0.1} animation="fade-up">
             <p className="type-body-lg text-muted-foreground leading-relaxed" style={{ textWrap: "pretty" }}>
               The most common gaps we see are not dramatic. They are quiet
-              oversights: a missing state registration in a state where you have
+              oversights: a missing provincial registration where you have
               a remote employee, a cap table that hasn't been updated since
               your last SAFE closed, contractor agreements that were never
               properly executed. Each one individually is a small fix. Together,
@@ -206,7 +206,7 @@ export default function ArticlePage() {
           <Reveal delay={0.1} animation="fade-up">
             <div className="my-10 space-y-6">
               {[
-                { time: "6 months before raise", action: "Audit your entity structure, file any missing state registrations, and clean up your cap table. Make sure all employee and contractor agreements are signed and properly classify every worker." },
+                { time: "6 months before raise", action: "Audit your entity structure, file any missing provincial or state registrations, and clean up your cap table. Make sure all employee and contractor agreements are signed and properly classify every worker." },
                 { time: "4 months before raise", action: "Set up financial controls: bank reconciliation, expense approval workflows, and basic bookkeeping. Create your board minute book and document any corporate governance decisions." },
                 { time: "2 months before raise", action: "Run a mock due diligence process. Hand someone your data room and ask them to find holes. Fix what they find before an investor's legal team does." },
                 { time: "Day of", action: "Have a clean data room ready to share within 24 hours of a term sheet. Speed signals competence. Delays signal problems." },

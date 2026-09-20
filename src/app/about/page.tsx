@@ -13,7 +13,7 @@ import {
 export const metadata: Metadata = {
   title: "About | Lemide Partners",
   description:
-    "Learn about Lemide Partners, the operational infrastructure partner helping early-stage startups build, launch, and scale with confidence.",
+    "Learn about Lemide Partners, Canada's operational infrastructure partner helping early-stage startups build, launch, and scale with confidence across Canada and the U.S.",
 };
 
 const advantages = [
@@ -35,7 +35,7 @@ const advantages = [
     ),
     title: "Multi-Market Expertise",
     description:
-      "From U.S. state filings to international compliance, we navigate the regulatory landscape across 5+ countries so you don't have to.",
+      "From Canadian federal and provincial filings to U.S. state registrations and international compliance, we navigate the regulatory landscape across 5+ countries so you don't have to.",
   },
   {
     icon: (
@@ -101,12 +101,12 @@ const faqItems = [
   {
     question: "What types of startups do you work with?",
     answer:
-      "We work with early-stage startups across industries, from pre-seed to Series A. Whether you're a solo founder or a small team, we specialize in getting your operational foundation right so you can focus on growth.",
+      "We primarily work with Canadian early-stage startups across industries, from pre-seed to Series A. Whether you're a solo founder or a small team, we specialize in getting your operational foundation right so you can focus on growth. We also support founders expanding into the U.S.",
   },
   {
     question: "How quickly can you get us set up?",
     answer:
-      "Most entity formations and basic operational setups are completed within 2 to 4 weeks. More complex multi-state or international filings may take longer, but we always provide a clear timeline upfront.",
+      "Most entity formations and basic operational setups are completed within 2 to 4 weeks. More complex multi-province, cross-border, or international filings may take longer, but we always provide a clear timeline upfront.",
   },
   {
     question: "Do you replace our legal or accounting team?",
@@ -219,9 +219,9 @@ export default function AboutPage() {
           </h1>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mt-6">
             <p className="type-body-lg text-inverse-muted max-w-4xl" style={{ textWrap: "pretty" }}>
-              Lemide Partners is the operational infrastructure partner for
+              Lemide Partners is Canada's operational infrastructure partner for
               early-stage startups. We handle incorporation, compliance, banking,
-              tooling, and credentials so you can focus on product and growth.
+              tooling, and credentials across Canada and the U.S. so you can focus on product and growth.
             </p>
             <div className="shrink-0">
               <Link href="/contact">
@@ -255,7 +255,7 @@ export default function AboutPage() {
               <Reveal delay={0.15} animation="fade-left">
                 <p className="type-body-lg text-muted-foreground" style={{ textWrap: "pretty" }}>
                   Lemide was founded by operators who lived the pain of building
-                  startups from scratch: navigating state filings, banking
+                  startups from scratch: navigating government filings, banking
                   hurdles, compliance deadlines, and credential management while
                   trying to ship product.
                 </p>
@@ -503,8 +503,8 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={0.2} animation="fade-left">
                 <blockquote className="mt-8 text-muted-foreground type-body-lg border-l-2 border-accent pl-6" style={{ lineHeight: 1.8, textWrap: "pretty" }}>
-                  &ldquo;I built Lemide because I saw too many brilliant founders
-                  burning out on operational busywork (state filings, banking
+                  &ldquo;I built Lemide because I saw too many brilliant Canadian founders
+                  burning out on operational busywork (government filings, banking
                   setups, compliance deadlines) instead of building the products
                   the world needs. We exist to carry that weight so they
                   don&apos;t have to.&rdquo;

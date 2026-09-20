@@ -139,7 +139,7 @@ export default function ArticlePage() {
                   "API integrations with your accounting software (QuickBooks, Xero, or similar)",
                   "Support for wire transfers, ACH, and international payments without branch visits",
                   "Multi-user access with role-based permissions so your bookkeeper and CFO see different things",
-                  "FDIC insurance and, for balances over $250,000, sweep networks that extend coverage across multiple banks",
+                  "CDIC insurance in Canada (or FDIC in the U.S.), and for larger balances, sweep networks that extend coverage across multiple institutions",
                   "Dedicated support for startups, not a 1-800 number and a 45-minute hold queue",
                   "No minimum balance fees during pre-revenue stages",
                 ].map((item, i) => (
@@ -247,7 +247,7 @@ export default function ArticlePage() {
                   "Confirm that your account type supports the expected balance (some basic business accounts have balance caps)",
                   "Verify your wire transfer instructions, including routing number, account number, and bank address, and have them ready to share securely with your investors",
                   "Set up a high-yield savings or sweep account for funds you do not need in the next 30 days",
-                  "Review your FDIC coverage and consider extended coverage through deposit sweep networks if your balance will exceed $250,000",
+                  "Review your CDIC coverage in Canada (or FDIC in the U.S.) and consider extended coverage through deposit sweep networks if your balance will exceed insurance limits",
                 ].map((item, i) => (
                   <li key={i} className="flex gap-3">
                     <div className="shrink-0 w-5 h-5 rounded-full bg-accent/10 text-accent flex items-center justify-center mt-0.5">

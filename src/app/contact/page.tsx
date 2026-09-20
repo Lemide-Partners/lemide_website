@@ -86,8 +86,8 @@ export default function ContactPage() {
             <span className="text-accent">operational backbone.</span>
           </h1>
           <p className="type-body-lg text-inverse-muted mt-6 max-w-2xl" style={{ textWrap: "pretty" }}>
-            Whether you&apos;re incorporating for the first time or scaling
-            across borders, we&apos;re here to help you get it right.
+            Whether you&apos;re incorporating in Canada for the first time or scaling
+            into the U.S. market, we&apos;re here to help you get it right.
           </p>
         </div>
       </section>
