@@ -69,22 +69,22 @@ const values = [
 
 const team = [
   {
-    name: "Jordan Lee",
-    title: "Head of Compliance",
-    experience: "Former Big 4 advisory",
-    imageSrc: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop&crop=faces",
+    name: "Mide Makinde",
+    title: "Financial Advisor",
+    imageSrc: "/assets/images/Mide.png",
+    linkedIn: "https://www.linkedin.com/in/ayomidemakinde/",
   },
   {
-    name: "Taylor Chen",
-    title: "Financial Operations Lead",
-    experience: "Fintech & banking specialist",
-    imageSrc: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=800&fit=crop&crop=faces",
+    name: "Tolu Olubode",
+    title: "Business Operations Manager",
+    imageSrc: "/assets/images/Tolu.png",
+    linkedIn: "https://www.linkedin.com/in/toluolubode/",
   },
   {
-    name: "Sam Adeyemi",
-    title: "Access & Infra Lead",
-    experience: "Enterprise security background",
-    imageSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=faces",
+    name: "Ope Kuku",
+    title: "Business Development Manager",
+    imageSrc: "/assets/images/Ope.png",
+    linkedIn: "https://www.linkedin.com/in/opemipo-kuku-606b6a160/",
   },
 ];
 
@@ -479,10 +479,9 @@ export default function AboutPage() {
             <Reveal animation="fade-right">
               <div className="relative rounded-2xl overflow-hidden bg-navy-50 aspect-[4/3.4] group">
                 <Image
-                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=750&fit=crop&crop=faces"
-                  alt="Sola Oyegbile, Founder and Managing Partner"
+                  src="/assets/images/Sola.png"
+                  alt="Sola Oyegbile, Founder and CEO"
                   fill
-                  unoptimized
                   className="object-cover img-zoom"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
@@ -515,11 +514,11 @@ export default function AboutPage() {
                   <div>
                     <p className="type-h5 text-foreground">Sola Oyegbile</p>
                     <p className="type-body-sm text-muted-foreground">
-                      Founder &amp; Managing Partner
+                      Founder &amp; CEO
                     </p>
                   </div>
                   <a
-                    href="https://www.linkedin.com/in/solaoyegbile"
+                    href="https://www.linkedin.com/in/sola-oyegbile/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors duration-300"
@@ -552,7 +551,6 @@ export default function AboutPage() {
                         src={member.imageSrc}
                         alt={member.name}
                         fill
-                        unoptimized
                         className="object-cover img-zoom"
                         sizes="(max-width: 640px) 100vw, 33vw"
                       />
@@ -561,15 +559,19 @@ export default function AboutPage() {
                     <div className="mt-4">
                       <div className="flex items-center gap-2">
                         <h4 className="type-h6 text-foreground whitespace-nowrap">{member.name}</h4>
-                        <svg className="w-3.5 h-3.5 shrink-0 text-muted-foreground/50 hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
+                        <a
+                          href={member.linkedIn}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} LinkedIn`}
+                        >
+                          <svg className="w-3.5 h-3.5 shrink-0 text-muted-foreground/50 hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                          </svg>
+                        </a>
                       </div>
                       <p className="type-body-sm text-muted-foreground mt-1">
                         {member.title}
-                      </p>
-                      <p className="type-body-sm text-muted-foreground/70 mt-0.5">
-                        {member.experience}
                       </p>
                     </div>
                   </div>
