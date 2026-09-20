@@ -84,7 +84,7 @@ export default function StyleGuidePage() {
             <div>
               <p className="type-body-sm text-muted-foreground mb-3">Large (240px)</p>
               <div className="border border-dashed border-border rounded-lg p-2 inline-block">
-                <Logo width={240} />
+                <Logo />
               </div>
             </div>
             <div>

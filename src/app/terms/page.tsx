@@ -31,7 +31,7 @@ export default function TermsOfService() {
               <h2>Services</h2>
               <p>
                 Lemide Partners provides operational infrastructure services for early-stage
-                startups, including but not limited to:
+                startups in Canada and internationally, including but not limited to:
               </p>
               <ul>
                 <li>Compliance and regulatory filings management.</li>

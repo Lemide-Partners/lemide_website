@@ -10,6 +10,7 @@ interface Metric {
 
 interface MetricsBarProps {
   metrics: Metric[];
+  className?: string;
 }
 
 function AnimatedValue({ value }: { value: string }) {
@@ -54,9 +55,9 @@ function AnimatedValue({ value }: { value: string }) {
   return <span ref={ref}>{displayed}</span>;
 }
 
-export function MetricsBar({ metrics }: MetricsBarProps) {
+export function MetricsBar({ metrics, className }: MetricsBarProps) {
   return (
-    <section className="bg-background">
+    <section className={className ?? "bg-background"}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-28">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
           {metrics.map((metric, i) => (

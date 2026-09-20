@@ -22,9 +22,9 @@ export default function Home() {
       <Hero
         headline="Operational infrastructure for founders who"
         headlineAccent="move fast."
-        description="We help startups set up and run the operations behind the company: incorporation, banking, compliance, tools, and credentials."
+        description="We help Canadian startups set up and run the operations behind the company: incorporation, banking, compliance, tools, and credentials, with support for U.S. expansion."
         ctaLabel="Book a Call"
-        ctaHref="/contact"
+        ctaHref="https://calendly.com/lemide/30min?month=2026-09"
         videoSrc="/assets/videos/lemidehero.mp4"
       />
 
@@ -50,35 +50,35 @@ export default function Home() {
           {
             title: "Compliance & Filings",
             description:
-              "State registrations, annual filings, regulatory reporting, and ongoing compliance management — handled end-to-end so you never miss a deadline.",
+              "Provincial and federal registrations, annual filings, regulatory reporting, and ongoing compliance management across Canada and the U.S., handled end-to-end so you never miss a deadline.",
             href: "/services/compliance",
             icon: "compliance_filings",
           },
           {
             title: "Financial Operations",
             description:
-              "Bank account setup, payment infrastructure, bookkeeping coordination, and treasury operations — from day one through Series B.",
+              "Bank account setup, payment infrastructure, bookkeeping coordination, and treasury operations in Canada and the U.S., from day one through Series B.",
             href: "/services/financial-operations",
             icon: "financial_ops",
           },
           {
             title: "Access Governance Automation",
             description:
-              "Automated provisioning, role-based access controls, and credential management across your entire tool stack — secure by default.",
+              "Automated provisioning, role-based access controls, and credential management across your entire tool stack. Secure by default.",
             href: "/services/access-governance",
             icon: "access_governance",
           },
           {
             title: "Workflow Automation",
             description:
-              "Streamlined onboarding, vendor management, document workflows, and operational processes — built to scale without adding headcount.",
+              "Streamlined onboarding, vendor management, document workflows, and operational processes. Built to scale without adding headcount.",
             href: "/services/workflow-automation",
             icon: "workflow_automation",
           },
           {
             title: "Operations Visibility",
             description:
-              "Real-time dashboards, compliance status tracking, and operational reporting — so you always know where things stand.",
+              "Real-time dashboards, compliance status tracking, and operational reporting, so you always know where things stand.",
             href: "/services/operations-visibility",
             icon: "ops_visibility",
           },
@@ -109,31 +109,31 @@ export default function Home() {
         description="Explore case studies that showcase how we've helped businesses overcome challenges and achieve lasting success through tailored consulting solutions."
         studies={[
           {
-            title: "From incorporation to Series A in 90 days",
+            title: "The Compliance Maze That Almost Cost a Funding Close",
             excerpt:
-              "How we helped a fintech startup go from idea to fully operational — entity, banking, compliance — in record time. Millions saved through streamlined processes.",
-            tags: ["Fintech", "Legal", "Banking"],
-            href: "/case-studies/fintech-series-a",
-            imageSrc: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
-            imageAlt: "Fintech team collaborating in modern office",
+              "A payments startup building a Canada-to-Nigeria remittance corridor discovered, six weeks before closing, that they weren't actually cleared to move money. A fractional operations partner mapped the regulatory sequence and got the round closed on schedule.",
+            tags: ["Payments", "Compliance", "Fundraising"],
+            href: "/case-studies/compliance-maze",
+            imageSrc: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80",
+            imageAlt: "Financial documents and compliance review",
           },
           {
-            title: "Multi-state compliance for a healthcare platform",
+            title: "Audit Ready in 90 Days",
             excerpt:
-              "Navigating 12-state regulatory requirements for a telehealth startup scaling faster than their ops team could handle. Real-time dashboards and automated filings.",
-            tags: ["Healthcare", "Compliance", "Regulatory"],
-            href: "/case-studies/healthcare-compliance",
-            imageSrc: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
-            imageAlt: "Healthcare technology and compliance",
+              "A vertical SaaS company had grown fast on foundations nobody had time to formalize. When a term sheet arrived, an operations partner turned informal processes into audit-ready documentation before the closing date.",
+            tags: ["Due Diligence", "Fundraising", "Operations"],
+            href: "/case-studies/audit-ready-90-days",
+            imageSrc: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+            imageAlt: "Professional reviewing business documents",
           },
           {
-            title: "A logistics transformation that moves with precision",
+            title: "Two Countries, One Payroll",
             excerpt:
-              "How a manufacturing giant achieved end-to-end supply chain agility by land, air, and sea. Millions saved, smarter analytics, real-time dashboards, and streamlined operations.",
-            tags: ["Logistics", "Supply Chain", "Manufacturing"],
-            href: "/case-studies/logistics-transformation",
-            imageSrc: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
-            imageAlt: "Logistics and supply chain operations",
+              "A logistics and technology company with teams in Toronto and Lagos needed one coherent payroll process instead of two half-solutions. The fix wasn't a payroll app. It was someone who understood both regulatory systems.",
+            tags: ["Payroll", "Cross-Border", "Operations"],
+            href: "/case-studies/two-countries-one-payroll",
+            imageSrc: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
+            imageAlt: "International team collaboration",
           },
         ]}
       />
@@ -147,7 +147,7 @@ export default function Home() {
             type: "feature",
             title: "Cut Costs",
             tag: "Popular Solution",
-            description: "We identify cost-saving opportunities without compromising value — from automation to smart resource allocation.",
+            description: "We identify cost-saving opportunities without compromising value, from automation to smart resource allocation.",
             stat: "2x",
             statLabel: "Is an **average result** in cost optimization services.",
           },
@@ -182,15 +182,14 @@ export default function Home() {
         label="Trusted By"
         heading="We help startups"
         headingAccent="build with confidence."
-        description="Working alongside the best founders, accelerators, and venture firms in the ecosystem."
+        description="Working alongside the best founders, accelerators, and venture firms in the Canadian ecosystem and beyond."
         partners={[
-          { name: "Partner 1", logoSrc: "/assets/images/partners/partner-1.svg" },
-          { name: "Partner 2", logoSrc: "/assets/images/partners/partner-2.svg" },
-          { name: "Partner 3", logoSrc: "/assets/images/partners/partner-3.svg" },
-          { name: "Partner 4", logoSrc: "/assets/images/partners/partner-4.svg" },
-          { name: "Partner 5", logoSrc: "/assets/images/partners/partner-5.svg" },
-          { name: "Partner 6", logoSrc: "/assets/images/partners/partner-6.svg" },
-          { name: "Partner 7", logoSrc: "/assets/images/partners/partner-7.svg" },
+          { name: "Krunchpark", logoSrc: "/assets/images/partners/1.png" },
+          { name: "Partner 2", logoSrc: "/assets/images/partners/2.png" },
+          { name: "Partner 3", logoSrc: "/assets/images/partners/3.png" },
+          { name: "Partner 4", logoSrc: "/assets/images/partners/4.png" },
+          { name: "Partner 5", logoSrc: "/assets/images/partners/5.png" },
+          { name: "Partner 6", logoSrc: "/assets/images/partners/6.png" },
         ]}
       />
 
@@ -203,12 +202,12 @@ export default function Home() {
           {
             title: "Why operational infrastructure is the silent killer of Series A rounds",
             excerpt:
-              "Most founders don't lose funding because of a weak product — they lose it because investors find compliance gaps, messy cap tables, and no financial controls. Here's how to fix it before the due diligence clock starts.",
+              "Most founders don't lose funding because of a weak product. They lose it because investors find compliance gaps, messy cap tables, and no financial controls. Here's how to fix it before the due diligence clock starts.",
             category: "Fundraising",
             date: "Aug 2026",
             readTime: "6 min read",
             href: "/insights/operational-infrastructure-series-a",
-            imageSrc: "https://images.unsplash.com/photo-1553729459-ebb1b9bca9bf?w=800&q=80",
+            imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
           },
           {
             title: "The true cost of DIY compliance for early-stage startups",
@@ -221,9 +220,9 @@ export default function Home() {
             imageSrc: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
           },
           {
-            title: "Multi-state operations: a founder's playbook",
+            title: "Multi-jurisdiction operations: a founder's playbook",
             excerpt:
-              "Expanding across state lines means navigating a maze of registrations, tax obligations, and employment law. Our step-by-step guide keeps you compliant as you scale.",
+              "Expanding across provinces or into the U.S. means navigating a maze of registrations, tax obligations, and employment law. Our step-by-step guide keeps you compliant as you scale.",
             category: "Operations",
             date: "Jun 2026",
             readTime: "8 min read",
@@ -233,7 +232,7 @@ export default function Home() {
           {
             title: "Banking setup mistakes that slow down your first 90 days",
             excerpt:
-              "From picking the wrong bank to missing fraud controls, these are the treasury missteps we see most often — and how to avoid them.",
+              "From picking the wrong bank to missing fraud controls, these are the treasury missteps we see most often, and how to avoid them.",
             category: "Banking",
             date: "May 2026",
             readTime: "5 min read",
@@ -250,12 +249,12 @@ export default function Home() {
           {
             question: "What types of startups do you work with?",
             answer:
-              "We primarily work with early-stage startups (pre-seed through Series B) across sectors including fintech, healthtech, SaaS, e-commerce, and climate. Our solutions are tailored to your stage, industry, and specific operational needs.",
+              "We primarily work with Canadian early-stage startups (pre-seed through Series B) across sectors including fintech, healthtech, SaaS, e-commerce, and climate. We also support founders expanding into the U.S. market. Our solutions are tailored to your stage, industry, and specific operational needs.",
           },
           {
             question: "How is the retainer model structured?",
             answer:
-              "We offer flat monthly retainers that cover your core operational needs — legal, compliance, banking, and entity management. No surprise invoices, no hourly billing. We scope the retainer based on your company's stage and complexity.",
+              "We offer flat monthly retainers that cover your core operational needs: legal, compliance, banking, and entity management. No surprise invoices, no hourly billing. We scope the retainer based on your company's stage and complexity.",
           },
           {
             question: "What's the typical engagement timeline?",
@@ -283,8 +282,8 @@ export default function Home() {
       <Footer
         email="contact@lemide.com"
         socialLinks={[
-          { platform: "linkedin", href: "https://linkedin.com/company/lemide" },
-          { platform: "twitter", href: "https://x.com/lemide" },
+          { platform: "linkedin", href: "https://www.linkedin.com/company/lemide-partners" },
+          { platform: "instagram", href: "https://www.instagram.com/lemidepartners/" },
         ]}
       />
     </>

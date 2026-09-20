@@ -42,13 +42,13 @@ function FaqAccordion({
         aria-expanded={isOpen}
       >
         <span className={`type-h5 pr-4 transition-colors duration-300 ${
-          isOpen ? "text-white" : "text-foreground group-hover:text-accent"
+          isOpen ? "text-white" : "text-foreground group-hover:text-primary"
         }`}>
           {item.question}
         </span>
         <span
           className={`faq-icon shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${
-            isOpen ? "border-white/30 bg-white/10" : "border-border group-hover:border-accent"
+            isOpen ? "border-white/30 bg-white/10" : "border-border group-hover:border-primary"
           }`}
         >
           <svg

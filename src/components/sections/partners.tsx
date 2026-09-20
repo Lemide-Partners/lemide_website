@@ -79,7 +79,7 @@ export function Partners({
                       alt={partner.name}
                       width={120}
                       height={40}
-                      className="h-8 lg:h-10 w-auto object-contain"
+                      className="h-9 lg:h-11 w-auto object-contain"
                     />
                   </a>
                 ) : (
@@ -88,7 +88,7 @@ export function Partners({
                     alt={partner.name}
                     width={120}
                     height={40}
-                    className="h-8 lg:h-10 w-auto object-contain"
+                    className="h-9 lg:h-11 w-auto object-contain"
                   />
                 )}
               </div>

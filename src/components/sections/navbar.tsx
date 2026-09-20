@@ -17,17 +17,17 @@ interface NavbarProps {
 }
 
 const defaultLinks: NavLink[] = [
-  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Case Studies", href: "/case-studies" },
+  { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar({
   links = defaultLinks,
   ctaLabel = "Book a Call",
-  ctaHref = "/contact",
+  ctaHref = "https://calendly.com/lemide/30min?month=2026-09",
 }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -68,15 +68,17 @@ export function Navbar({
                 {link.label}
               </Link>
             ))}
-            <Link
+            <a
               href={ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-3 inline-flex items-center h-9 px-5 rounded-full text-white type-body-sm font-display font-medium transition-colors duration-200"
               style={{
                 background: scrolled ? "var(--accent)" : "var(--primary)",
               }}
             >
               {ctaLabel}
-            </Link>
+            </a>
           </div>
 
           <button
@@ -127,8 +129,10 @@ export function Navbar({
               </div>
             ))}
             <div className="pt-3">
-              <Link
+              <a
                 href={ctaHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block text-center py-3 rounded-full text-white type-body-sm font-display font-medium"
                 style={{
                   background: scrolled ? "var(--accent)" : "var(--primary)",
@@ -136,7 +140,7 @@ export function Navbar({
                 onClick={() => setMobileOpen(false)}
               >
                 {ctaLabel}
-              </Link>
+              </a>
             </div>
           </div>
         </div>

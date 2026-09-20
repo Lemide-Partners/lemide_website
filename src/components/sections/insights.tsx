@@ -91,6 +91,7 @@ export function Insights({
                         src={featured.imageSrc}
                         alt={featured.imageAlt ?? featured.title}
                         fill
+                        unoptimized
                         className="object-cover img-zoom"
                         sizes="(max-width: 1024px) 100vw, 50vw"
                       />
@@ -140,6 +141,7 @@ export function Insights({
                           src={insight.imageSrc}
                           alt={insight.imageAlt ?? insight.title}
                           fill
+                          unoptimized
                           className="object-cover img-zoom"
                           sizes="160px"
                         />

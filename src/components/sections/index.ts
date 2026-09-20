@@ -15,3 +15,4 @@ export { Faq } from "./faq";
 export { FooterCta } from "./footer-cta";
 export { Footer } from "./footer";
 export { Reveal } from "./reveal";
+export { ShareButtons } from "./share-buttons";
