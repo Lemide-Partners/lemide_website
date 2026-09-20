@@ -194,7 +194,7 @@ export default function CaseStudiesPage() {
         heading="Ready to offload your operations?"
         headingAccent="Let's talk."
         ctaLabel="Book a Call"
-        ctaHref="/contact"
+        ctaHref="https://calendly.com/lemide/30min?month=2026-09"
       />
 
       <Footer />

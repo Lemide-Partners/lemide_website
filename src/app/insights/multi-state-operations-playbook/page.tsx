@@ -309,7 +309,7 @@ export default function ArticlePage() {
         heading="Expanding across provinces or into the U.S.?"
         headingAccent="We'll keep you compliant."
         ctaLabel="Book a Call"
-        ctaHref="/contact"
+        ctaHref="https://calendly.com/lemide/30min?month=2026-09"
       />
 
       <Footer />

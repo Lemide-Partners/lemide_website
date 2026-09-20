@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Button } from "@/components/ui";
 import { Reveal } from "./reveal";
 
@@ -13,7 +12,7 @@ export function FooterCta({
   heading,
   headingAccent,
   ctaLabel = "Book an Appointment",
-  ctaHref = "/contact",
+  ctaHref = "https://calendly.com/lemide/30min?month=2026-09",
 }: FooterCtaProps) {
   return (
     <section className="bg-inverse-bg py-24 lg:py-32">
@@ -28,11 +27,11 @@ export function FooterCta({
         </Reveal>
         <Reveal delay={0.2} animation="scale-up">
           <div className="mt-10">
-            <Link href={ctaHref}>
+            <a href={ctaHref} target="_blank" rel="noopener noreferrer">
               <Button variant="accent" size="lg">
                 {ctaLabel}
               </Button>
-            </Link>
+            </a>
           </div>
         </Reveal>
       </div>

@@ -262,7 +262,7 @@ export default function AuditReadyPage() {
         heading="Need to get audit-ready fast?"
         headingAccent="Let's talk."
         ctaLabel="Book a Call"
-        ctaHref="/contact"
+        ctaHref="https://calendly.com/lemide/30min?month=2026-09"
       />
 
       <Footer />

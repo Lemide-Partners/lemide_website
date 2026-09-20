@@ -73,7 +73,7 @@ export function Services({
   services,
   dark = true,
   ctaLabel = "Book a Call",
-  ctaHref = "/contact",
+  ctaHref = "https://calendly.com/lemide/30min?month=2026-09",
 }: ServicesProps) {
   const bg = dark ? "bg-inverse-bg" : "bg-background";
   const fg = dark ? "text-inverse-fg" : "text-foreground";
@@ -139,11 +139,11 @@ export function Services({
 
         <Reveal animation="fade-up" delay={services.length * 0.1 + 0.1}>
           <div className="mt-12 text-center">
-            <Link href={ctaHref}>
+            <a href={ctaHref} target="_blank" rel="noopener noreferrer">
               <Button variant="accent" size="lg">
                 {ctaLabel}
               </Button>
-            </Link>
+            </a>
           </div>
         </Reveal>
       </div>

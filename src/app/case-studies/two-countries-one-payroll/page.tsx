@@ -268,7 +268,7 @@ export default function TwoCountriesPage() {
         heading="Running a cross-border team?"
         headingAccent="Let's talk."
         ctaLabel="Book a Call"
-        ctaHref="/contact"
+        ctaHref="https://calendly.com/lemide/30min?month=2026-09"
       />
 
       <Footer />

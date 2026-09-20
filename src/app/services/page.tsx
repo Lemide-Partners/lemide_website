@@ -424,7 +424,7 @@ export default function ServicesPage() {
         heading="Ready to build your operational infrastructure?"
         headingAccent="Start here."
         ctaLabel="Book a Call"
-        ctaHref="/contact"
+        ctaHref="https://calendly.com/lemide/30min?month=2026-09"
       />
 
       <Footer />

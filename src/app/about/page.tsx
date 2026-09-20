@@ -224,11 +224,11 @@ export default function AboutPage() {
               tooling, and credentials across Canada and the U.S. so you can focus on product and growth.
             </p>
             <div className="shrink-0">
-              <Link href="/contact">
+              <a href="https://calendly.com/lemide/30min?month=2026-09" target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" className="bg-white text-foreground border-white hover:bg-white/90">
                   Book a Call
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -590,7 +590,7 @@ export default function AboutPage() {
         heading="Ready to offload your operations?"
         headingAccent="Let's talk."
         ctaLabel="Book a Call"
-        ctaHref="/contact"
+        ctaHref="https://calendly.com/lemide/30min?month=2026-09"
       />
 
       <Footer />

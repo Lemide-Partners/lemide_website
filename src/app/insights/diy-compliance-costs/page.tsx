@@ -303,7 +303,7 @@ export default function ArticlePage() {
         heading="Stop spending your weekends on compliance."
         headingAccent="Let us handle it."
         ctaLabel="Book a Call"
-        ctaHref="/contact"
+        ctaHref="https://calendly.com/lemide/30min?month=2026-09"
       />
 
       <Footer />

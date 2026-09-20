@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState, type FormEvent } from "react";
 import { Button, Input, Textarea } from "@/components/ui";
 import {
@@ -202,11 +201,11 @@ export default function ContactPage() {
                       walk through your current setup and identify where we can
                       help.
                     </p>
-                    <Link href="/contact">
+                    <a href="https://calendly.com/lemide/30min?month=2026-09" target="_blank" rel="noopener noreferrer">
                       <Button variant="primary" size="md">
                         Book a Call
                       </Button>
-                    </Link>
+                    </a>
                   </div>
 
                   {/* Email */}

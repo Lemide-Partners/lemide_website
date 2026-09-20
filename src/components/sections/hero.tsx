@@ -21,7 +21,7 @@ export function Hero({
   headlineAccent,
   description,
   ctaLabel = "Book a Call",
-  ctaHref = "/contact",
+  ctaHref = "https://calendly.com/lemide/30min?month=2026-09",
   secondaryCtaLabel,
   secondaryCtaHref,
   avatars = [],
@@ -69,11 +69,11 @@ export function Hero({
 
         <Reveal animation="scale-up" delay={0.3} duration={0.8}>
           <div className="mt-10 lg:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href={ctaHref}>
+            <a href={ctaHref} target="_blank" rel="noopener noreferrer">
               <Button variant="primary" size="lg">
                 {ctaLabel}
               </Button>
-            </Link>
+            </a>
             {secondaryCtaLabel && secondaryCtaHref && (
               <Link href={secondaryCtaHref}>
                 <Button variant="outline" size="lg">
@@ -104,15 +104,17 @@ export function Hero({
                   </div>
                 ))}
               </div>
-              <Link
+              <a
                 href={ctaHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="type-body-sm text-inverse-fg font-display font-medium hover:text-accent transition-colors duration-200 group"
               >
                 {avatarCtaLabel}
                 <span className="inline-block ml-1.5 transition-transform duration-200 group-hover:translate-x-1">
                   &rarr;
                 </span>
-              </Link>
+              </a>
             </div>
           </Reveal>
         )}

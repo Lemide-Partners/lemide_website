@@ -331,7 +331,7 @@ export default function ArticlePage() {
         heading="Need help setting up your banking infrastructure?"
         headingAccent="We'll get it right."
         ctaLabel="Book a Call"
-        ctaHref="/contact"
+        ctaHref="https://calendly.com/lemide/30min?month=2026-09"
       />
 
       <Footer />

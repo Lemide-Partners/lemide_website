@@ -24,7 +24,7 @@ export default function Home() {
         headlineAccent="move fast."
         description="We help Canadian startups set up and run the operations behind the company: incorporation, banking, compliance, tools, and credentials, with support for U.S. expansion."
         ctaLabel="Book a Call"
-        ctaHref="/contact"
+        ctaHref="https://calendly.com/lemide/30min?month=2026-09"
         videoSrc="/assets/videos/lemidehero.mp4"
       />
 

@@ -264,7 +264,7 @@ export default function InsightsPage() {
         heading="Want operational insights for your startup?"
         headingAccent="Subscribe."
         ctaLabel="Book a Call"
-        ctaHref="/contact"
+        ctaHref="https://calendly.com/lemide/30min?month=2026-09"
       />
 
       <Footer />
