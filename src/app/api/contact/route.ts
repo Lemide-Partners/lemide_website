@@ -82,53 +82,60 @@ function adminEmailHtml({
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 </head>
-<body style="margin:0; padding:0; background-color:#f4f4f5; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f5; padding:40px 20px;">
+<body style="margin:0; padding:0; background-color:#F7EBDF; font-family:'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#F7EBDF; padding:40px 20px;">
     <tr>
       <td align="center">
         <table width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff; border-radius:12px; overflow:hidden;">
-          <!-- Header -->
+          <!-- Header with logo -->
           <tr>
-            <td style="background-color:#0B1D4B; padding:32px 40px;">
-              <h1 style="margin:0; color:#ffffff; font-size:20px; font-weight:600;">New Contact Form Submission</h1>
+            <td style="background-color:#0B1D4B; padding:28px 40px; text-align:center;">
+              <img src="https://lemide.com/assets/images/Lemide_White.png" alt="Lemide Partners" width="160" style="display:inline-block; max-width:160px; height:auto;" />
+            </td>
+          </tr>
+          <!-- Title bar -->
+          <tr>
+            <td style="padding:24px 40px 20px;">
+              <h1 style="margin:0; font-family:'Plus Jakarta Sans', 'DM Sans', sans-serif; color:#0B1D4B; font-size:20px; font-weight:700;">New Contact Form Submission</h1>
             </td>
           </tr>
           <!-- Body -->
           <tr>
-            <td style="padding:32px 40px;">
+            <td style="padding:0 40px 32px;">
               <table width="100%" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="padding:12px 0; border-bottom:1px solid #e4e4e7;">
-                    <p style="margin:0 0 4px; font-size:12px; color:#71717a; text-transform:uppercase; letter-spacing:0.5px;">Name</p>
-                    <p style="margin:0; font-size:16px; color:#18181b;">${fullName}</p>
+                    <p style="margin:0 0 4px; font-family:'DM Sans', sans-serif; font-size:12px; color:#71717a; text-transform:uppercase; letter-spacing:0.5px;">Name</p>
+                    <p style="margin:0; font-family:'DM Sans', sans-serif; font-size:16px; color:#18181b;">${fullName}</p>
                   </td>
                 </tr>
                 <tr>
                   <td style="padding:12px 0; border-bottom:1px solid #e4e4e7;">
-                    <p style="margin:0 0 4px; font-size:12px; color:#71717a; text-transform:uppercase; letter-spacing:0.5px;">Email</p>
-                    <p style="margin:0; font-size:16px;"><a href="mailto:${email}" style="color:#CC9E49; text-decoration:none;">${email}</a></p>
+                    <p style="margin:0 0 4px; font-family:'DM Sans', sans-serif; font-size:12px; color:#71717a; text-transform:uppercase; letter-spacing:0.5px;">Email</p>
+                    <p style="margin:0; font-family:'DM Sans', sans-serif; font-size:16px;"><a href="mailto:${email}" style="color:#CC9E49; text-decoration:none;">${email}</a></p>
                   </td>
                 </tr>
                 ${company ? `
                 <tr>
                   <td style="padding:12px 0; border-bottom:1px solid #e4e4e7;">
-                    <p style="margin:0 0 4px; font-size:12px; color:#71717a; text-transform:uppercase; letter-spacing:0.5px;">Company</p>
-                    <p style="margin:0; font-size:16px; color:#18181b;">${company}</p>
+                    <p style="margin:0 0 4px; font-family:'DM Sans', sans-serif; font-size:12px; color:#71717a; text-transform:uppercase; letter-spacing:0.5px;">Company</p>
+                    <p style="margin:0; font-family:'DM Sans', sans-serif; font-size:16px; color:#18181b;">${company}</p>
                   </td>
                 </tr>
                 ` : ""}
                 <tr>
                   <td style="padding:12px 0; border-bottom:1px solid #e4e4e7;">
-                    <p style="margin:0 0 4px; font-size:12px; color:#71717a; text-transform:uppercase; letter-spacing:0.5px;">Service Interest</p>
-                    <p style="margin:0; font-size:16px; color:#18181b;">${serviceName}</p>
+                    <p style="margin:0 0 4px; font-family:'DM Sans', sans-serif; font-size:12px; color:#71717a; text-transform:uppercase; letter-spacing:0.5px;">Service Interest</p>
+                    <p style="margin:0; font-family:'DM Sans', sans-serif; font-size:16px; color:#18181b;">${serviceName}</p>
                   </td>
                 </tr>
                 ${message ? `
                 <tr>
                   <td style="padding:12px 0;">
-                    <p style="margin:0 0 4px; font-size:12px; color:#71717a; text-transform:uppercase; letter-spacing:0.5px;">Message</p>
-                    <p style="margin:0; font-size:16px; color:#18181b; line-height:1.6; white-space:pre-wrap;">${message}</p>
+                    <p style="margin:0 0 4px; font-family:'DM Sans', sans-serif; font-size:12px; color:#71717a; text-transform:uppercase; letter-spacing:0.5px;">Message</p>
+                    <p style="margin:0; font-family:'DM Sans', sans-serif; font-size:16px; color:#18181b; line-height:1.6; white-space:pre-wrap;">${message}</p>
                   </td>
                 </tr>
                 ` : ""}
@@ -137,8 +144,8 @@ function adminEmailHtml({
           </tr>
           <!-- Footer -->
           <tr>
-            <td style="padding:20px 40px; background-color:#f9fafb; border-top:1px solid #e4e4e7;">
-              <p style="margin:0; font-size:13px; color:#71717a;">You can reply directly to this email to respond to ${fullName}.</p>
+            <td style="padding:20px 40px; background-color:#0B1D4B;">
+              <p style="margin:0; font-family:'DM Sans', sans-serif; font-size:13px; color:rgba(255,255,255,0.7);">You can reply directly to this email to respond to ${fullName}.</p>
             </td>
           </tr>
         </table>
@@ -156,32 +163,33 @@ function confirmationEmailHtml({ firstName }: { firstName: string }) {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 </head>
-<body style="margin:0; padding:0; background-color:#f4f4f5; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f5; padding:40px 20px;">
+<body style="margin:0; padding:0; background-color:#F7EBDF; font-family:'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#F7EBDF; padding:40px 20px;">
     <tr>
       <td align="center">
         <table width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff; border-radius:12px; overflow:hidden;">
-          <!-- Header -->
+          <!-- Header with logo -->
           <tr>
-            <td style="background-color:#0B1D4B; padding:32px 40px; text-align:center;">
-              <h1 style="margin:0; color:#CC9E49; font-size:22px; font-weight:700; letter-spacing:0.5px;">Lemide Partners</h1>
+            <td style="background-color:#0B1D4B; padding:28px 40px; text-align:center;">
+              <img src="https://lemide.com/assets/images/Lemide_White.png" alt="Lemide Partners" width="160" style="display:inline-block; max-width:160px; height:auto;" />
             </td>
           </tr>
           <!-- Body -->
           <tr>
             <td style="padding:40px;">
-              <h2 style="margin:0 0 16px; font-size:20px; color:#18181b;">Thank you, ${firstName}.</h2>
-              <p style="margin:0 0 16px; font-size:16px; color:#3f3f46; line-height:1.6;">
+              <h2 style="margin:0 0 16px; font-family:'Plus Jakarta Sans', 'DM Sans', sans-serif; font-size:20px; font-weight:700; color:#0B1D4B;">Thank you, ${firstName}.</h2>
+              <p style="margin:0 0 16px; font-family:'DM Sans', sans-serif; font-size:16px; color:#3f3f46; line-height:1.6;">
                 We have received your message and a member of our team will be in touch within one business day.
               </p>
-              <p style="margin:0 0 24px; font-size:16px; color:#3f3f46; line-height:1.6;">
+              <p style="margin:0 0 24px; font-family:'DM Sans', sans-serif; font-size:16px; color:#3f3f46; line-height:1.6;">
                 If your request is urgent, you can book a call with us directly:
               </p>
               <table cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="background-color:#CC9E49; border-radius:8px;">
-                    <a href="https://calendly.com/lemide/30min?month=2026-09" target="_blank" style="display:inline-block; padding:12px 28px; color:#ffffff; font-size:15px; font-weight:600; text-decoration:none;">
+                    <a href="https://calendly.com/lemide/30min?month=2026-09" target="_blank" style="display:inline-block; padding:12px 28px; font-family:'Plus Jakarta Sans', 'DM Sans', sans-serif; color:#ffffff; font-size:15px; font-weight:600; text-decoration:none;">
                       Book a Call
                     </a>
                   </td>
@@ -191,9 +199,9 @@ function confirmationEmailHtml({ firstName }: { firstName: string }) {
           </tr>
           <!-- Footer -->
           <tr>
-            <td style="padding:24px 40px; background-color:#f9fafb; border-top:1px solid #e4e4e7; text-align:center;">
-              <p style="margin:0 0 8px; font-size:13px; color:#71717a;">Lemide Partners</p>
-              <p style="margin:0; font-size:13px; color:#a1a1aa;">
+            <td style="padding:24px 40px; background-color:#0B1D4B; text-align:center;">
+              <p style="margin:0 0 8px; font-family:'DM Sans', sans-serif; font-size:13px; color:rgba(255,255,255,0.7);">Lemide Partners</p>
+              <p style="margin:0; font-family:'DM Sans', sans-serif; font-size:13px;">
                 <a href="https://lemide.com" style="color:#CC9E49; text-decoration:none;">lemide.com</a>
                 &nbsp;&middot;&nbsp;
                 <a href="https://www.linkedin.com/company/lemide-partners" style="color:#CC9E49; text-decoration:none;">LinkedIn</a>
