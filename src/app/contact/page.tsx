@@ -11,10 +11,42 @@ import {
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const data = {
+      firstName: (form.elements.namedItem("firstName") as HTMLInputElement).value,
+      lastName: (form.elements.namedItem("lastName") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      interest: (form.elements.namedItem("interest") as HTMLSelectElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const json = await res.json();
+        throw new Error(json.error || "Something went wrong.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send message. Please try again.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -179,8 +211,11 @@ export default function ContactPage() {
                       placeholder="What stage is your company at? What operational challenges are you facing?"
                       rows={5}
                     />
-                    <Button type="submit" variant="accent" size="lg">
-                      Send Message
+                    {error && (
+                      <p className="type-body-sm text-red-600">{error}</p>
+                    )}
+                    <Button type="submit" variant="accent" size="lg" disabled={sending}>
+                      {sending ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 )}
@@ -214,13 +249,13 @@ export default function ContactPage() {
                       Email us directly
                     </h3>
                     <a
-                      href="mailto:contact@lemide.com"
+                      href="mailto:hello@lemide.com"
                       className="type-body text-accent hover:text-accent/80 transition-colors inline-flex items-center gap-2"
                     >
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                       </svg>
-                      contact@lemide.com
+                      hello@lemide.com
                     </a>
                   </div>
 
