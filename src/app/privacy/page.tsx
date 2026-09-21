@@ -114,8 +114,8 @@ export default function PrivacyPolicy() {
               <p>
                 If you have questions about this Privacy Policy or our data practices, please
                 contact us at{" "}
-                <a href="mailto:contact@lemide.com" className="text-accent hover:underline">
-                  contact@lemide.com
+                <a href="mailto:hello@lemide.com" className="text-accent hover:underline">
+                  hello@lemide.com
                 </a>.
               </p>
             </section>

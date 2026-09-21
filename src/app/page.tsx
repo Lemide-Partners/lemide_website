@@ -280,7 +280,7 @@ export default function Home() {
       />
 
       <Footer
-        email="contact@lemide.com"
+        email="hello@lemide.com"
         socialLinks={[
           { platform: "linkedin", href: "https://www.linkedin.com/company/lemide-partners" },
           { platform: "instagram", href: "https://www.instagram.com/lemidepartners/" },

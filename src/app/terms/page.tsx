@@ -149,8 +149,8 @@ export default function TermsOfService() {
               <h2>Contact Us</h2>
               <p>
                 For questions about these Terms of Service, please contact us at{" "}
-                <a href="mailto:contact@lemide.com" className="text-accent hover:underline">
-                  contact@lemide.com
+                <a href="mailto:hello@lemide.com" className="text-accent hover:underline">
+                  hello@lemide.com
                 </a>.
               </p>
             </section>

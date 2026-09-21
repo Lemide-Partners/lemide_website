@@ -7,7 +7,7 @@ function getResend() {
   return new Resend(key);
 }
 
-const ADMIN_EMAIL = process.env.CONTACT_ADMIN_EMAIL || "contact@lemide.com";
+const ADMIN_EMAIL = process.env.CONTACT_ADMIN_EMAIL || "hello@lemide.com";
 const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || "Lemide Partners <noreply@lemide.com>";
 
 const serviceLabels: Record<string, string> = {
