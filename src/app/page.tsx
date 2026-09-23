@@ -22,7 +22,7 @@ export default function Home() {
       <Hero
         headline="Operational infrastructure for founders who"
         headlineAccent="move fast."
-        description="We help Canadian startups set up and run the operations behind the company: incorporation, banking, compliance, tools, and credentials, with support for U.S. expansion."
+        description="We build and run the operational infrastructure early-stage founders need to go from formation to Series A."
         ctaLabel="Book a Call"
         ctaHref="https://calendly.com/lemide/30min?month=2026-09"
         videoSrc="/assets/videos/lemidehero.mp4"
