@@ -482,7 +482,7 @@ export default function AboutPage() {
                   src="/assets/images/Sola.png"
                   alt="Sola Oyegbile, Founder and CEO"
                   fill
-                  className="object-cover img-zoom"
+                  className="object-cover object-top img-zoom"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
